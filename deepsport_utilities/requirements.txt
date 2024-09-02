@@ -1,0 +1,14 @@
+aleatorpy
+calib3d==2.10.1
+python-dotenv==0.17.1
+imageio==2.9.0
+m3u8==0.8.0
+mlworkflow==0.6.0
+numpy==1.19.5
+opencv-python==4.5.1.48
+pydotenv==0.0.7
+pytest==6.2.2
+requests==2.26.0
+scikit-image==0.18.3
+scipy==1.6.0
+shapely==1.7.1

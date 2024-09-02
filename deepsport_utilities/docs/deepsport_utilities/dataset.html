@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.dataset API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.dataset</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import dataclasses
+from enum import IntFlag
+import errno
+from functools import cached_property
+import logging
+import os
+import random
+import shutil
+import threading
+
+import numpy as np
+
+from mlworkflow.datasets import batchify, Dataset, AugmentedDataset, PickledDataset
+from aleatorpy import pseudo_random, method # pylint: disable=unused-import
+
+
+
+
+def collate_fn(items):
+    return {f&#34;batch_{k}&#34;: v for k,v in batchify(items).items()}
+
+
+# This object is defined both in here and in experimentator repository
+# Any change here should be reported in experimentator as well
+class SubsetType(IntFlag):
+    TRAIN = 1
+    EVAL  = 2
+
+# This object is defined both in here and in experimentator repository
+# Any change here should be reported in experimentator as well
+class Subset:
+    def __init__(self, name: str, subset_type: SubsetType, dataset: Dataset, keys=None, repetitions=1, desc=None):
+        keys = keys if keys is not None else dataset.keys.all()
+        assert isinstance(keys, (tuple, list)), f&#34;Received instance of {type(keys)} for subset {name}&#34;
+        self.name = name
+        self.type = subset_type
+        self.dataset = dataset#FilteredDataset(dataset, predicate=lambda k,v: v is not None)
+        self._keys = keys
+        self.keys = keys
+        self.repetitions = repetitions
+        self.desc = desc
+        self.is_training = self.type == SubsetType.TRAIN
+        loop = None if self.is_training else repetitions
+        self.shuffled_keys = pseudo_random(evolutive=self.is_training)(self.shuffled_keys)
+        self.query_item = pseudo_random(loop=loop, input_dependent=True)(self.query_item)
+
+    def shuffled_keys(self): # pylint: disable=method-hidden
+        keys = self.keys * self.repetitions
+        return random.sample(keys, len(keys)) if self.is_training else keys
+
+    def __len__(self):
+        return len(self.keys)*self.repetitions
+
+    def __str__(self):
+        return f&#34;{self.__class__.__name__}&lt;{self.name}&gt;({len(self)})&#34;
+
+    def query_item(self, key):
+        return self.dataset.query_item(key)
+
+    def chunkify(self, keys, chunk_size, drop_last=True):
+        d = []
+        for k in keys:
+            try:
+                v = self.query_item(k)
+            except KeyError:
+                continue
+            if v is None:
+                continue
+            d.append((k, v))
+            if len(d) == chunk_size:  # yield complete sublist and create a new list
+                yield d
+                d = []
+        if not drop_last:
+            yield d
+
+    def batches(self, batch_size, keys=None, drop_last=True, *args, **kwargs):
+        keys = keys or self.shuffled_keys()
+        for chunk in self.chunkify(keys, chunk_size=batch_size, drop_last=drop_last):
+            keys, batch = list(zip(*chunk)) # transforms list of (k,v) into list of (k) and list of (v)
+            yield keys, collate_fn(batch)
+
+
+class FastFilteredDataset(Dataset):
+    def __init__(self, parent, predicate):
+        self.parent = parent
+        self.predicate = predicate
+        self.cached_keys = list(self.parent.keys.all())
+
+    def yield_keys(self):
+        yield from self.cached_keys
+
+    def __len__(self):
+        return len(self.cached_keys)
+
+    def query_item(self, key):
+        try:
+            item = self.parent.query_item(key)
+            if self.predicate(key, item):
+                return item
+        except KeyError:
+            pass
+        self.cached_keys.remove(key)
+        return None
+
+
+class CombinedSubset(Subset):
+    def __init__(self, name, *subsets):
+        self.subsets = subsets
+        self.name = name
+        assert len(set(subset.type for subset in subsets)) == 1, &#34;Combined Subsets must have the same type&#34;
+        self.type = subsets[0].type
+
+    def __len__(self):
+        return min(len(subset) for subset in self.subsets)*len(self.subsets)
+
+    def batches(self, batch_size, **kwargs):
+        assert batch_size % len(self.subsets) == 0, f&#34;Batch size must be a multiple of the number of subsets ({len(self.subsets)})&#34;
+        batch_size = batch_size // len(self.subsets)
+        iterators = [subset.batches(batch_size, **kwargs) for subset in self.subsets]
+        while True:
+            try:
+                key_chunks, chunks = zip(*[next(it) for it in iterators])
+            except StopIteration:
+                break
+            keys = [key for key_chunk in key_chunks for key in key_chunk]
+            batch = {k: np.concatenate([chunk[k] for chunk in chunks]) for k in chunks[0]}
+            yield keys, batch
+
+from mlworkflow.datasets import GeneratorBackedCache
+
+class BalancedSubset(Subset):
+    &#34;&#34;&#34;
+    &#34;&#34;&#34;
+    def __new__(cls, subset, classes, get_class):
+        subset.__cache = {
+            c: GeneratorBackedCache([k for k in subset.keys if get_class(k) == c])
+            for c in classes
+        }
+        return subset
+    def shuffled_keys(self):
+        keys = super().shuffled_keys()
+        if not self.is_training:
+            return keys
+
+        i = 0
+        try:
+            while True:
+                for c, l in self.__cache.items():
+                    yield l[i]
+                i += 1
+        except IndexError:
+            return
+
+class MergedDataset(Dataset):
+    def __init__(self, *ds):
+        self.ds = ds
+        self.cache = {}
+    def yield_keys(self):
+        for ds in self.ds:
+            for key in ds.yield_keys():
+                self.cache[key] = ds
+                yield key
+    def query_item(self, key):
+        return self.cache[key].query_item(key)
+
+
+
+class TolerentDataset(AugmentedDataset):
+    def __init__(self, parent, retry=0):
+        super().__init__(parent)
+        self.retry = retry
+    def augment(self, root_key, root_item):
+        retry = self.retry
+        while root_item is None and retry:
+            root_item = self.parent.query_item(root_key)
+            retry -= 1
+        return root_item
+
+
+
+class DatasetSamplerDataset(Dataset):
+    def __init__(self, dataset, count):
+        self.parent = dataset
+        self.keys = random.sample(list(dataset.keys.all()), count)
+    def yield_keys(self):
+        for key in self.keys:
+            yield key
+    def query_item(self, key):
+        return self.parent.query_item(key)
+
+
+@dataclasses.dataclass
+class BasicDatasetSplitter:
+    validation_pc: int = 15
+    testing_pc: int = 15
+    def __post_init__(self):
+        assert self.validation_pc + self.testing_pc &lt; 100
+
+    def __call__(self, dataset, fold=0):
+        keys = list(dataset.keys.all())
+        l = len(keys)
+
+        # Backup random seed
+        random_state = random.getstate()
+        random.seed(fold)
+
+        random.shuffle(keys)
+
+        # Restore random seed
+        random.setstate(random_state)
+
+        u1 = self.validation_pc
+        u2 = self.validation_pc + self.testing_pc
+
+        validation_keys = keys[00*l//100:u1*l//100]
+        testing_keys    = keys[u1*l//100:u2*l//100]
+        training_keys   = keys[u2*l//100:]
+
+        return [
+            Subset(&#34;training&#34;, subset_type=SubsetType.TRAIN, keys=training_keys, dataset=dataset),
+            Subset(&#34;validation&#34;, subset_type=SubsetType.EVAL, keys=validation_keys, dataset=dataset),
+            Subset(&#34;testing&#34;, subset_type=SubsetType.EVAL, keys=testing_keys, dataset=dataset),
+        ]
+
+
+def split_equally(d, K):
+    &#34;&#34;&#34; splits equally the keys of d given their values
+        arguments:
+            d (dict) - A dict {&#34;label1&#34;: 30, &#34;label2&#34;: 45, &#34;label3&#34;: 22, ... &#34;label&lt;N&gt;&#34;: 14}
+            K (int)  - The number of split to make
+        returns:
+            A list of &#39;K&#39; lists splitting equally the values of &#39;d&#39;:
+            e.g. [[label1, label12, label19], [label2, label15], [label3, label10, label11], ...]
+            where
+            ```
+               d[&#34;label1&#34;]+d[&#34;label12&#34;]+d[&#34;label19&#34;]  ~=  d[&#34;label2&#34;]+d[&#34;label15&#34;]  ~=  d[&#34;label3&#34;]+d[&#34;label10&#34;]+d[&#34;label11]
+            ```
+    &#34;&#34;&#34;
+    s = sorted(d.items(), key=lambda kv: kv[1])
+    f = [{&#34;count&#34;: 0, &#34;list&#34;: []} for _ in range(K)]
+    while s:
+        arena_label, count = s.pop(-1)
+        index, _ = min(enumerate(f), key=(lambda x: x[1][&#34;count&#34;]))
+        f[index][&#34;count&#34;] += count
+        f[index][&#34;list&#34;].append(arena_label)
+    return [x[&#34;list&#34;] for x in f]
+
+
+# class UnSafeCachedPickledDataset(PickledDataset):
+#     def __init__(self, filename, local_scratch=&#34;&#34;):
+#         super().__init__(filename)
+#         local_scratch = local_scratch or os.environ.get(&#39;LOCALSCRATCH&#39;, &#34;&#34;)
+#         self.filename = None
+#         if local_scratch:
+#             def f():
+#                 print(&#34;Copying dataset to local scratch...&#34;)
+#                 self.filename = shutil.copy(filename, local_scratch)
+#                 print(&#34;Done.&#34;)
+#             self.sr = SideRunner()
+#             self.sr.do(f)
+#         else:
+#             self.query_item = super().query_item
+
+#     def query_item(self, key):
+#         if self.filename:
+#             super().__init__(self.filename)
+#             self.query_item = super().query_item
+#         return super().query_item(key)
+
+class CachedPickledDataset(PickledDataset):
+    def __init__(self, filename, local_scratch=&#34;&#34;):
+        super().__init__(filename)
+        local_scratch = local_scratch or os.environ.get(&#39;LOCALSCRATCH&#39;, &#34;&#34;)
+        if not local_scratch or local_scratch in filename:
+            self.query_item = super().query_item
+            return
+
+        self.filename = os.path.join(local_scratch, os.path.basename(filename))
+        lock = f&#34;{self.filename}.lock&#34;
+        self.available = lambda: not os.path.exists(lock)
+
+        try:
+            with open(lock, &#34;x&#34;) as _:
+                pass # First process to reach this point copies the dataset
+        except FileExistsError:
+            return
+
+        if os.path.isfile(self.filename):
+            os.remove(lock)
+            self.reload()
+            return
+
+        def function():
+            logging.info(f&#34;Copying dataset to local scratch: {filename} -&gt; &#34; \
+                f&#34;{self.filename}.&#34;)
+            try:
+                shutil.copy(filename, self.filename)
+            except:
+                try:
+                    os.remove(self.filename)
+                except:
+                    pass
+                logging.info(&#34;Failed copying dataset.&#34;)
+                self.query_item = super().query_item
+            os.remove(lock)
+        self.thread = threading.Thread(target=function, daemon=True)
+        self.thread.start()
+
+    def reload(self):
+        logging.info(f&#34;Reloading dataset from {self.filename}&#34;)
+        super().__init__(self.filename)
+        self.query_item = super().query_item
+
+    def query_item(self, key):
+        if self.available():
+            self.reload()
+        return super().query_item(key)
+
+
+
+def find(path, dirs=None, verbose=True, fail=True):
+    if os.path.isabs(path):
+        if not os.path.isfile(path) and not os.path.isdir(path):
+            if not fail:
+                not verbose or print(f&#34;{path} not found&#34;)
+                return None
+            raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+        return path
+
+    dirs = dirs or [os.getcwd(), *os.getenv(&#34;DATA_PATH&#34;, &#34;&#34;).split(&#34;:&#34;)]
+    for dirname in dirs:
+        if dirname is None:
+            continue
+        tmp_path = os.path.join(dirname, path)
+        if os.path.isfile(tmp_path) or os.path.isdir(tmp_path):
+            not verbose or print(&#34;{} found in {}&#34;.format(path, tmp_path))
+            return tmp_path
+
+    if not fail:
+        not verbose or print(f&#34;{path} not found (searched in {dirs})&#34;)
+        return None
+    raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT),
+                                &#34;{} (searched in {})&#34;.format(path, dirs))</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="deepsport_utilities.dataset.collate_fn"><code class="name flex">
+<span>def <span class="ident">collate_fn</span></span>(<span>items)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def collate_fn(items):
+    return {f&#34;batch_{k}&#34;: v for k,v in batchify(items).items()}</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.find"><code class="name flex">
+<span>def <span class="ident">find</span></span>(<span>path, dirs=None, verbose=True, fail=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find(path, dirs=None, verbose=True, fail=True):
+    if os.path.isabs(path):
+        if not os.path.isfile(path) and not os.path.isdir(path):
+            if not fail:
+                not verbose or print(f&#34;{path} not found&#34;)
+                return None
+            raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+        return path
+
+    dirs = dirs or [os.getcwd(), *os.getenv(&#34;DATA_PATH&#34;, &#34;&#34;).split(&#34;:&#34;)]
+    for dirname in dirs:
+        if dirname is None:
+            continue
+        tmp_path = os.path.join(dirname, path)
+        if os.path.isfile(tmp_path) or os.path.isdir(tmp_path):
+            not verbose or print(&#34;{} found in {}&#34;.format(path, tmp_path))
+            return tmp_path
+
+    if not fail:
+        not verbose or print(f&#34;{path} not found (searched in {dirs})&#34;)
+        return None
+    raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT),
+                                &#34;{} (searched in {})&#34;.format(path, dirs))</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.split_equally"><code class="name flex">
+<span>def <span class="ident">split_equally</span></span>(<span>d, K)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>splits equally the keys of d given their values
+arguments:
+d (dict) - A dict {"label1": 30, "label2": 45, "label3": 22, &hellip; "label<N>": 14}
+K (int)
+- The number of split to make
+returns:
+A list of 'K' lists splitting equally the values of 'd':
+e.g. [[label1, label12, label19], [label2, label15], [label3, label10, label11], &hellip;]
+where
+<code>d["label1"]+d["label12"]+d["label19"]
+~=
+d["label2"]+d["label15"]
+~=
+d["label3"]+d["label10"]+d["label11]</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_equally(d, K):
+    &#34;&#34;&#34; splits equally the keys of d given their values
+        arguments:
+            d (dict) - A dict {&#34;label1&#34;: 30, &#34;label2&#34;: 45, &#34;label3&#34;: 22, ... &#34;label&lt;N&gt;&#34;: 14}
+            K (int)  - The number of split to make
+        returns:
+            A list of &#39;K&#39; lists splitting equally the values of &#39;d&#39;:
+            e.g. [[label1, label12, label19], [label2, label15], [label3, label10, label11], ...]
+            where
+            ```
+               d[&#34;label1&#34;]+d[&#34;label12&#34;]+d[&#34;label19&#34;]  ~=  d[&#34;label2&#34;]+d[&#34;label15&#34;]  ~=  d[&#34;label3&#34;]+d[&#34;label10&#34;]+d[&#34;label11]
+            ```
+    &#34;&#34;&#34;
+    s = sorted(d.items(), key=lambda kv: kv[1])
+    f = [{&#34;count&#34;: 0, &#34;list&#34;: []} for _ in range(K)]
+    while s:
+        arena_label, count = s.pop(-1)
+        index, _ = min(enumerate(f), key=(lambda x: x[1][&#34;count&#34;]))
+        f[index][&#34;count&#34;] += count
+        f[index][&#34;list&#34;].append(arena_label)
+    return [x[&#34;list&#34;] for x in f]</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.dataset.BalancedSubset"><code class="flex name class">
+<span>class <span class="ident">BalancedSubset</span></span>
+<span>(</span><span>name: str, subset_type: <a title="deepsport_utilities.dataset.SubsetType" href="#deepsport_utilities.dataset.SubsetType">SubsetType</a>, dataset: mlworkflow.datasets.Dataset, keys=None, repetitions=1, desc=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BalancedSubset(Subset):
+    &#34;&#34;&#34;
+    &#34;&#34;&#34;
+    def __new__(cls, subset, classes, get_class):
+        subset.__cache = {
+            c: GeneratorBackedCache([k for k in subset.keys if get_class(k) == c])
+            for c in classes
+        }
+        return subset
+    def shuffled_keys(self):
+        keys = super().shuffled_keys()
+        if not self.is_training:
+            return keys
+
+        i = 0
+        try:
+            while True:
+                for c, l in self.__cache.items():
+                    yield l[i]
+                i += 1
+        except IndexError:
+            return</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.dataset.Subset" href="#deepsport_utilities.dataset.Subset">Subset</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.BalancedSubset.shuffled_keys"><code class="name flex">
+<span>def <span class="ident">shuffled_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def shuffled_keys(self):
+    keys = super().shuffled_keys()
+    if not self.is_training:
+        return keys
+
+    i = 0
+    try:
+        while True:
+            for c, l in self.__cache.items():
+                yield l[i]
+            i += 1
+    except IndexError:
+        return</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.BasicDatasetSplitter"><code class="flex name class">
+<span>class <span class="ident">BasicDatasetSplitter</span></span>
+<span>(</span><span>validation_pc: int = 15, testing_pc: int = 15)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>BasicDatasetSplitter(validation_pc: int = 15, testing_pc: int = 15)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BasicDatasetSplitter:
+    validation_pc: int = 15
+    testing_pc: int = 15
+    def __post_init__(self):
+        assert self.validation_pc + self.testing_pc &lt; 100
+
+    def __call__(self, dataset, fold=0):
+        keys = list(dataset.keys.all())
+        l = len(keys)
+
+        # Backup random seed
+        random_state = random.getstate()
+        random.seed(fold)
+
+        random.shuffle(keys)
+
+        # Restore random seed
+        random.setstate(random_state)
+
+        u1 = self.validation_pc
+        u2 = self.validation_pc + self.testing_pc
+
+        validation_keys = keys[00*l//100:u1*l//100]
+        testing_keys    = keys[u1*l//100:u2*l//100]
+        training_keys   = keys[u2*l//100:]
+
+        return [
+            Subset(&#34;training&#34;, subset_type=SubsetType.TRAIN, keys=training_keys, dataset=dataset),
+            Subset(&#34;validation&#34;, subset_type=SubsetType.EVAL, keys=validation_keys, dataset=dataset),
+            Subset(&#34;testing&#34;, subset_type=SubsetType.EVAL, keys=testing_keys, dataset=dataset),
+        ]</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.BasicDatasetSplitter.testing_pc"><code class="name">var <span class="ident">testing_pc</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.dataset.BasicDatasetSplitter.validation_pc"><code class="name">var <span class="ident">validation_pc</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.CachedPickledDataset"><code class="flex name class">
+<span>class <span class="ident">CachedPickledDataset</span></span>
+<span>(</span><span>filename, local_scratch='')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>A dataset compacted on the disk with Pickle. For initial creation from
+an old dataset::</p>
+<pre><code>in_mem_dataset = DictDataset({"a": 1, "b": 2, "c": 3})
+with open("file_path", "wb") as f:
+    PickledDataset.create(in_mem_dataset, f)
+</code></pre>
+<p>For using a PickledDataset::</p>
+<pre><code>with open("file_path", "rb") as f:
+    pd = PickledDataset(f)
+    pd = TransformedDataset(pd, [lambda x, draw: (x, x)])
+    X, Y = pd.query(pd.keys())
+    model.fit(X, Y)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CachedPickledDataset(PickledDataset):
+    def __init__(self, filename, local_scratch=&#34;&#34;):
+        super().__init__(filename)
+        local_scratch = local_scratch or os.environ.get(&#39;LOCALSCRATCH&#39;, &#34;&#34;)
+        if not local_scratch or local_scratch in filename:
+            self.query_item = super().query_item
+            return
+
+        self.filename = os.path.join(local_scratch, os.path.basename(filename))
+        lock = f&#34;{self.filename}.lock&#34;
+        self.available = lambda: not os.path.exists(lock)
+
+        try:
+            with open(lock, &#34;x&#34;) as _:
+                pass # First process to reach this point copies the dataset
+        except FileExistsError:
+            return
+
+        if os.path.isfile(self.filename):
+            os.remove(lock)
+            self.reload()
+            return
+
+        def function():
+            logging.info(f&#34;Copying dataset to local scratch: {filename} -&gt; &#34; \
+                f&#34;{self.filename}.&#34;)
+            try:
+                shutil.copy(filename, self.filename)
+            except:
+                try:
+                    os.remove(self.filename)
+                except:
+                    pass
+                logging.info(&#34;Failed copying dataset.&#34;)
+                self.query_item = super().query_item
+            os.remove(lock)
+        self.thread = threading.Thread(target=function, daemon=True)
+        self.thread.start()
+
+    def reload(self):
+        logging.info(f&#34;Reloading dataset from {self.filename}&#34;)
+        super().__init__(self.filename)
+        self.query_item = super().query_item
+
+    def query_item(self, key):
+        if self.available():
+            self.reload()
+        return super().query_item(key)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.PickledDataset</li>
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.CachedPickledDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    if self.available():
+        self.reload()
+    return super().query_item(key)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.CachedPickledDataset.reload"><code class="name flex">
+<span>def <span class="ident">reload</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reload(self):
+    logging.info(f&#34;Reloading dataset from {self.filename}&#34;)
+    super().__init__(self.filename)
+    self.query_item = super().query_item</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.CombinedSubset"><code class="flex name class">
+<span>class <span class="ident">CombinedSubset</span></span>
+<span>(</span><span>name, *subsets)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CombinedSubset(Subset):
+    def __init__(self, name, *subsets):
+        self.subsets = subsets
+        self.name = name
+        assert len(set(subset.type for subset in subsets)) == 1, &#34;Combined Subsets must have the same type&#34;
+        self.type = subsets[0].type
+
+    def __len__(self):
+        return min(len(subset) for subset in self.subsets)*len(self.subsets)
+
+    def batches(self, batch_size, **kwargs):
+        assert batch_size % len(self.subsets) == 0, f&#34;Batch size must be a multiple of the number of subsets ({len(self.subsets)})&#34;
+        batch_size = batch_size // len(self.subsets)
+        iterators = [subset.batches(batch_size, **kwargs) for subset in self.subsets]
+        while True:
+            try:
+                key_chunks, chunks = zip(*[next(it) for it in iterators])
+            except StopIteration:
+                break
+            keys = [key for key_chunk in key_chunks for key in key_chunk]
+            batch = {k: np.concatenate([chunk[k] for chunk in chunks]) for k in chunks[0]}
+            yield keys, batch</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.dataset.Subset" href="#deepsport_utilities.dataset.Subset">Subset</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.CombinedSubset.batches"><code class="name flex">
+<span>def <span class="ident">batches</span></span>(<span>self, batch_size, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def batches(self, batch_size, **kwargs):
+    assert batch_size % len(self.subsets) == 0, f&#34;Batch size must be a multiple of the number of subsets ({len(self.subsets)})&#34;
+    batch_size = batch_size // len(self.subsets)
+    iterators = [subset.batches(batch_size, **kwargs) for subset in self.subsets]
+    while True:
+        try:
+            key_chunks, chunks = zip(*[next(it) for it in iterators])
+        except StopIteration:
+            break
+        keys = [key for key_chunk in key_chunks for key in key_chunk]
+        batch = {k: np.concatenate([chunk[k] for chunk in chunks]) for k in chunks[0]}
+        yield keys, batch</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.DatasetSamplerDataset"><code class="flex name class">
+<span>class <span class="ident">DatasetSamplerDataset</span></span>
+<span>(</span><span>dataset, count)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DatasetSamplerDataset(Dataset):
+    def __init__(self, dataset, count):
+        self.parent = dataset
+        self.keys = random.sample(list(dataset.keys.all()), count)
+    def yield_keys(self):
+        for key in self.keys:
+            yield key
+    def query_item(self, key):
+        return self.parent.query_item(key)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.DatasetSamplerDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    return self.parent.query_item(key)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.DatasetSamplerDataset.yield_keys"><code class="name flex">
+<span>def <span class="ident">yield_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def yield_keys(self):
+    for key in self.keys:
+        yield key</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.FastFilteredDataset"><code class="flex name class">
+<span>class <span class="ident">FastFilteredDataset</span></span>
+<span>(</span><span>parent, predicate)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FastFilteredDataset(Dataset):
+    def __init__(self, parent, predicate):
+        self.parent = parent
+        self.predicate = predicate
+        self.cached_keys = list(self.parent.keys.all())
+
+    def yield_keys(self):
+        yield from self.cached_keys
+
+    def __len__(self):
+        return len(self.cached_keys)
+
+    def query_item(self, key):
+        try:
+            item = self.parent.query_item(key)
+            if self.predicate(key, item):
+                return item
+        except KeyError:
+            pass
+        self.cached_keys.remove(key)
+        return None</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.FastFilteredDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    try:
+        item = self.parent.query_item(key)
+        if self.predicate(key, item):
+            return item
+    except KeyError:
+        pass
+    self.cached_keys.remove(key)
+    return None</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.FastFilteredDataset.yield_keys"><code class="name flex">
+<span>def <span class="ident">yield_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def yield_keys(self):
+    yield from self.cached_keys</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.MergedDataset"><code class="flex name class">
+<span>class <span class="ident">MergedDataset</span></span>
+<span>(</span><span>*ds)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MergedDataset(Dataset):
+    def __init__(self, *ds):
+        self.ds = ds
+        self.cache = {}
+    def yield_keys(self):
+        for ds in self.ds:
+            for key in ds.yield_keys():
+                self.cache[key] = ds
+                yield key
+    def query_item(self, key):
+        return self.cache[key].query_item(key)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.MergedDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    return self.cache[key].query_item(key)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.MergedDataset.yield_keys"><code class="name flex">
+<span>def <span class="ident">yield_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def yield_keys(self):
+    for ds in self.ds:
+        for key in ds.yield_keys():
+            self.cache[key] = ds
+            yield key</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.Subset"><code class="flex name class">
+<span>class <span class="ident">Subset</span></span>
+<span>(</span><span>name: str, subset_type: <a title="deepsport_utilities.dataset.SubsetType" href="#deepsport_utilities.dataset.SubsetType">SubsetType</a>, dataset: mlworkflow.datasets.Dataset, keys=None, repetitions=1, desc=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Subset:
+    def __init__(self, name: str, subset_type: SubsetType, dataset: Dataset, keys=None, repetitions=1, desc=None):
+        keys = keys if keys is not None else dataset.keys.all()
+        assert isinstance(keys, (tuple, list)), f&#34;Received instance of {type(keys)} for subset {name}&#34;
+        self.name = name
+        self.type = subset_type
+        self.dataset = dataset#FilteredDataset(dataset, predicate=lambda k,v: v is not None)
+        self._keys = keys
+        self.keys = keys
+        self.repetitions = repetitions
+        self.desc = desc
+        self.is_training = self.type == SubsetType.TRAIN
+        loop = None if self.is_training else repetitions
+        self.shuffled_keys = pseudo_random(evolutive=self.is_training)(self.shuffled_keys)
+        self.query_item = pseudo_random(loop=loop, input_dependent=True)(self.query_item)
+
+    def shuffled_keys(self): # pylint: disable=method-hidden
+        keys = self.keys * self.repetitions
+        return random.sample(keys, len(keys)) if self.is_training else keys
+
+    def __len__(self):
+        return len(self.keys)*self.repetitions
+
+    def __str__(self):
+        return f&#34;{self.__class__.__name__}&lt;{self.name}&gt;({len(self)})&#34;
+
+    def query_item(self, key):
+        return self.dataset.query_item(key)
+
+    def chunkify(self, keys, chunk_size, drop_last=True):
+        d = []
+        for k in keys:
+            try:
+                v = self.query_item(k)
+            except KeyError:
+                continue
+            if v is None:
+                continue
+            d.append((k, v))
+            if len(d) == chunk_size:  # yield complete sublist and create a new list
+                yield d
+                d = []
+        if not drop_last:
+            yield d
+
+    def batches(self, batch_size, keys=None, drop_last=True, *args, **kwargs):
+        keys = keys or self.shuffled_keys()
+        for chunk in self.chunkify(keys, chunk_size=batch_size, drop_last=drop_last):
+            keys, batch = list(zip(*chunk)) # transforms list of (k,v) into list of (k) and list of (v)
+            yield keys, collate_fn(batch)</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.dataset.BalancedSubset" href="#deepsport_utilities.dataset.BalancedSubset">BalancedSubset</a></li>
+<li><a title="deepsport_utilities.dataset.CombinedSubset" href="#deepsport_utilities.dataset.CombinedSubset">CombinedSubset</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.Subset.batches"><code class="name flex">
+<span>def <span class="ident">batches</span></span>(<span>self, batch_size, keys=None, drop_last=True, *args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def batches(self, batch_size, keys=None, drop_last=True, *args, **kwargs):
+    keys = keys or self.shuffled_keys()
+    for chunk in self.chunkify(keys, chunk_size=batch_size, drop_last=drop_last):
+        keys, batch = list(zip(*chunk)) # transforms list of (k,v) into list of (k) and list of (v)
+        yield keys, collate_fn(batch)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.Subset.chunkify"><code class="name flex">
+<span>def <span class="ident">chunkify</span></span>(<span>self, keys, chunk_size, drop_last=True)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def chunkify(self, keys, chunk_size, drop_last=True):
+    d = []
+    for k in keys:
+        try:
+            v = self.query_item(k)
+        except KeyError:
+            continue
+        if v is None:
+            continue
+        d.append((k, v))
+        if len(d) == chunk_size:  # yield complete sublist and create a new list
+            yield d
+            d = []
+    if not drop_last:
+        yield d</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.Subset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    return self.dataset.query_item(key)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.dataset.Subset.shuffled_keys"><code class="name flex">
+<span>def <span class="ident">shuffled_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def shuffled_keys(self): # pylint: disable=method-hidden
+    keys = self.keys * self.repetitions
+    return random.sample(keys, len(keys)) if self.is_training else keys</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.SubsetType"><code class="flex name class">
+<span>class <span class="ident">SubsetType</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SubsetType(IntFlag):
+    TRAIN = 1
+    EVAL  = 2</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntFlag</li>
+<li>builtins.int</li>
+<li>enum.Flag</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.SubsetType.EVAL"><code class="name">var <span class="ident">EVAL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.dataset.SubsetType.TRAIN"><code class="name">var <span class="ident">TRAIN</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.dataset.TolerentDataset"><code class="flex name class">
+<span>class <span class="ident">TolerentDataset</span></span>
+<span>(</span><span>parent, retry=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>"Augments" a dataset in the sense that it can produce many child items
+from one root item of the dataset. The root key must be retrievable from
+the child key. By convention, the root key is in the first element of the
+child key. This is overridable with the <code>root_key</code> method.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; class PermutingDataset(AugmentedDataset):
+...     def augment(self, root_key, root_item):
+...         yield (root_key, 0), root_item
+...         yield (root_key, 1), root_item[::-1]
+&gt;&gt;&gt; d = DictDataset({0: (&quot;Denzel&quot;, &quot;Washington&quot;), 1: (&quot;Tom&quot;, &quot;Hanks&quot;)})
+&gt;&gt;&gt; d = PermutingDataset(d)
+&gt;&gt;&gt; new_keys = d.keys()
+&gt;&gt;&gt; new_keys
+((0, 0), (0, 1), (1, 0), (1, 1))
+&gt;&gt;&gt; d.query(new_keys)
+(array(['Denzel', 'Washington', 'Tom', 'Hanks'], ...),
+ array(['Washington', 'Denzel', 'Hanks', 'Tom'], ...))
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TolerentDataset(AugmentedDataset):
+    def __init__(self, parent, retry=0):
+        super().__init__(parent)
+        self.retry = retry
+    def augment(self, root_key, root_item):
+        retry = self.retry
+        while root_item is None and retry:
+            root_item = self.parent.query_item(root_key)
+            retry -= 1
+        return root_item</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.AugmentedDataset</li>
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.dataset.TolerentDataset.augment"><code class="name flex">
+<span>def <span class="ident">augment</span></span>(<span>self, root_key, root_item)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def augment(self, root_key, root_item):
+    retry = self.retry
+    while root_item is None and retry:
+        root_item = self.parent.query_item(root_key)
+        retry -= 1
+    return root_item</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities" href="index.html">deepsport_utilities</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.collate_fn" href="#deepsport_utilities.dataset.collate_fn">collate_fn</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.find" href="#deepsport_utilities.dataset.find">find</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.split_equally" href="#deepsport_utilities.dataset.split_equally">split_equally</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.BalancedSubset" href="#deepsport_utilities.dataset.BalancedSubset">BalancedSubset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.BalancedSubset.shuffled_keys" href="#deepsport_utilities.dataset.BalancedSubset.shuffled_keys">shuffled_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.BasicDatasetSplitter" href="#deepsport_utilities.dataset.BasicDatasetSplitter">BasicDatasetSplitter</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.BasicDatasetSplitter.testing_pc" href="#deepsport_utilities.dataset.BasicDatasetSplitter.testing_pc">testing_pc</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.BasicDatasetSplitter.validation_pc" href="#deepsport_utilities.dataset.BasicDatasetSplitter.validation_pc">validation_pc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.CachedPickledDataset" href="#deepsport_utilities.dataset.CachedPickledDataset">CachedPickledDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.CachedPickledDataset.query_item" href="#deepsport_utilities.dataset.CachedPickledDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.CachedPickledDataset.reload" href="#deepsport_utilities.dataset.CachedPickledDataset.reload">reload</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.CombinedSubset" href="#deepsport_utilities.dataset.CombinedSubset">CombinedSubset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.CombinedSubset.batches" href="#deepsport_utilities.dataset.CombinedSubset.batches">batches</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.DatasetSamplerDataset" href="#deepsport_utilities.dataset.DatasetSamplerDataset">DatasetSamplerDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.DatasetSamplerDataset.query_item" href="#deepsport_utilities.dataset.DatasetSamplerDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.DatasetSamplerDataset.yield_keys" href="#deepsport_utilities.dataset.DatasetSamplerDataset.yield_keys">yield_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.FastFilteredDataset" href="#deepsport_utilities.dataset.FastFilteredDataset">FastFilteredDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.FastFilteredDataset.query_item" href="#deepsport_utilities.dataset.FastFilteredDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.FastFilteredDataset.yield_keys" href="#deepsport_utilities.dataset.FastFilteredDataset.yield_keys">yield_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.MergedDataset" href="#deepsport_utilities.dataset.MergedDataset">MergedDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.MergedDataset.query_item" href="#deepsport_utilities.dataset.MergedDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.MergedDataset.yield_keys" href="#deepsport_utilities.dataset.MergedDataset.yield_keys">yield_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.Subset" href="#deepsport_utilities.dataset.Subset">Subset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.Subset.batches" href="#deepsport_utilities.dataset.Subset.batches">batches</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.Subset.chunkify" href="#deepsport_utilities.dataset.Subset.chunkify">chunkify</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.Subset.query_item" href="#deepsport_utilities.dataset.Subset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.Subset.shuffled_keys" href="#deepsport_utilities.dataset.Subset.shuffled_keys">shuffled_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.SubsetType" href="#deepsport_utilities.dataset.SubsetType">SubsetType</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.SubsetType.EVAL" href="#deepsport_utilities.dataset.SubsetType.EVAL">EVAL</a></code></li>
+<li><code><a title="deepsport_utilities.dataset.SubsetType.TRAIN" href="#deepsport_utilities.dataset.SubsetType.TRAIN">TRAIN</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.dataset.TolerentDataset" href="#deepsport_utilities.dataset.TolerentDataset">TolerentDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.dataset.TolerentDataset.augment" href="#deepsport_utilities.dataset.TolerentDataset.augment">augment</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.ds.instants_dataset.instants_dataset API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.ds.instants_dataset.instants_dataset</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from enum import IntFlag, IntEnum
+from mlworkflow import lazyproperty as cached_property
+import json
+import os
+from typing import NamedTuple
+
+import cv2
+import imageio
+import numpy as np
+
+from mlworkflow import Dataset
+from deepsport_utilities.calib import Calib, Point3D
+from deepsport_utilities.court import Court, court_dim as COURT_DIM
+from deepsport_utilities.ds.generic_dataset import GenericItem
+
+class DownloadFlags(IntFlag):
+    NONE = 0
+    WITH_IMAGE = 1
+    WITH_CALIB_FILE = 2
+    #WITH_FOREGROUND_MASK_FILE = 4 # obsolete
+    WITH_HUMAN_SEGMENTATION_MASKS = 8
+    WITH_FOLLOWING_IMAGE = 16
+    WITH_ALL_IMAGES = 32
+    ALL = -1
+
+class InstantKey(NamedTuple):
+    arena_label: str
+    game_id: int
+    timestamp: int
+
+class Instant(GenericItem):
+    def __init__(self, db_item, dataset_folder, download_flags):
+        self.dataset_folder = dataset_folder
+        self.download_flags = download_flags
+
+        self.arena_label = db_item[&#34;arena_label&#34;]
+        self.num_cameras = db_item[&#34;num_cameras&#34;]
+
+        self.game_id = db_item[&#34;game_id&#34;]
+        self.league_id = db_item[&#34;league_id&#34;]
+        self.rule_type = db_item[&#34;rule_type&#34;]
+        self.sport = db_item[&#34;sport&#34;]
+
+        self.timestamp = db_item[&#34;timestamp&#34;]
+        self.offsets = db_item[&#34;offsets&#34;]
+
+        self.annotation_state = db_item.get(&#34;annotation_state&#34;, None)
+        self.annotator_id = db_item.get(&#34;annotator_id&#34;, None)
+        self.annotation_ts = db_item.get(&#34;annotation_ts&#34;, None)
+        self.annotation_duration = db_item.get(&#34;annotation_duration&#34;, None)
+        self.annotation_game_state = db_item.get(&#34;annotation_game_state&#34;, &#34;standard_game&#34;)
+        self.annotated_human_masks = db_item.get(&#34;annotated_human_masks&#34;, False)
+
+        self.format =  db_item[&#34;format&#34;]
+
+        annotation_map = {
+            &#34;player&#34;: Player,
+            &#34;ball&#34;: Ball
+        }
+        self.annotations = [annotation_map[a[&#39;type&#39;]](a)for a in (db_item.get(&#39;annotations&#39;, []) or [])]
+
+        self.image_source = db_item.get(&#34;image_source&#34;, &#34;raw&#34;)
+        self.court_dim = COURT_DIM[self.rule_type]
+        self.court = Court(self.rule_type)
+        self.timestamps = [self.timestamp for _ in range(self.num_cameras)]
+
+    def __str__(self):
+        return &#34;({}[{:5d}]@{})&#34;.format(self.arena_label, self.game_id, self.timestamp)
+
+    def get_filekey(self, prefix, suffix):
+        return os.path.join(self.arena_label, str(self.game_id), &#34;{}{}{}&#34;.format(prefix, self.timestamp, suffix))
+
+    @cached_property
+    def calibs(self):
+        return [self.__load_calib(c) for c in range(self.num_cameras)]
+
+    @cached_property
+    def all_images(self):
+        _ = self.calibs # triggers calib loading
+        all_images = {}
+        for c in range(self.num_cameras):
+            for idx, offset in enumerate(self.offsets):
+                if     (idx == 0) \
+                    or (idx == 1 and self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE) \
+                    or (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES):
+                    try:
+                        all_images[(c,offset)] = self.__load_image(c, offset)
+                    except BaseException as e:
+                        raise ValueError((self.offsets, self.key)) from e
+        return all_images
+
+    @property
+    def images(self):
+        return [img for (c, offset), img in self.all_images.items() if offset == 0]
+
+    @cached_property
+    def human_masks(self):
+        assert self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS, \
+            &#34;Provided flag doesn&#39;t contain &#39;human_masks&#39;. Recreate your dataset with appropriate DownloadFlags&#34;
+        try:
+            filenames = [os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_humans.png&#34;)) for cam_idx in range(self.num_cameras)]
+            return [imageio.imread(filename) for filename in filenames] # imageio handles 16bits images while cv2 doesn&#39;t
+        except FileNotFoundError:
+            # If one human_masks file is missing for one camera, no human_masks will be available.
+            # If file is missing because no human appears on that camera, you should upload an empty image to the bucket.
+            return []
+
+    def __load_image(self, cam_idx, offset=0):
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_{}.png&#34;.format(offset)))
+        image = cv2.imread(filename)
+        if image is None:
+            raise FileNotFoundError(filename)
+        return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    def __load_calib(self, cam_idx):
+        assert self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE, \
+            &#34;Provided flag doesn&#39;t contain calib files. Recreate your dataset with appropriate DownloadFlags&#34;
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;.json&#34;))
+        return parse_DeepSport_calib(json.load(open(filename, &#39;r&#39;))[&#39;calibration&#39;])
+
+    def draw(self, i=None, draw_players=True, draw_ball=True, draw_lines=False):
+        if i is None:
+            w, h = self.court_dim
+            image = np.ones((int(h), int(w), 3), np.uint8)*255
+            R = np.identity(3)
+            C = Point3D(w/2, h/2, -3000)
+            m = w/0.01  # pixel_size (pixels/meters) on 1 centimeter sensor
+            f = 0.009  # focal (meters)
+            R = np.identity(3)
+            calib = Calib(width=w, height=h, T=-R@C[:3], R=R, K=np.array([[f*m,  0, w/2], [0, f*m, h/2], [0,  0,  1]]))
+        else:
+            image = self.images[i].copy()
+            calib = self.calibs[i]
+
+        if draw_lines:
+            self.court.draw_lines(image, calib)
+        # if fg_detections is not None:
+        #     calib = self.calibs[i] if i is not None else None
+        #     detections = self.fg_detections[i][fg_detections] if i is not None else \
+        #                  itertools.chain(*self.fg_detections)
+        #     for det in detections:
+        #         v = calib.project_3D_to_2D(det.feet).to_int_tuple()
+        #         cv2.circle(image, v[0:2].flatten(), 7, [255, 0, 255], -1)
+
+        for annotation in self.annotations:
+            if annotation.type == &#34;player&#34; and draw_players:
+                head = calib.project_3D_to_2D(annotation.head).to_int_tuple()
+                hips = calib.project_3D_to_2D(annotation.hips).to_int_tuple()
+                foot1 = calib.project_3D_to_2D(annotation.foot1).to_int_tuple()
+                foot2 = calib.project_3D_to_2D(annotation.foot2).to_int_tuple()
+
+                if any([kp[0] &lt; 0 or kp[1] &gt; image.shape[1] or kp[1] &lt; 0 or kp[1] &gt; image.shape[0] for kp in [head, hips]]):
+                    continue
+
+                # head tip
+                length = 70 # cm
+                headT3D = length * Point3D(np.cos(annotation.headAngle), np.sin(annotation.headAngle), 0)
+                headT = calib.project_3D_to_2D(annotation.head+headT3D).to_int_tuple()
+
+                color = [0, 0, 0]
+                color[annotation.team-1] = 255
+
+                if i is not None:
+                    cv2.line(image, hips, foot1, color, 3)
+                    cv2.line(image, hips, foot2, color, 3)
+                    cv2.line(image, head, hips, color, 3)
+                else:
+                    cv2.circle(image, head, 5, color, -1)
+                cv2.line(image, head, headT, color, 3)
+
+            elif annotation.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(annotation.center).to_list())
+                color = [255, 255, 0]
+                cv2.circle(image, center, 5, color, -1)
+        for detection in getattr(self, &#34;detections&#34;, []):
+            if detection.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(detection.center).to_list())
+                color = [0, 255, 255]
+                cv2.circle(image, center, 5, color, -1)
+        return image
+
+    @property
+    def files(self):
+        for i in range(0, int(self.num_cameras)):
+            if self.download_flags &amp; DownloadFlags.WITH_IMAGE:
+                for idx, offset in enumerate(self.offsets):
+                    if     (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES) \
+                        or (self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE and idx == 1) \
+                        or (idx == 0):
+                        yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_{}.png&#34;.format(offset))
+            if self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;.json&#34;)
+            if self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_humans.png&#34;)
+
+    @property
+    def key(self):
+        return InstantKey(self.arena_label, self.game_id, self.timestamp)
+
+    @property
+    def db_item(self):
+        db_item = {
+            &#34;format&#34;: self.format,
+            &#34;image_source&#34;: self.image_source,
+
+            # arena relative infos
+            &#34;arena_label&#34;: self.arena_label,
+            &#34;num_cameras&#34;: self.num_cameras,
+
+            # game relative infos
+            &#34;sport&#34;: self.sport,
+            &#34;game_id&#34;: self.game_id,
+            &#34;league_id&#34;: self.league_id,
+            &#34;rule_type&#34;: self.rule_type,
+
+            # instant relative infos
+            &#34;timestamp&#34;: self.timestamp,
+            &#34;offsets&#34;: self.offsets,
+
+            &#34;annotation_state&#34;: self.annotation_state,
+            &#34;annotations&#34;: [a.to_dict() for a in self.annotations],
+            &#34;annotated_human_masks&#34;: self.annotated_human_masks
+        }
+
+        for attr in [&#34;annotation_ts&#34;, &#34;annotator_id&#34;, &#34;annotation_duration&#34;, &#34;annotation_game_state&#34;]:
+            if value := getattr(self, attr, None):
+                db_item[attr] = value
+        return db_item
+
+    def to_dict(self):
+        return {&#34;db_item&#34;: self.db_item, &#34;download_flags&#34;: self.download_flags, &#34;dataset_folder&#34;: self.dataset_folder}
+
+def parse_DeepSport_calib(data):
+    return Calib(
+        width = data[&#34;img_width&#34;],
+        height = data[&#34;img_height&#34;],
+        T = np.array([data[&#34;T&#34;]]).T,
+        K = np.array(data[&#34;KK&#34;]).reshape((3, 3)),
+        kc = np.array(data[&#34;kc&#34;]),
+        R = np.array(data[&#34;R&#34;]).reshape((3, 3))
+    )
+
+class InstantsDataset(Dataset):
+    items_type = Instant
+
+
+class BallState(IntEnum):
+    NONE = 0
+    FLYING = 1
+    CONSTRAINT = 2
+    DRIBBLING = 3
+
+class Ball():
+    state = BallState.NONE # default
+    visible = None         # default
+    value = None           # default
+    def __init__(self, data):
+        self.type = &#34;ball&#34;
+        self.center = Point3D(*data[&#39;center&#39;])
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.camera = data[&#39;image&#39;]
+        self.visible = data.get(&#39;visible&#39;, None)
+        self.state = BallState(data.get(&#39;state&#39;, 0))
+        self.value = data.get(&#39;value&#39;, None)
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;center&#34;: self.center.to_list(),
+            &#34;image&#34;: self.camera,
+            &#34;visible&#34;: self.visible,
+            &#34;state&#34;: self.state,
+            &#34;value&#34;: self.value
+        }
+
+    def __repr__(self):
+        return &#34;Ball(&#34; + &#34;,&#34;.join([
+            f&#34;origin=&#39;{self.origin}&#39;, &#34; \
+            f&#34;center=({self.center.x:.01f}, {self.center.y:.01f}, {self.center.z:.01f})&#34; \
+        ]) + &#34;)&#34;
+
+class BallAnnotation(Ball):
+    origin = &#34;annotation&#34;
+    pass # retro-compatibility
+
+
+class Player():
+    def __init__(self, data):
+        self.type = &#34;player&#34;
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.team = data[&#39;team&#39;]
+        self.head = Point3D(*data[&#39;head&#39;])
+        self.hips = Point3D(*data[&#39;hips&#39;])
+        self.foot1 = Point3D(*data[&#39;foot1&#39;])
+        self.foot2 = Point3D(*data[&#39;foot2&#39;])
+        self.foot1_at_the_ground = str(data[&#34;foot1_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.foot2_at_the_ground = str(data[&#34;foot2_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.headAngle = data[&#39;headOrientation&#39;]
+        self.camera = data[&#39;image&#39;]
+        self.hipsAngle = data.get(&#39;hipsOrientation&#39;, self.headAngle)
+        self.feet = (self.foot1 + self.foot2) / 2
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;team&#34;: self.team,
+            &#34;head&#34;: self.head.to_list(),
+            &#34;headOrientation&#34;: self.headAngle,
+            &#34;hips&#34;: self.hips.to_list(),
+            &#34;foot1&#34;: self.foot1.to_list(),
+            &#34;foot2&#34;: self.foot2.to_list(),
+            &#34;foot1_at_the_ground&#34;: self.foot1_at_the_ground,
+            &#34;foot2_at_the_ground&#34;: self.foot2_at_the_ground,
+            &#34;image&#34;: self.camera
+        }
+
+class ForegroundDetection():
+    def __init__(self, detection, camera: int) -&gt; None:
+        self.origin = &#34;foreground&#34;
+        self.feet = Point3D(*[detection[&#34;pos_feet&#34;][0], detection[&#34;pos_feet&#34;][1], 0])
+        self.confidence = detection[&#34;level&#34;]
+        self.status = detection[&#34;status&#34;]
+        self.camera = camera</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.parse_DeepSport_calib"><code class="name flex">
+<span>def <span class="ident">parse_DeepSport_calib</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def parse_DeepSport_calib(data):
+    return Calib(
+        width = data[&#34;img_width&#34;],
+        height = data[&#34;img_height&#34;],
+        T = np.array([data[&#34;T&#34;]]).T,
+        K = np.array(data[&#34;KK&#34;]).reshape((3, 3)),
+        kc = np.array(data[&#34;kc&#34;]),
+        R = np.array(data[&#34;R&#34;]).reshape((3, 3))
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball"><code class="flex name class">
+<span>class <span class="ident">Ball</span></span>
+<span>(</span><span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Ball():
+    state = BallState.NONE # default
+    visible = None         # default
+    value = None           # default
+    def __init__(self, data):
+        self.type = &#34;ball&#34;
+        self.center = Point3D(*data[&#39;center&#39;])
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.camera = data[&#39;image&#39;]
+        self.visible = data.get(&#39;visible&#39;, None)
+        self.state = BallState(data.get(&#39;state&#39;, 0))
+        self.value = data.get(&#39;value&#39;, None)
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;center&#34;: self.center.to_list(),
+            &#34;image&#34;: self.camera,
+            &#34;visible&#34;: self.visible,
+            &#34;state&#34;: self.state,
+            &#34;value&#34;: self.value
+        }
+
+    def __repr__(self):
+        return &#34;Ball(&#34; + &#34;,&#34;.join([
+            f&#34;origin=&#39;{self.origin}&#39;, &#34; \
+            f&#34;center=({self.center.x:.01f}, {self.center.y:.01f}, {self.center.z:.01f})&#34; \
+        ]) + &#34;)&#34;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation">BallAnnotation</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.state"><code class="name">var <span class="ident">state</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.visible"><code class="name">var <span class="ident">visible</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {
+        &#34;type&#34;: self.type,
+        &#34;origin&#34;: self.origin,
+        &#34;center&#34;: self.center.to_list(),
+        &#34;image&#34;: self.camera,
+        &#34;visible&#34;: self.visible,
+        &#34;state&#34;: self.state,
+        &#34;value&#34;: self.value
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation"><code class="flex name class">
+<span>class <span class="ident">BallAnnotation</span></span>
+<span>(</span><span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BallAnnotation(Ball):
+    origin = &#34;annotation&#34;
+    pass # retro-compatibility</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball">Ball</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation.origin"><code class="name">var <span class="ident">origin</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState"><code class="flex name class">
+<span>class <span class="ident">BallState</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BallState(IntEnum):
+    NONE = 0
+    FLYING = 1
+    CONSTRAINT = 2
+    DRIBBLING = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.CONSTRAINT"><code class="name">var <span class="ident">CONSTRAINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.DRIBBLING"><code class="name">var <span class="ident">DRIBBLING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.FLYING"><code class="name">var <span class="ident">FLYING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags"><code class="flex name class">
+<span>class <span class="ident">DownloadFlags</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DownloadFlags(IntFlag):
+    NONE = 0
+    WITH_IMAGE = 1
+    WITH_CALIB_FILE = 2
+    #WITH_FOREGROUND_MASK_FILE = 4 # obsolete
+    WITH_HUMAN_SEGMENTATION_MASKS = 8
+    WITH_FOLLOWING_IMAGE = 16
+    WITH_ALL_IMAGES = 32
+    ALL = -1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntFlag</li>
+<li>builtins.int</li>
+<li>enum.Flag</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.ALL"><code class="name">var <span class="ident">ALL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_ALL_IMAGES"><code class="name">var <span class="ident">WITH_ALL_IMAGES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_CALIB_FILE"><code class="name">var <span class="ident">WITH_CALIB_FILE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE"><code class="name">var <span class="ident">WITH_FOLLOWING_IMAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS"><code class="name">var <span class="ident">WITH_HUMAN_SEGMENTATION_MASKS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_IMAGE"><code class="name">var <span class="ident">WITH_IMAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.ForegroundDetection"><code class="flex name class">
+<span>class <span class="ident">ForegroundDetection</span></span>
+<span>(</span><span>detection, camera: int)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ForegroundDetection():
+    def __init__(self, detection, camera: int) -&gt; None:
+        self.origin = &#34;foreground&#34;
+        self.feet = Point3D(*[detection[&#34;pos_feet&#34;][0], detection[&#34;pos_feet&#34;][1], 0])
+        self.confidence = detection[&#34;level&#34;]
+        self.status = detection[&#34;status&#34;]
+        self.camera = camera</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant"><code class="flex name class">
+<span>class <span class="ident">Instant</span></span>
+<span>(</span><span>db_item, dataset_folder, download_flags)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Python object describing dataset item.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Attributes that require files to be downloaded (like images) should
+be decorated with <code>functools.cached_property</code> to prevent being read before they get
+downloaded.</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Instant(GenericItem):
+    def __init__(self, db_item, dataset_folder, download_flags):
+        self.dataset_folder = dataset_folder
+        self.download_flags = download_flags
+
+        self.arena_label = db_item[&#34;arena_label&#34;]
+        self.num_cameras = db_item[&#34;num_cameras&#34;]
+
+        self.game_id = db_item[&#34;game_id&#34;]
+        self.league_id = db_item[&#34;league_id&#34;]
+        self.rule_type = db_item[&#34;rule_type&#34;]
+        self.sport = db_item[&#34;sport&#34;]
+
+        self.timestamp = db_item[&#34;timestamp&#34;]
+        self.offsets = db_item[&#34;offsets&#34;]
+
+        self.annotation_state = db_item.get(&#34;annotation_state&#34;, None)
+        self.annotator_id = db_item.get(&#34;annotator_id&#34;, None)
+        self.annotation_ts = db_item.get(&#34;annotation_ts&#34;, None)
+        self.annotation_duration = db_item.get(&#34;annotation_duration&#34;, None)
+        self.annotation_game_state = db_item.get(&#34;annotation_game_state&#34;, &#34;standard_game&#34;)
+        self.annotated_human_masks = db_item.get(&#34;annotated_human_masks&#34;, False)
+
+        self.format =  db_item[&#34;format&#34;]
+
+        annotation_map = {
+            &#34;player&#34;: Player,
+            &#34;ball&#34;: Ball
+        }
+        self.annotations = [annotation_map[a[&#39;type&#39;]](a)for a in (db_item.get(&#39;annotations&#39;, []) or [])]
+
+        self.image_source = db_item.get(&#34;image_source&#34;, &#34;raw&#34;)
+        self.court_dim = COURT_DIM[self.rule_type]
+        self.court = Court(self.rule_type)
+        self.timestamps = [self.timestamp for _ in range(self.num_cameras)]
+
+    def __str__(self):
+        return &#34;({}[{:5d}]@{})&#34;.format(self.arena_label, self.game_id, self.timestamp)
+
+    def get_filekey(self, prefix, suffix):
+        return os.path.join(self.arena_label, str(self.game_id), &#34;{}{}{}&#34;.format(prefix, self.timestamp, suffix))
+
+    @cached_property
+    def calibs(self):
+        return [self.__load_calib(c) for c in range(self.num_cameras)]
+
+    @cached_property
+    def all_images(self):
+        _ = self.calibs # triggers calib loading
+        all_images = {}
+        for c in range(self.num_cameras):
+            for idx, offset in enumerate(self.offsets):
+                if     (idx == 0) \
+                    or (idx == 1 and self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE) \
+                    or (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES):
+                    try:
+                        all_images[(c,offset)] = self.__load_image(c, offset)
+                    except BaseException as e:
+                        raise ValueError((self.offsets, self.key)) from e
+        return all_images
+
+    @property
+    def images(self):
+        return [img for (c, offset), img in self.all_images.items() if offset == 0]
+
+    @cached_property
+    def human_masks(self):
+        assert self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS, \
+            &#34;Provided flag doesn&#39;t contain &#39;human_masks&#39;. Recreate your dataset with appropriate DownloadFlags&#34;
+        try:
+            filenames = [os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_humans.png&#34;)) for cam_idx in range(self.num_cameras)]
+            return [imageio.imread(filename) for filename in filenames] # imageio handles 16bits images while cv2 doesn&#39;t
+        except FileNotFoundError:
+            # If one human_masks file is missing for one camera, no human_masks will be available.
+            # If file is missing because no human appears on that camera, you should upload an empty image to the bucket.
+            return []
+
+    def __load_image(self, cam_idx, offset=0):
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_{}.png&#34;.format(offset)))
+        image = cv2.imread(filename)
+        if image is None:
+            raise FileNotFoundError(filename)
+        return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    def __load_calib(self, cam_idx):
+        assert self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE, \
+            &#34;Provided flag doesn&#39;t contain calib files. Recreate your dataset with appropriate DownloadFlags&#34;
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;.json&#34;))
+        return parse_DeepSport_calib(json.load(open(filename, &#39;r&#39;))[&#39;calibration&#39;])
+
+    def draw(self, i=None, draw_players=True, draw_ball=True, draw_lines=False):
+        if i is None:
+            w, h = self.court_dim
+            image = np.ones((int(h), int(w), 3), np.uint8)*255
+            R = np.identity(3)
+            C = Point3D(w/2, h/2, -3000)
+            m = w/0.01  # pixel_size (pixels/meters) on 1 centimeter sensor
+            f = 0.009  # focal (meters)
+            R = np.identity(3)
+            calib = Calib(width=w, height=h, T=-R@C[:3], R=R, K=np.array([[f*m,  0, w/2], [0, f*m, h/2], [0,  0,  1]]))
+        else:
+            image = self.images[i].copy()
+            calib = self.calibs[i]
+
+        if draw_lines:
+            self.court.draw_lines(image, calib)
+        # if fg_detections is not None:
+        #     calib = self.calibs[i] if i is not None else None
+        #     detections = self.fg_detections[i][fg_detections] if i is not None else \
+        #                  itertools.chain(*self.fg_detections)
+        #     for det in detections:
+        #         v = calib.project_3D_to_2D(det.feet).to_int_tuple()
+        #         cv2.circle(image, v[0:2].flatten(), 7, [255, 0, 255], -1)
+
+        for annotation in self.annotations:
+            if annotation.type == &#34;player&#34; and draw_players:
+                head = calib.project_3D_to_2D(annotation.head).to_int_tuple()
+                hips = calib.project_3D_to_2D(annotation.hips).to_int_tuple()
+                foot1 = calib.project_3D_to_2D(annotation.foot1).to_int_tuple()
+                foot2 = calib.project_3D_to_2D(annotation.foot2).to_int_tuple()
+
+                if any([kp[0] &lt; 0 or kp[1] &gt; image.shape[1] or kp[1] &lt; 0 or kp[1] &gt; image.shape[0] for kp in [head, hips]]):
+                    continue
+
+                # head tip
+                length = 70 # cm
+                headT3D = length * Point3D(np.cos(annotation.headAngle), np.sin(annotation.headAngle), 0)
+                headT = calib.project_3D_to_2D(annotation.head+headT3D).to_int_tuple()
+
+                color = [0, 0, 0]
+                color[annotation.team-1] = 255
+
+                if i is not None:
+                    cv2.line(image, hips, foot1, color, 3)
+                    cv2.line(image, hips, foot2, color, 3)
+                    cv2.line(image, head, hips, color, 3)
+                else:
+                    cv2.circle(image, head, 5, color, -1)
+                cv2.line(image, head, headT, color, 3)
+
+            elif annotation.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(annotation.center).to_list())
+                color = [255, 255, 0]
+                cv2.circle(image, center, 5, color, -1)
+        for detection in getattr(self, &#34;detections&#34;, []):
+            if detection.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(detection.center).to_list())
+                color = [0, 255, 255]
+                cv2.circle(image, center, 5, color, -1)
+        return image
+
+    @property
+    def files(self):
+        for i in range(0, int(self.num_cameras)):
+            if self.download_flags &amp; DownloadFlags.WITH_IMAGE:
+                for idx, offset in enumerate(self.offsets):
+                    if     (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES) \
+                        or (self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE and idx == 1) \
+                        or (idx == 0):
+                        yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_{}.png&#34;.format(offset))
+            if self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;.json&#34;)
+            if self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_humans.png&#34;)
+
+    @property
+    def key(self):
+        return InstantKey(self.arena_label, self.game_id, self.timestamp)
+
+    @property
+    def db_item(self):
+        db_item = {
+            &#34;format&#34;: self.format,
+            &#34;image_source&#34;: self.image_source,
+
+            # arena relative infos
+            &#34;arena_label&#34;: self.arena_label,
+            &#34;num_cameras&#34;: self.num_cameras,
+
+            # game relative infos
+            &#34;sport&#34;: self.sport,
+            &#34;game_id&#34;: self.game_id,
+            &#34;league_id&#34;: self.league_id,
+            &#34;rule_type&#34;: self.rule_type,
+
+            # instant relative infos
+            &#34;timestamp&#34;: self.timestamp,
+            &#34;offsets&#34;: self.offsets,
+
+            &#34;annotation_state&#34;: self.annotation_state,
+            &#34;annotations&#34;: [a.to_dict() for a in self.annotations],
+            &#34;annotated_human_masks&#34;: self.annotated_human_masks
+        }
+
+        for attr in [&#34;annotation_ts&#34;, &#34;annotator_id&#34;, &#34;annotation_duration&#34;, &#34;annotation_game_state&#34;]:
+            if value := getattr(self, attr, None):
+                db_item[attr] = value
+        return db_item
+
+    def to_dict(self):
+        return {&#34;db_item&#34;: self.db_item, &#34;download_flags&#34;: self.download_flags, &#34;dataset_folder&#34;: self.dataset_folder}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.generic_dataset.GenericItem" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem">GenericItem</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.all_images"><code class="name">var <span class="ident">all_images</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.calibs"><code class="name">var <span class="ident">calibs</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.human_masks"><code class="name">var <span class="ident">human_masks</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.images"><code class="name">var <span class="ident">images</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def images(self):
+    return [img for (c, offset), img in self.all_images.items() if offset == 0]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.draw"><code class="name flex">
+<span>def <span class="ident">draw</span></span>(<span>self, i=None, draw_players=True, draw_ball=True, draw_lines=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw(self, i=None, draw_players=True, draw_ball=True, draw_lines=False):
+    if i is None:
+        w, h = self.court_dim
+        image = np.ones((int(h), int(w), 3), np.uint8)*255
+        R = np.identity(3)
+        C = Point3D(w/2, h/2, -3000)
+        m = w/0.01  # pixel_size (pixels/meters) on 1 centimeter sensor
+        f = 0.009  # focal (meters)
+        R = np.identity(3)
+        calib = Calib(width=w, height=h, T=-R@C[:3], R=R, K=np.array([[f*m,  0, w/2], [0, f*m, h/2], [0,  0,  1]]))
+    else:
+        image = self.images[i].copy()
+        calib = self.calibs[i]
+
+    if draw_lines:
+        self.court.draw_lines(image, calib)
+    # if fg_detections is not None:
+    #     calib = self.calibs[i] if i is not None else None
+    #     detections = self.fg_detections[i][fg_detections] if i is not None else \
+    #                  itertools.chain(*self.fg_detections)
+    #     for det in detections:
+    #         v = calib.project_3D_to_2D(det.feet).to_int_tuple()
+    #         cv2.circle(image, v[0:2].flatten(), 7, [255, 0, 255], -1)
+
+    for annotation in self.annotations:
+        if annotation.type == &#34;player&#34; and draw_players:
+            head = calib.project_3D_to_2D(annotation.head).to_int_tuple()
+            hips = calib.project_3D_to_2D(annotation.hips).to_int_tuple()
+            foot1 = calib.project_3D_to_2D(annotation.foot1).to_int_tuple()
+            foot2 = calib.project_3D_to_2D(annotation.foot2).to_int_tuple()
+
+            if any([kp[0] &lt; 0 or kp[1] &gt; image.shape[1] or kp[1] &lt; 0 or kp[1] &gt; image.shape[0] for kp in [head, hips]]):
+                continue
+
+            # head tip
+            length = 70 # cm
+            headT3D = length * Point3D(np.cos(annotation.headAngle), np.sin(annotation.headAngle), 0)
+            headT = calib.project_3D_to_2D(annotation.head+headT3D).to_int_tuple()
+
+            color = [0, 0, 0]
+            color[annotation.team-1] = 255
+
+            if i is not None:
+                cv2.line(image, hips, foot1, color, 3)
+                cv2.line(image, hips, foot2, color, 3)
+                cv2.line(image, head, hips, color, 3)
+            else:
+                cv2.circle(image, head, 5, color, -1)
+            cv2.line(image, head, headT, color, 3)
+
+        elif annotation.type == &#34;ball&#34; and draw_ball:
+            center = tuple(int(x) for x in calib.project_3D_to_2D(annotation.center).to_list())
+            color = [255, 255, 0]
+            cv2.circle(image, center, 5, color, -1)
+    for detection in getattr(self, &#34;detections&#34;, []):
+        if detection.type == &#34;ball&#34; and draw_ball:
+            center = tuple(int(x) for x in calib.project_3D_to_2D(detection.center).to_list())
+            color = [0, 255, 255]
+            cv2.circle(image, center, 5, color, -1)
+    return image</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.get_filekey"><code class="name flex">
+<span>def <span class="ident">get_filekey</span></span>(<span>self, prefix, suffix)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_filekey(self, prefix, suffix):
+    return os.path.join(self.arena_label, str(self.game_id), &#34;{}{}{}&#34;.format(prefix, self.timestamp, suffix))</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {&#34;db_item&#34;: self.db_item, &#34;download_flags&#34;: self.download_flags, &#34;dataset_folder&#34;: self.dataset_folder}</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.generic_dataset.GenericItem" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem">GenericItem</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.db_item" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.db_item">db_item</a></code></li>
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.files" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.files">files</a></code></li>
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.key" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.key">key</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey"><code class="flex name class">
+<span>class <span class="ident">InstantKey</span></span>
+<span>(</span><span>arena_label: str, game_id: int, timestamp: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>InstantKey(arena_label, game_id, timestamp)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InstantKey(NamedTuple):
+    arena_label: str
+    game_id: int
+    timestamp: int</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.tuple</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.arena_label"><code class="name">var <span class="ident">arena_label</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 0</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.game_id"><code class="name">var <span class="ident">game_id</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 1</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.timestamp"><code class="name">var <span class="ident">timestamp</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 2</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset"><code class="flex name class">
+<span>class <span class="ident">InstantsDataset</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InstantsDataset(Dataset):
+    items_type = Instant</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset.items_type"><code class="name">var <span class="ident">items_type</span></code></dt>
+<dd>
+<div class="desc"><p>Python object describing dataset item.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Attributes that require files to be downloaded (like images) should
+be decorated with <code>functools.cached_property</code> to prevent being read before they get
+downloaded.</p>
+</div></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Player"><code class="flex name class">
+<span>class <span class="ident">Player</span></span>
+<span>(</span><span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Player():
+    def __init__(self, data):
+        self.type = &#34;player&#34;
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.team = data[&#39;team&#39;]
+        self.head = Point3D(*data[&#39;head&#39;])
+        self.hips = Point3D(*data[&#39;hips&#39;])
+        self.foot1 = Point3D(*data[&#39;foot1&#39;])
+        self.foot2 = Point3D(*data[&#39;foot2&#39;])
+        self.foot1_at_the_ground = str(data[&#34;foot1_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.foot2_at_the_ground = str(data[&#34;foot2_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.headAngle = data[&#39;headOrientation&#39;]
+        self.camera = data[&#39;image&#39;]
+        self.hipsAngle = data.get(&#39;hipsOrientation&#39;, self.headAngle)
+        self.feet = (self.foot1 + self.foot2) / 2
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;team&#34;: self.team,
+            &#34;head&#34;: self.head.to_list(),
+            &#34;headOrientation&#34;: self.headAngle,
+            &#34;hips&#34;: self.hips.to_list(),
+            &#34;foot1&#34;: self.foot1.to_list(),
+            &#34;foot2&#34;: self.foot2.to_list(),
+            &#34;foot1_at_the_ground&#34;: self.foot1_at_the_ground,
+            &#34;foot2_at_the_ground&#34;: self.foot2_at_the_ground,
+            &#34;image&#34;: self.camera
+        }</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.instants_dataset.Player.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {
+        &#34;type&#34;: self.type,
+        &#34;origin&#34;: self.origin,
+        &#34;team&#34;: self.team,
+        &#34;head&#34;: self.head.to_list(),
+        &#34;headOrientation&#34;: self.headAngle,
+        &#34;hips&#34;: self.hips.to_list(),
+        &#34;foot1&#34;: self.foot1.to_list(),
+        &#34;foot2&#34;: self.foot2.to_list(),
+        &#34;foot1_at_the_ground&#34;: self.foot1_at_the_ground,
+        &#34;foot2_at_the_ground&#34;: self.foot2_at_the_ground,
+        &#34;image&#34;: self.camera
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities.ds.instants_dataset" href="index.html">deepsport_utilities.ds.instants_dataset</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.parse_DeepSport_calib" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.parse_DeepSport_calib">parse_DeepSport_calib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball">Ball</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.state" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.state">state</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.to_dict" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.to_dict">to_dict</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.value" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.value">value</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.visible" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Ball.visible">visible</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation">BallAnnotation</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation.origin" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation.origin">origin</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallState">BallState</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.CONSTRAINT" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.CONSTRAINT">CONSTRAINT</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.DRIBBLING" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.DRIBBLING">DRIBBLING</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.FLYING" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.FLYING">FLYING</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.NONE" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.BallState.NONE">NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags">DownloadFlags</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.ALL" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.ALL">ALL</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.NONE" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.NONE">NONE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_ALL_IMAGES" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_ALL_IMAGES">WITH_ALL_IMAGES</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_CALIB_FILE" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_CALIB_FILE">WITH_CALIB_FILE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE">WITH_FOLLOWING_IMAGE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS">WITH_HUMAN_SEGMENTATION_MASKS</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_IMAGE" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.DownloadFlags.WITH_IMAGE">WITH_IMAGE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.ForegroundDetection" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.ForegroundDetection">ForegroundDetection</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant">Instant</a></code></h4>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.all_images" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.all_images">all_images</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.calibs" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.calibs">calibs</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.draw" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.draw">draw</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.get_filekey" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.get_filekey">get_filekey</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.human_masks" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.human_masks">human_masks</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.images" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.images">images</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.to_dict" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey">InstantKey</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.arena_label" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.arena_label">arena_label</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.game_id" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.game_id">game_id</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.timestamp" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey.timestamp">timestamp</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset">InstantsDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset.items_type" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset.items_type">items_type</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Player" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Player">Player</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Player.to_dict" href="#deepsport_utilities.ds.instants_dataset.instants_dataset.Player.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

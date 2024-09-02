@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.transforms API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.transforms</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import abc
+import copy
+import random
+
+import numpy as np
+from calib3d.calib import parameters_to_affine_transform
+
+from deepsport_utilities.utils import jpegBlur
+
+class Transform(metaclass=abc.ABCMeta):
+    def __lt__(self, other):
+        return self.__repr__() &lt; other.__repr__()
+
+    def __gt__(self, other):
+        return self.__repr__() &gt; other.__repr__()
+
+    @abc.abstractmethod
+    def __call__(self, key, item):
+        pass
+
+    def __repr__(self):
+        config = getattr(self, &#34;config&#34;, {k:v for k, v in self.__dict__.items() if not k.startswith(&#34;_&#34;)})
+        attributes = &#34;,&#34;.join(&#34;{}={}&#34;.format(k, v) for k,v in config.items())
+        return &#34;{}({})&#34;.format(self.__class__.__name__, attributes)
+
+
+class DoNothing(Transform):
+    def __call__(self, key, item):
+        return item
+
+
+class DeclutterItems(Transform):
+    &#34;&#34;&#34; Drops attributes from dataset items. Attributes to drop are given by the
+        &#39;drop&#39; argument.
+    &#34;&#34;&#34;
+    def __init__(self, drop):
+        self.drop = drop
+    def __call__(self, key, item):
+        for name in self.drop:
+            delattr(item, name)
+        return item
+
+
+class JPEGCompressionTransform(Transform):
+    def __init__(self, key_names, q_range=(30,60)):
+        self.key_names = key_names
+        self.q_range = q_range
+        assert len(q_range) == 2 and q_range[0] &lt; q_range[1] and q_range[0] &gt; 0 and q_range[1] &lt;= 100
+
+    def __call__(self, key, data):
+        if data is None:
+            return None
+        q = random.randint(*self.q_range)
+        for k in data:
+            if k in self.key_names:
+                data[k] = jpegBlur(data[k], q)
+        return data
+
+
+class IncompatibleCropException(ValueError):
+    pass
+
+class RandomCropperTransform(Transform, metaclass=abc.ABCMeta):
+    linewidth = 4
+    random_size = np.random.uniform
+    def __init__(self, output_shape, size_min, size_max, max_angle=0, do_flip=False, padding=0, margin=0, debug=False, regenerate=False):
+        &#34;&#34;&#34; Randomly scale, crop and rotate dataset items. The scale factor is
+            randomly selected to keep the given keypoints of interest between
+            `size_min` and `size_max` (At each call, the current keypoint size
+            is returned by `_get_current_parameters`).
+
+            Arguments:
+                output_shape: Tuple(int, int) final shape of image-like data.
+                size_min: (int) lower bound of keypoints random size. If `0`
+                    `size_min` and `size_max` are ignored and no random scaling
+                    is applied.
+                size_max: (int) upper bound of keypoints random size. If `0`
+                    `size_min` and `size_max` are ignored and no random scaling
+                    is applied.
+                max_angle: (int) positive and negative bounds for random
+                    rotation (in degrees)
+                do_flip: (bool) tells if random flip should be applied
+                padding: (int) amount of padding (in pixels) in input image
+                margin: (int) minimum margin (in pixels) between keypoints and
+                    output image border
+                debug: (bool) if `True`, doesn&#39;t actually crop but display
+                    debug information on image instead.
+                regenerate: (bool) if `True`, items are (deep)-copied before
+                    calling `_apply_transformation`. Else, transformation can
+                    occur in-place.
+        &#34;&#34;&#34;
+        self.output_shape = output_shape
+        self.size_min = size_min
+        self.size_max = size_max
+        self.max_angle = max_angle
+        self.do_flip = do_flip
+        assert not self.do_flip, &#34;There seem to be a bug in the flip&#34;
+        self.padding = padding
+        self.margin = margin
+        self.debug = debug
+        self.regenerate = regenerate
+
+    def compute(self, input_shape, keypoints, actual_size, size_min=None, size_max=None):
+        if size_min is not None and self.size_min*self.size_max == 0:
+            # updated size range after failing to create a crop at given scale
+            raise IncompatibleCropException(&#34;Impossible to crop image without changing the scale&#34;)
+
+        size_min = size_min or self.size_min
+        size_max = size_max or self.size_max
+
+        if size_min &gt; size_max:
+            raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+        target_size = self.random_size(size_min, size_max) if size_min and size_max else actual_size
+        ratio = target_size/actual_size
+        tmp_width, tmp_height = [int(x/ratio) for x in self.output_shape]
+        if tmp_width == 0 or tmp_height == 0:
+            raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+        input_width, input_height = input_shape
+
+        # If target size makes the output image bigger than input image, try with a lower size
+        if tmp_width &gt;= input_width + 2*self.padding or tmp_height &gt;= input_height + 2*self.padding:
+            if not size_min or not size_max:
+                raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+            return self.compute(input_shape, keypoints, actual_size, size_min=target_size*1.1, size_max=size_max)
+
+        margin = self.margin / ratio # margin expressed in pixels in the output image
+        if keypoints is not None:
+            # Restrict keypoints in input image limits
+            max_keypoints_x = min(int(np.max(keypoints.x))+margin, input_width)
+            min_keypoints_x = max(0, int(np.min(keypoints.x))-margin)
+            max_keypoints_y = min(int(np.max(keypoints.y))+margin, input_height)
+            min_keypoints_y = max(0, int(np.min(keypoints.y))-margin)
+
+            # Compute offsets to fit input image
+            x_offset_min = max(-self.padding, max_keypoints_x - tmp_width)
+            x_offset_max = min(min_keypoints_x, input_width + self.padding)
+            y_offset_min = max(-self.padding, max_keypoints_y - tmp_height)
+            y_offset_max = min(min_keypoints_y, input_height + self.padding)
+        else:
+            x_offset_min = -self.padding
+            x_offset_max = input_width - tmp_width + self.padding
+            y_offset_min = -self.padding
+            y_offset_max = input_height - tmp_height + self.padding
+
+        x_offset_max = int(np.ceil(x_offset_max))
+        x_offset_min = int(np.floor(x_offset_min))
+        y_offset_max = int(np.ceil(y_offset_max))
+        y_offset_min = int(np.floor(y_offset_min))
+
+        # If target size makes it incompatible with input image shape and keypoints positions, try with a higher size
+        if x_offset_max &lt; x_offset_min or y_offset_max &lt; y_offset_min:
+            return self.compute(input_shape, keypoints, actual_size, size_min=size_min, size_max=target_size*0.9)
+
+        x_offset = np.random.randint(x_offset_min, x_offset_max) if x_offset_min != x_offset_max else x_offset_max
+        y_offset = np.random.randint(y_offset_min, y_offset_max) if y_offset_min != y_offset_max else y_offset_max
+
+        x_slice = slice(x_offset, x_offset+tmp_width, None)
+        y_slice = slice(y_offset, y_offset+tmp_height, None)
+
+        angle = self.max_angle*(2*np.random.beta(2, 2)-1)
+
+        return angle, x_slice, y_slice
+
+    @abc.abstractmethod
+    def _get_current_parameters(self, key, item):
+        raise NotImplementedError(
+            &#34;This method should return (keypoints, actual_size, shape) corresponding to the &#34; \
+            &#34;current keypoints and size of object of interest in the image, as well as the &#34; \
+            &#34;current image shape (width, height)&#34;)
+
+    @abc.abstractmethod
+    def _apply_transformation(self, item, A):
+        raise NotImplementedError(
+            &#34;This method should return the final transformed item, based on the original&#34; \
+            &#34;item and the affine transformation matrix&#34;)
+
+    def __call__(self, key, item):
+        if item is None:
+            return None
+        parameters = self._get_current_parameters(key, item)
+        if parameters is None:
+            return None
+        keypoints, actual_size, input_shape = parameters
+        try:
+            angle, x_slice, y_slice = self.compute(input_shape, keypoints, actual_size)
+            flip = self.do_flip and bool(np.random.randint(0,2))
+        except IncompatibleCropException:
+            return None
+
+        A = parameters_to_affine_transform(angle, x_slice, y_slice, self.output_shape, flip)
+        if self.regenerate:
+            item = copy.deepcopy(item)
+        return self._apply_transformation(item, A)
+
+
+class DataExtractorTransform(Transform):
+    def __init__(self, *factories):
+        self.factories = list(factories)
+    def __call__(self, key, item):
+        if not item:
+            return None
+        data = {}
+        for factory in self.factories:
+            if factory is None:
+                continue
+            try:
+                data.update(**factory(key, item))
+            except BaseException as e:
+                print(factory, &#34;failed&#34;, e)
+                raise
+        return data</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.transforms.DataExtractorTransform"><code class="flex name class">
+<span>class <span class="ident">DataExtractorTransform</span></span>
+<span>(</span><span>*factories)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DataExtractorTransform(Transform):
+    def __init__(self, *factories):
+        self.factories = list(factories)
+    def __call__(self, key, item):
+        if not item:
+            return None
+        data = {}
+        for factory in self.factories:
+            if factory is None:
+                continue
+            try:
+                data.update(**factory(key, item))
+            except BaseException as e:
+                print(factory, &#34;failed&#34;, e)
+                raise
+        return data</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.transforms.DeclutterItems"><code class="flex name class">
+<span>class <span class="ident">DeclutterItems</span></span>
+<span>(</span><span>drop)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drops attributes from dataset items. Attributes to drop are given by the
+'drop' argument.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeclutterItems(Transform):
+    &#34;&#34;&#34; Drops attributes from dataset items. Attributes to drop are given by the
+        &#39;drop&#39; argument.
+    &#34;&#34;&#34;
+    def __init__(self, drop):
+        self.drop = drop
+    def __call__(self, key, item):
+        for name in self.drop:
+            delattr(item, name)
+        return item</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.transforms.DoNothing"><code class="flex name class">
+<span>class <span class="ident">DoNothing</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DoNothing(Transform):
+    def __call__(self, key, item):
+        return item</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.transforms.IncompatibleCropException"><code class="flex name class">
+<span>class <span class="ident">IncompatibleCropException</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Inappropriate argument value (of correct type).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IncompatibleCropException(ValueError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.ValueError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.transforms.JPEGCompressionTransform"><code class="flex name class">
+<span>class <span class="ident">JPEGCompressionTransform</span></span>
+<span>(</span><span>key_names, q_range=(30, 60))</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class JPEGCompressionTransform(Transform):
+    def __init__(self, key_names, q_range=(30,60)):
+        self.key_names = key_names
+        self.q_range = q_range
+        assert len(q_range) == 2 and q_range[0] &lt; q_range[1] and q_range[0] &gt; 0 and q_range[1] &lt;= 100
+
+    def __call__(self, key, data):
+        if data is None:
+            return None
+        q = random.randint(*self.q_range)
+        for k in data:
+            if k in self.key_names:
+                data[k] = jpegBlur(data[k], q)
+        return data</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.transforms.RandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">RandomCropperTransform</span></span>
+<span>(</span><span>output_shape, size_min, size_max, max_angle=0, do_flip=False, padding=0, margin=0, debug=False, regenerate=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RandomCropperTransform(Transform, metaclass=abc.ABCMeta):
+    linewidth = 4
+    random_size = np.random.uniform
+    def __init__(self, output_shape, size_min, size_max, max_angle=0, do_flip=False, padding=0, margin=0, debug=False, regenerate=False):
+        &#34;&#34;&#34; Randomly scale, crop and rotate dataset items. The scale factor is
+            randomly selected to keep the given keypoints of interest between
+            `size_min` and `size_max` (At each call, the current keypoint size
+            is returned by `_get_current_parameters`).
+
+            Arguments:
+                output_shape: Tuple(int, int) final shape of image-like data.
+                size_min: (int) lower bound of keypoints random size. If `0`
+                    `size_min` and `size_max` are ignored and no random scaling
+                    is applied.
+                size_max: (int) upper bound of keypoints random size. If `0`
+                    `size_min` and `size_max` are ignored and no random scaling
+                    is applied.
+                max_angle: (int) positive and negative bounds for random
+                    rotation (in degrees)
+                do_flip: (bool) tells if random flip should be applied
+                padding: (int) amount of padding (in pixels) in input image
+                margin: (int) minimum margin (in pixels) between keypoints and
+                    output image border
+                debug: (bool) if `True`, doesn&#39;t actually crop but display
+                    debug information on image instead.
+                regenerate: (bool) if `True`, items are (deep)-copied before
+                    calling `_apply_transformation`. Else, transformation can
+                    occur in-place.
+        &#34;&#34;&#34;
+        self.output_shape = output_shape
+        self.size_min = size_min
+        self.size_max = size_max
+        self.max_angle = max_angle
+        self.do_flip = do_flip
+        assert not self.do_flip, &#34;There seem to be a bug in the flip&#34;
+        self.padding = padding
+        self.margin = margin
+        self.debug = debug
+        self.regenerate = regenerate
+
+    def compute(self, input_shape, keypoints, actual_size, size_min=None, size_max=None):
+        if size_min is not None and self.size_min*self.size_max == 0:
+            # updated size range after failing to create a crop at given scale
+            raise IncompatibleCropException(&#34;Impossible to crop image without changing the scale&#34;)
+
+        size_min = size_min or self.size_min
+        size_max = size_max or self.size_max
+
+        if size_min &gt; size_max:
+            raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+        target_size = self.random_size(size_min, size_max) if size_min and size_max else actual_size
+        ratio = target_size/actual_size
+        tmp_width, tmp_height = [int(x/ratio) for x in self.output_shape]
+        if tmp_width == 0 or tmp_height == 0:
+            raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+        input_width, input_height = input_shape
+
+        # If target size makes the output image bigger than input image, try with a lower size
+        if tmp_width &gt;= input_width + 2*self.padding or tmp_height &gt;= input_height + 2*self.padding:
+            if not size_min or not size_max:
+                raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+            return self.compute(input_shape, keypoints, actual_size, size_min=target_size*1.1, size_max=size_max)
+
+        margin = self.margin / ratio # margin expressed in pixels in the output image
+        if keypoints is not None:
+            # Restrict keypoints in input image limits
+            max_keypoints_x = min(int(np.max(keypoints.x))+margin, input_width)
+            min_keypoints_x = max(0, int(np.min(keypoints.x))-margin)
+            max_keypoints_y = min(int(np.max(keypoints.y))+margin, input_height)
+            min_keypoints_y = max(0, int(np.min(keypoints.y))-margin)
+
+            # Compute offsets to fit input image
+            x_offset_min = max(-self.padding, max_keypoints_x - tmp_width)
+            x_offset_max = min(min_keypoints_x, input_width + self.padding)
+            y_offset_min = max(-self.padding, max_keypoints_y - tmp_height)
+            y_offset_max = min(min_keypoints_y, input_height + self.padding)
+        else:
+            x_offset_min = -self.padding
+            x_offset_max = input_width - tmp_width + self.padding
+            y_offset_min = -self.padding
+            y_offset_max = input_height - tmp_height + self.padding
+
+        x_offset_max = int(np.ceil(x_offset_max))
+        x_offset_min = int(np.floor(x_offset_min))
+        y_offset_max = int(np.ceil(y_offset_max))
+        y_offset_min = int(np.floor(y_offset_min))
+
+        # If target size makes it incompatible with input image shape and keypoints positions, try with a higher size
+        if x_offset_max &lt; x_offset_min or y_offset_max &lt; y_offset_min:
+            return self.compute(input_shape, keypoints, actual_size, size_min=size_min, size_max=target_size*0.9)
+
+        x_offset = np.random.randint(x_offset_min, x_offset_max) if x_offset_min != x_offset_max else x_offset_max
+        y_offset = np.random.randint(y_offset_min, y_offset_max) if y_offset_min != y_offset_max else y_offset_max
+
+        x_slice = slice(x_offset, x_offset+tmp_width, None)
+        y_slice = slice(y_offset, y_offset+tmp_height, None)
+
+        angle = self.max_angle*(2*np.random.beta(2, 2)-1)
+
+        return angle, x_slice, y_slice
+
+    @abc.abstractmethod
+    def _get_current_parameters(self, key, item):
+        raise NotImplementedError(
+            &#34;This method should return (keypoints, actual_size, shape) corresponding to the &#34; \
+            &#34;current keypoints and size of object of interest in the image, as well as the &#34; \
+            &#34;current image shape (width, height)&#34;)
+
+    @abc.abstractmethod
+    def _apply_transformation(self, item, A):
+        raise NotImplementedError(
+            &#34;This method should return the final transformed item, based on the original&#34; \
+            &#34;item and the affine transformation matrix&#34;)
+
+    def __call__(self, key, item):
+        if item is None:
+            return None
+        parameters = self._get_current_parameters(key, item)
+        if parameters is None:
+            return None
+        keypoints, actual_size, input_shape = parameters
+        try:
+            angle, x_slice, y_slice = self.compute(input_shape, keypoints, actual_size)
+            flip = self.do_flip and bool(np.random.randint(0,2))
+        except IncompatibleCropException:
+            return None
+
+        A = parameters_to_affine_transform(angle, x_slice, y_slice, self.output_shape, flip)
+        if self.regenerate:
+            item = copy.deepcopy(item)
+        return self._apply_transformation(item, A)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.transforms.RandomCropperTransform.linewidth"><code class="name">var <span class="ident">linewidth</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.transforms.RandomCropperTransform.compute"><code class="name flex">
+<span>def <span class="ident">compute</span></span>(<span>self, input_shape, keypoints, actual_size, size_min=None, size_max=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute(self, input_shape, keypoints, actual_size, size_min=None, size_max=None):
+    if size_min is not None and self.size_min*self.size_max == 0:
+        # updated size range after failing to create a crop at given scale
+        raise IncompatibleCropException(&#34;Impossible to crop image without changing the scale&#34;)
+
+    size_min = size_min or self.size_min
+    size_max = size_max or self.size_max
+
+    if size_min &gt; size_max:
+        raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+    target_size = self.random_size(size_min, size_max) if size_min and size_max else actual_size
+    ratio = target_size/actual_size
+    tmp_width, tmp_height = [int(x/ratio) for x in self.output_shape]
+    if tmp_width == 0 or tmp_height == 0:
+        raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+    input_width, input_height = input_shape
+
+    # If target size makes the output image bigger than input image, try with a lower size
+    if tmp_width &gt;= input_width + 2*self.padding or tmp_height &gt;= input_height + 2*self.padding:
+        if not size_min or not size_max:
+            raise IncompatibleCropException(&#34;Impossible to crop image with object in the given size range&#34;)
+        return self.compute(input_shape, keypoints, actual_size, size_min=target_size*1.1, size_max=size_max)
+
+    margin = self.margin / ratio # margin expressed in pixels in the output image
+    if keypoints is not None:
+        # Restrict keypoints in input image limits
+        max_keypoints_x = min(int(np.max(keypoints.x))+margin, input_width)
+        min_keypoints_x = max(0, int(np.min(keypoints.x))-margin)
+        max_keypoints_y = min(int(np.max(keypoints.y))+margin, input_height)
+        min_keypoints_y = max(0, int(np.min(keypoints.y))-margin)
+
+        # Compute offsets to fit input image
+        x_offset_min = max(-self.padding, max_keypoints_x - tmp_width)
+        x_offset_max = min(min_keypoints_x, input_width + self.padding)
+        y_offset_min = max(-self.padding, max_keypoints_y - tmp_height)
+        y_offset_max = min(min_keypoints_y, input_height + self.padding)
+    else:
+        x_offset_min = -self.padding
+        x_offset_max = input_width - tmp_width + self.padding
+        y_offset_min = -self.padding
+        y_offset_max = input_height - tmp_height + self.padding
+
+    x_offset_max = int(np.ceil(x_offset_max))
+    x_offset_min = int(np.floor(x_offset_min))
+    y_offset_max = int(np.ceil(y_offset_max))
+    y_offset_min = int(np.floor(y_offset_min))
+
+    # If target size makes it incompatible with input image shape and keypoints positions, try with a higher size
+    if x_offset_max &lt; x_offset_min or y_offset_max &lt; y_offset_min:
+        return self.compute(input_shape, keypoints, actual_size, size_min=size_min, size_max=target_size*0.9)
+
+    x_offset = np.random.randint(x_offset_min, x_offset_max) if x_offset_min != x_offset_max else x_offset_max
+    y_offset = np.random.randint(y_offset_min, y_offset_max) if y_offset_min != y_offset_max else y_offset_max
+
+    x_slice = slice(x_offset, x_offset+tmp_width, None)
+    y_slice = slice(y_offset, y_offset+tmp_height, None)
+
+    angle = self.max_angle*(2*np.random.beta(2, 2)-1)
+
+    return angle, x_slice, y_slice</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.transforms.RandomCropperTransform.random_size"><code class="name flex">
+<span>def <span class="ident">random_size</span></span>(<span>...)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>uniform(low=0.0, high=1.0, size=None)</p>
+<p>Draw samples from a uniform distribution.</p>
+<p>Samples are uniformly distributed over the half-open interval
+<code>[low, high)</code> (includes low, but excludes high).
+In other words,
+any value within the given interval is equally likely to be drawn
+by <code>uniform</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New code should use the <code>uniform</code> method of a <code>default_rng()</code>
+instance instead; please see the :ref:<code>random-quick-start</code>.</p>
+</div>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>low</code></strong> :&ensp;<code>float</code> or <code>array_like</code> of <code>floats</code>, optional</dt>
+<dd>Lower boundary of the output interval.
+All values generated will be
+greater than or equal to low.
+The default value is 0.</dd>
+<dt><strong><code>high</code></strong> :&ensp;<code>float</code> or <code>array_like</code> of <code>floats</code></dt>
+<dd>Upper boundary of the output interval.
+All values generated will be
+less than or equal to high.
+The default value is 1.0.</dd>
+<dt><strong><code>size</code></strong> :&ensp;<code>int</code> or <code>tuple</code> of <code>ints</code>, optional</dt>
+<dd>Output shape.
+If the given shape is, e.g., <code>(m, n, k)</code>, then
+<code>m * n * k</code> samples are drawn.
+If size is <code>None</code> (default),
+a single value is returned if <code>low</code> and <code>high</code> are both scalars.
+Otherwise, <code>np.broadcast(low, high).size</code> samples are drawn.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>out</code></strong> :&ensp;<code>ndarray</code> or <code>scalar</code></dt>
+<dd>Drawn samples from the parameterized uniform distribution.</dd>
+</dl>
+<h2 id="see-also">See Also</h2>
+<dl>
+<dt><code>randint</code></dt>
+<dd>Discrete uniform distribution, yielding integers.</dd>
+<dt><code>random_integers</code></dt>
+<dd>Discrete uniform distribution over the closed interval <code>[low, high]</code>.</dd>
+<dt><code>random_sample</code></dt>
+<dd>Floats uniformly distributed over <code>[0, 1)</code>.</dd>
+<dt><code>random</code></dt>
+<dd>Alias for <code>random_sample</code>.</dd>
+<dt><code>rand</code></dt>
+<dd>Convenience function that accepts dimensions as input, e.g., <code>rand(2,2)</code> would generate a 2-by-2 array of floats, uniformly distributed over <code>[0, 1)</code>.</dd>
+<dt><code>Generator.uniform</code></dt>
+<dd>which should be used for new code.</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>The probability density function of the uniform distribution is</p>
+<p><span><span class="MathJax_Preview">
+</span><script type="math/tex; mode=display">
+</script></span>
+anywhere within the interval <code>[a, b)</code>, and zero elsewhere.</p>
+<p>When <code>high</code> == <code>low</code>, values of <code>low</code> will be returned.
+If <code>high</code> &lt; <code>low</code>, the results are officially undefined
+and may eventually raise an error, i.e. do not rely on this
+function to behave when passed arguments satisfying that
+inequality condition. The <code>high</code> limit may be included in the
+returned array of floats due to floating-point rounding in the
+equation <code>low + (high-low) * random_sample()</code>. For example:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; x = np.float32(5*0.99999999)
+&gt;&gt;&gt; x
+5.0
+</code></pre>
+<h2 id="examples">Examples</h2>
+<p>Draw samples from the distribution:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; s = np.random.uniform(-1,0,1000)
+</code></pre>
+<p>All values are within the given interval:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; np.all(s &gt;= -1)
+True
+&gt;&gt;&gt; np.all(s &lt; 0)
+True
+</code></pre>
+<p>Display the histogram of the samples, along with the
+probability density function:</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt; count, bins, ignored = plt.hist(s, 15, density=True)
+&gt;&gt;&gt; plt.plot(bins, np.ones_like(bins), linewidth=2, color='r')
+&gt;&gt;&gt; plt.show()
+</code></pre></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.transforms.Transform"><code class="flex name class">
+<span>class <span class="ident">Transform</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Transform(metaclass=abc.ABCMeta):
+    def __lt__(self, other):
+        return self.__repr__() &lt; other.__repr__()
+
+    def __gt__(self, other):
+        return self.__repr__() &gt; other.__repr__()
+
+    @abc.abstractmethod
+    def __call__(self, key, item):
+        pass
+
+    def __repr__(self):
+        config = getattr(self, &#34;config&#34;, {k:v for k, v in self.__dict__.items() if not k.startswith(&#34;_&#34;)})
+        attributes = &#34;,&#34;.join(&#34;{}={}&#34;.format(k, v) for k,v in config.items())
+        return &#34;{}({})&#34;.format(self.__class__.__name__, attributes)</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.CropBlockDividable" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.CropBlockDividable">CropBlockDividable</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.EnhanceColorTransform" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.EnhanceColorTransform">EnhanceColorTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.GammaCorrectionTransform" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.GammaCorrectionTransform">GammaCorrectionTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.ProjectBall" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.ProjectBall">ProjectBall</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.RemoveAnnotationMetadata" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.RemoveAnnotationMetadata">RemoveAnnotationMetadata</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_transforms.RemoveGroundTruth" href="ds/instants_dataset/instants_transforms.html#deepsport_utilities.ds.instants_dataset.instants_transforms.RemoveGroundTruth">RemoveGroundTruth</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallAnnotation" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallAnnotation">AddBallAnnotation</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallFactory">AddBallFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallHeightFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallHeightFactory">AddBallHeightFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPositionFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPositionFactory">AddBallPositionFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPresenceFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPresenceFactory">AddBallPresenceFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSegmentationTargetViewFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSegmentationTargetViewFactory">AddBallSegmentationTargetViewFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSizeFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSizeFactory">AddBallSizeFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallStateFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallStateFactory">AddBallStateFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallVisibilityFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallVisibilityFactory">AddBallVisibilityFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory">AddCalibFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddCourtFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddCourtFactory">AddCourtFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddDiffFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddDiffFactory">AddDiffFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddHumansSegmentationTargetViewFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddHumansSegmentationTargetViewFactory">AddHumansSegmentationTargetViewFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddImageFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddImageFactory">AddImageFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddNextImageFactory" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.AddNextImageFactory">AddNextImageFactory</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BayeringTransform" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.BayeringTransform">BayeringTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ComputeDiff" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.ComputeDiff">ComputeDiff</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.GameGammaColorTransform" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.GameGammaColorTransform">GameGammaColorTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.GameRGBColorTransform" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.GameRGBColorTransform">GameRGBColorTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.UndistortTransform" href="ds/instants_dataset/views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.UndistortTransform">UndistortTransform</a></li>
+<li><a title="deepsport_utilities.transforms.DataExtractorTransform" href="#deepsport_utilities.transforms.DataExtractorTransform">DataExtractorTransform</a></li>
+<li><a title="deepsport_utilities.transforms.DeclutterItems" href="#deepsport_utilities.transforms.DeclutterItems">DeclutterItems</a></li>
+<li><a title="deepsport_utilities.transforms.DoNothing" href="#deepsport_utilities.transforms.DoNothing">DoNothing</a></li>
+<li><a title="deepsport_utilities.transforms.JPEGCompressionTransform" href="#deepsport_utilities.transforms.JPEGCompressionTransform">JPEGCompressionTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities" href="index.html">deepsport_utilities</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.DataExtractorTransform" href="#deepsport_utilities.transforms.DataExtractorTransform">DataExtractorTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.DeclutterItems" href="#deepsport_utilities.transforms.DeclutterItems">DeclutterItems</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.DoNothing" href="#deepsport_utilities.transforms.DoNothing">DoNothing</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.IncompatibleCropException" href="#deepsport_utilities.transforms.IncompatibleCropException">IncompatibleCropException</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.JPEGCompressionTransform" href="#deepsport_utilities.transforms.JPEGCompressionTransform">JPEGCompressionTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.RandomCropperTransform" href="#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.transforms.RandomCropperTransform.compute" href="#deepsport_utilities.transforms.RandomCropperTransform.compute">compute</a></code></li>
+<li><code><a title="deepsport_utilities.transforms.RandomCropperTransform.linewidth" href="#deepsport_utilities.transforms.RandomCropperTransform.linewidth">linewidth</a></code></li>
+<li><code><a title="deepsport_utilities.transforms.RandomCropperTransform.random_size" href="#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.transforms.Transform" href="#deepsport_utilities.transforms.Transform">Transform</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

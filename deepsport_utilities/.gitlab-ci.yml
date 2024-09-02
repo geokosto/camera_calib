@@ -1,0 +1,20 @@
+image: "python:3.8"
+
+# commands to run in the Docker container before starting each job.
+before_script:
+  - apt-get update -qy
+  - apt install -y python3-pip python3-pytest
+  - apt install -y libgl1-mesa-glx
+  - apt install -y libgeos-dev
+  - python3 -m pip install --upgrade pip
+  - pip install -r requirements.txt
+
+stages:
+  - Test
+
+# ensure the unit test pass
+# removed --import-mode=importlib
+Unit tests:
+  stage: Test
+  script:
+  - python3 -m pytest tests/

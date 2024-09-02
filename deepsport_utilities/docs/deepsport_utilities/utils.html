@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.utils API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.utils</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from dataclasses import dataclass
+from datetime import datetime, timedelta
+import io
+import os
+import struct
+import subprocess
+from urllib import request
+import warnings
+
+import cv2
+import imageio
+import m3u8
+import numpy as np
+
+from mlworkflow import Dataset, AugmentedDataset, SideRunner, TransformedDataset
+
+
+def gamma_correction(image, gammas=np.array([1.0, 1.0, 1.0])):
+    image = image.astype(np.float32)
+    image = image ** (1/gammas)
+    image = np.clip(image, 0, 255).astype(np.uint8)
+    return image
+
+
+def crop_padded(array, x_slice, y_slice, padding):
+    pad_width = [[padding]*2]*2 + (len(array.shape)-2)*[[0,0]]
+    return np.pad(array, pad_width)[y_slice.start+padding:y_slice.stop+padding, x_slice.start+padding:x_slice.stop+padding]
+
+try:
+    from matplotlib import pyplot as plt
+except ImportError:
+    warnings.warn(&#34;Failed importing matplotlib&#34;)
+else:
+    color_cycle = plt.rcParams[&#39;axes.prop_cycle&#39;].by_key()[&#39;color&#39;]
+    color_cycle_rgb = list(map(lambda color: list(map(lambda c: int(c, 16), [color[1:3], color[3:5], color[5:7]])), color_cycle))
+
+class DefaultDict(dict):
+    def __init__(self, factory):
+        self.factory = factory
+    def __missing__(self, key):
+        self[key] = self.factory(key)
+        return self[key]
+
+
+class LazyGeneratorBackedList(list):
+    def __init__(self, gen):
+        self.gen = gen
+    def next(self):
+        item = next(self.gen, None)
+        if item is None:
+            raise StopIteration
+        self.append(item)
+    def __getitem__(self, i):
+        while i &lt; -len(self) or len(self) &lt;= i:
+            self.next()
+        return super().__getitem__(i)
+
+
+class DefaultList(list):
+    def __init__(self, *args, default=None, default_factory=None):
+        super().__init__(*args)
+        self.default_factory = default_factory or (lambda x: default)
+    def __getitem__(self, i):
+        if i &lt; -len(self) or len(self) &lt;= i:
+            return self.default_factory(i)
+        return super().__getitem__(i)
+
+
+class DelayedCallback:
+    def __init__(self, callback, timedelta=timedelta(seconds=10)):
+        self.timedelta = timedelta
+        self.last = datetime.now()
+        self.callback = callback
+    def __call__(self):
+        now = datetime.now()
+        if now - self.last &gt; self.timedelta:
+            self.last = now
+            self.callback()
+    def __del__(self):
+        try:
+            self.callback()
+        except:
+            pass
+
+class VideoReaderDataset(Dataset):
+    cap = None
+    def __init__(self, filename, scale_factor=None, output_shape=None):
+        raise
+        # TODO: use instead
+        # vid = imageio.get_reader(&#34;/home/gva/KS-FR-STCHAMOND_93815_concatenated.mp4&#34;,  &#39;ffmpeg&#39;)
+        # nums = [0, 1, 2]
+        # for num in nums:
+        #     image = vid.get_data(num)
+        assert not scale_factor or not output_shape, &#34;You cannot provide both &#39;scale_factor&#39; and &#39;output_shape&#39; arguments.&#34;
+        self.cap = cv2.VideoCapture(filename)
+        self.fps = self.cap.get(cv2.CAP_PROP_FPS)
+        self.frame_count = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        shape = tuple([int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))])
+        if scale_factor:
+            shape = tuple(int(x*scale_factor) for x in shape)
+        elif output_shape:
+            shape = output_shape
+        self.shape = tuple(x-x%2 for x in shape) # make sure shape is even
+    def __del__(self):
+        if self.cap is not None:
+            self.cap.release()
+    def yield_keys(self):
+        yield from range(self.frame_count)
+    def query_item(self, i):
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, i)
+        _, frame = self.cap.read()
+        if frame is None:
+            return None
+        frame = cv2.resize(frame, self.shape)
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        return frame
+
+class M3u8PlaylistDataset(Dataset):
+    def __init__(self, filename, download_folder=None):
+        self.playlist = m3u8.load(filename)
+        self.download_folder = download_folder
+    def yield_keys(self):
+        yield from self.playlist.segments
+    def query_item(self, key):
+        if self.download_folder is not None:
+            filename = os.path.join(self.download_folder, os.path.basename(key.uri))
+            request.urlretrieve(key.uri, filename)
+            return filename
+        return key.uri
+
+class VideoFileNameToDatasetReaderTransform():
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+    def __call__(self, key, filename):
+        return VideoReaderDataset(filename, **self.kwargs)
+
+class VideoFromPlaylistDataset(AugmentedDataset):
+    def augment(self, root_key, dataset):
+        for key in dataset.yield_keys():
+            item = dataset.query_item(key)
+            if item is not None:
+                yield (root_key, root_key.uri, key), item
+
+def VideoDataset(filename, **kwargs):
+    folder = os.path.dirname(filename)
+    supported_formats = {
+        &#34;.m3u8&#34;: lambda name: VideoFromPlaylistDataset(
+            TransformedDataset(
+                M3u8PlaylistDataset(name, download_folder=folder),
+                [VideoFileNameToDatasetReaderTransform(**kwargs)]
+            )
+        ),
+        &#34;.mp4&#34;: lambda name: VideoReaderDataset(name, **kwargs) # pylint: disable=unnecessary-lambda
+    }
+    return supported_formats[os.path.splitext(filename)[1]](filename)
+
+
+def concatenate_chunks(output_filename, *chunk_urls):
+    side_runner = SideRunner(10)
+    for chunk_url in chunk_urls:
+        side_runner.run_async(subprocess.run, [&#34;wget&#34;, chunk_url])
+    side_runner.collect_runs()
+
+    command = [
+        &#39;ffmpeg&#39;,
+        &#39;-y&#39;,
+        &#39;-protocol_whitelist &#34;concat,file,http,https,tcp,tls&#34;&#39;,
+        &#39;-i &#34;concat:{}&#34;&#39;.format(&#34;|&#34;.join([url[url.rfind(&#34;/&#34;)+1:] for url in chunk_urls])),
+        &#39;-c:a copy&#39;,
+        &#39;-c:v copy&#39;,
+        &#39;-movflags faststart&#39;,
+        output_filename
+    ]
+    os.system(&#34; &#34;.join(command))
+    #subprocess.run(command) # For obscure reason, subprocess doesn&#39;t work here
+
+@dataclass
+class BoundingBox:
+    x: int
+    y: int
+    w: int
+    h: int
+    @property
+    def x_slice(self):
+        return slice(int(self.x), int(self.x+self.w), None)
+    @property
+    def y_slice(self):
+        return slice(int(self.y), int(self.y+self.h), None)
+
+    def increase_box(self, max_width, max_height, aspect_ratio=None, margin=0, padding=0):
+        &#34;&#34;&#34; Adapt the bounding-box s.t. it
+                - is increased by `margin` on all directions
+                - lies within the source image of size `max_width`x`max_height`
+                - has the aspect ratio given by `aspect_ratio` (if not None)
+                - contains the original bounding-box (box is increased if necessary, up to source image limits)
+            Arguments:
+                max_width (int)      - width of input image
+                max_height (int)     - height of input image
+                aspect_ratio (float) - output aspect-ratio
+                margin (int)         - margin in pixels to be added on 4 sides
+            Returns:
+                x_slice (slice) - the horizontal slice
+                y_slice (slice) - the vertical slice
+        &#34;&#34;&#34;
+        top   = max(-padding,           int(self.y-margin))
+        bot   = min(max_height+padding, int(self.y+self.h+margin))
+        left  = max(-padding,           int(self.x-margin))
+        right = min(max_width+padding,  int(self.x+self.w+margin))
+
+        if aspect_ratio is None:
+            return slice(left, right, None), slice(top, bot, None)
+
+        if padding:
+            try:
+                raise NotImplementedError(&#34;increase_box method doesn&#39;t support padding when aspect ratio is given&#34;)
+            except:
+                pass
+
+        w = right - left
+        h = bot - top
+        if w/h &gt; aspect_ratio: # box is wider
+            h = int(w/aspect_ratio)
+            if h &gt; max_height: # box is too wide
+                h = max_height
+                w = int(max_height*aspect_ratio)
+                left = max_width//2 - w//2
+                return slice(left, w, None), slice(0, h, None)
+            cy = (bot+top)//2
+            if cy + h//2 &gt; max_height: # box hits the top
+                return slice(left, right, None), slice(0, h, None)
+            if cy - h//2 &lt; 0: # box hits the bot
+                return slice(left, right, None), slice(max_height-h, max_height, None)
+            return slice(left, right, None), slice(cy-h//2, cy-h//2+h, None)
+
+        if w/h &lt; aspect_ratio: # box is taller
+            w = int(h*aspect_ratio)
+            if w &gt; max_width: # box is too tall
+                w = max_width
+                h = int(max_width/aspect_ratio)
+                top = max_height//2 - h//2
+                return slice(0, w, None), slice(top, top+h, None)
+            cx = (left+right)//2
+            if cx + w//2 &gt; max_width: # box hits the right
+                return slice(max_width-w, max_width, None), slice(top, bot, None)
+            if cx - w//2 &lt; 0: # box hits the left
+                return slice(0, w, None), slice(top, bot, None)
+            return slice(cx-w//2, cx-w//2+w, None), slice(top, bot, None)
+
+        # else: good aspect_ratio
+        return slice(left, right, None), slice(top, bot, None)
+
+
+class VideoMaker:
+    def __init__(self, filename=&#34;output.mp4&#34;, framerate=15):
+        self.filename = filename
+        self.writer = imageio.get_writer(filename, fps=framerate)
+    def __enter__(self):
+        return self
+    def __call__(self, image):
+        self.writer.append_data(image)
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.writer is not None:
+            self.writer.close()
+
+class VideoMaker_obsolete():
+    format_map = {
+        &#34;.mp4&#34;: &#39;mp4v&#39;,
+        &#34;.avi&#34;: &#39;XVID&#39;,
+        &#34;.mpeg4&#34;: &#39;H264&#39;
+    }
+    writer = None
+    def __init__(self, filename=&#34;output.mp4&#34;, framerate=15):
+        self.filename = filename
+        self.framerate = framerate
+        self.fourcc = cv2.VideoWriter_fourcc(*self.format_map[os.path.splitext(filename)[1]])
+    def __enter__(self):
+        return self
+    def __call__(self, image):
+        if self.writer is None:
+            shape = (image.shape[1], image.shape[0])
+            self.writer = cv2.VideoWriter(filename=self.filename, fourcc=self.fourcc, fps=self.framerate, frameSize=shape, apiPreference=cv2.CAP_FFMPEG)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        self.writer.write(image)
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.writer:
+            self.writer.release()
+            self.writer = None
+            print(&#34;{} successfully written&#34;.format(self.filename))
+    def __del__(self):
+        if self.writer:
+            self.writer.release()
+            self.writer = None
+            print(&#34;{} successfully written&#34;.format(self.filename))
+
+
+def blend(image, saliency, alpha=1.0, beta=0.5, gamma=0.0):
+    #assert image.dtype == np.uint8 and image.shape[2] == 3
+    #assert saliency.dtype == np.uint8
+
+    if len(saliency.shape) == 2 or saliency.shape[2] == 1:
+        saliency = np.dstack((saliency, saliency, saliency))
+    return cv2.addWeighted(image, alpha, saliency, beta, gamma)
+
+# Image is 2D numpy array, q is quality 0-100
+def jpegBlur(im, q):
+    buf = io.BytesIO()
+    imageio.imwrite(buf,im,format=&#39;jpg&#39;,quality=q)
+    s = buf.getbuffer()
+    return imageio.imread(s,format=&#39;jpg&#39;)
+
+def setdefaultattr(obj, name, value):
+    if not hasattr(obj, name):
+        setattr(obj, name, value)
+    return getattr(obj, name)
+
+
+class MJPEGReader:
+    def __init__(self, filename):
+        self.fd = open(f&#34;{filename}.idx&#34;, &#34;rb&#34;)
+        self.cap = cv2.VideoCapture(filename)
+        self.header, self.version = struct.unpack(&#34;QI&#34;, self.fd.read(12))
+    def __del__(self):
+        if self.cap:
+            self.cap.release()
+    def __iter__(self):
+        return self
+    def __next__(self):
+        try:
+            tvsec, tvusec, offset, frame_idx, other = struct.unpack(&#34;IIQII&#34;, self.fd.read(24))
+        except:
+            raise StopIteration
+        found, image = self.cap.read()
+        timestamp = round(tvsec*1000+tvusec/1000)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) if image is not None else None
+        return timestamp, offset, frame_idx, other, image
+
+def colorify_heatmap(heatmap, colormap=&#34;jet&#34;):
+    return (plt.get_cmap(colormap)(heatmap)[...,0:3]*255).astype(np.uint8)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="deepsport_utilities.utils.VideoDataset"><code class="name flex">
+<span>def <span class="ident">VideoDataset</span></span>(<span>filename, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def VideoDataset(filename, **kwargs):
+    folder = os.path.dirname(filename)
+    supported_formats = {
+        &#34;.m3u8&#34;: lambda name: VideoFromPlaylistDataset(
+            TransformedDataset(
+                M3u8PlaylistDataset(name, download_folder=folder),
+                [VideoFileNameToDatasetReaderTransform(**kwargs)]
+            )
+        ),
+        &#34;.mp4&#34;: lambda name: VideoReaderDataset(name, **kwargs) # pylint: disable=unnecessary-lambda
+    }
+    return supported_formats[os.path.splitext(filename)[1]](filename)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.blend"><code class="name flex">
+<span>def <span class="ident">blend</span></span>(<span>image, saliency, alpha=1.0, beta=0.5, gamma=0.0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def blend(image, saliency, alpha=1.0, beta=0.5, gamma=0.0):
+    #assert image.dtype == np.uint8 and image.shape[2] == 3
+    #assert saliency.dtype == np.uint8
+
+    if len(saliency.shape) == 2 or saliency.shape[2] == 1:
+        saliency = np.dstack((saliency, saliency, saliency))
+    return cv2.addWeighted(image, alpha, saliency, beta, gamma)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.colorify_heatmap"><code class="name flex">
+<span>def <span class="ident">colorify_heatmap</span></span>(<span>heatmap, colormap='jet')</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def colorify_heatmap(heatmap, colormap=&#34;jet&#34;):
+    return (plt.get_cmap(colormap)(heatmap)[...,0:3]*255).astype(np.uint8)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.concatenate_chunks"><code class="name flex">
+<span>def <span class="ident">concatenate_chunks</span></span>(<span>output_filename, *chunk_urls)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def concatenate_chunks(output_filename, *chunk_urls):
+    side_runner = SideRunner(10)
+    for chunk_url in chunk_urls:
+        side_runner.run_async(subprocess.run, [&#34;wget&#34;, chunk_url])
+    side_runner.collect_runs()
+
+    command = [
+        &#39;ffmpeg&#39;,
+        &#39;-y&#39;,
+        &#39;-protocol_whitelist &#34;concat,file,http,https,tcp,tls&#34;&#39;,
+        &#39;-i &#34;concat:{}&#34;&#39;.format(&#34;|&#34;.join([url[url.rfind(&#34;/&#34;)+1:] for url in chunk_urls])),
+        &#39;-c:a copy&#39;,
+        &#39;-c:v copy&#39;,
+        &#39;-movflags faststart&#39;,
+        output_filename
+    ]
+    os.system(&#34; &#34;.join(command))</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.crop_padded"><code class="name flex">
+<span>def <span class="ident">crop_padded</span></span>(<span>array, x_slice, y_slice, padding)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def crop_padded(array, x_slice, y_slice, padding):
+    pad_width = [[padding]*2]*2 + (len(array.shape)-2)*[[0,0]]
+    return np.pad(array, pad_width)[y_slice.start+padding:y_slice.stop+padding, x_slice.start+padding:x_slice.stop+padding]</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.gamma_correction"><code class="name flex">
+<span>def <span class="ident">gamma_correction</span></span>(<span>image, gammas=array([1., 1., 1.]))</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gamma_correction(image, gammas=np.array([1.0, 1.0, 1.0])):
+    image = image.astype(np.float32)
+    image = image ** (1/gammas)
+    image = np.clip(image, 0, 255).astype(np.uint8)
+    return image</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.jpegBlur"><code class="name flex">
+<span>def <span class="ident">jpegBlur</span></span>(<span>im, q)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jpegBlur(im, q):
+    buf = io.BytesIO()
+    imageio.imwrite(buf,im,format=&#39;jpg&#39;,quality=q)
+    s = buf.getbuffer()
+    return imageio.imread(s,format=&#39;jpg&#39;)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.setdefaultattr"><code class="name flex">
+<span>def <span class="ident">setdefaultattr</span></span>(<span>obj, name, value)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setdefaultattr(obj, name, value):
+    if not hasattr(obj, name):
+        setattr(obj, name, value)
+    return getattr(obj, name)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.utils.BoundingBox"><code class="flex name class">
+<span>class <span class="ident">BoundingBox</span></span>
+<span>(</span><span>x: int, y: int, w: int, h: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>BoundingBox(x: int, y: int, w: int, h: int)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BoundingBox:
+    x: int
+    y: int
+    w: int
+    h: int
+    @property
+    def x_slice(self):
+        return slice(int(self.x), int(self.x+self.w), None)
+    @property
+    def y_slice(self):
+        return slice(int(self.y), int(self.y+self.h), None)
+
+    def increase_box(self, max_width, max_height, aspect_ratio=None, margin=0, padding=0):
+        &#34;&#34;&#34; Adapt the bounding-box s.t. it
+                - is increased by `margin` on all directions
+                - lies within the source image of size `max_width`x`max_height`
+                - has the aspect ratio given by `aspect_ratio` (if not None)
+                - contains the original bounding-box (box is increased if necessary, up to source image limits)
+            Arguments:
+                max_width (int)      - width of input image
+                max_height (int)     - height of input image
+                aspect_ratio (float) - output aspect-ratio
+                margin (int)         - margin in pixels to be added on 4 sides
+            Returns:
+                x_slice (slice) - the horizontal slice
+                y_slice (slice) - the vertical slice
+        &#34;&#34;&#34;
+        top   = max(-padding,           int(self.y-margin))
+        bot   = min(max_height+padding, int(self.y+self.h+margin))
+        left  = max(-padding,           int(self.x-margin))
+        right = min(max_width+padding,  int(self.x+self.w+margin))
+
+        if aspect_ratio is None:
+            return slice(left, right, None), slice(top, bot, None)
+
+        if padding:
+            try:
+                raise NotImplementedError(&#34;increase_box method doesn&#39;t support padding when aspect ratio is given&#34;)
+            except:
+                pass
+
+        w = right - left
+        h = bot - top
+        if w/h &gt; aspect_ratio: # box is wider
+            h = int(w/aspect_ratio)
+            if h &gt; max_height: # box is too wide
+                h = max_height
+                w = int(max_height*aspect_ratio)
+                left = max_width//2 - w//2
+                return slice(left, w, None), slice(0, h, None)
+            cy = (bot+top)//2
+            if cy + h//2 &gt; max_height: # box hits the top
+                return slice(left, right, None), slice(0, h, None)
+            if cy - h//2 &lt; 0: # box hits the bot
+                return slice(left, right, None), slice(max_height-h, max_height, None)
+            return slice(left, right, None), slice(cy-h//2, cy-h//2+h, None)
+
+        if w/h &lt; aspect_ratio: # box is taller
+            w = int(h*aspect_ratio)
+            if w &gt; max_width: # box is too tall
+                w = max_width
+                h = int(max_width/aspect_ratio)
+                top = max_height//2 - h//2
+                return slice(0, w, None), slice(top, top+h, None)
+            cx = (left+right)//2
+            if cx + w//2 &gt; max_width: # box hits the right
+                return slice(max_width-w, max_width, None), slice(top, bot, None)
+            if cx - w//2 &lt; 0: # box hits the left
+                return slice(0, w, None), slice(top, bot, None)
+            return slice(cx-w//2, cx-w//2+w, None), slice(top, bot, None)
+
+        # else: good aspect_ratio
+        return slice(left, right, None), slice(top, bot, None)</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.utils.BoundingBox.h"><code class="name">var <span class="ident">h</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.utils.BoundingBox.w"><code class="name">var <span class="ident">w</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.utils.BoundingBox.x"><code class="name">var <span class="ident">x</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.utils.BoundingBox.y"><code class="name">var <span class="ident">y</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.utils.BoundingBox.x_slice"><code class="name">var <span class="ident">x_slice</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def x_slice(self):
+    return slice(int(self.x), int(self.x+self.w), None)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.BoundingBox.y_slice"><code class="name">var <span class="ident">y_slice</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def y_slice(self):
+    return slice(int(self.y), int(self.y+self.h), None)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.utils.BoundingBox.increase_box"><code class="name flex">
+<span>def <span class="ident">increase_box</span></span>(<span>self, max_width, max_height, aspect_ratio=None, margin=0, padding=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Adapt the bounding-box s.t. it
+- is increased by <code>margin</code> on all directions
+- lies within the source image of size <code>max_width</code>x<code>max_height</code>
+- has the aspect ratio given by <code>aspect_ratio</code> (if not None)
+- contains the original bounding-box (box is increased if necessary, up to source image limits)</p>
+<h2 id="arguments">Arguments</h2>
+<p>max_width (int)
+- width of input image
+max_height (int)
+- height of input image
+aspect_ratio (float) - output aspect-ratio
+margin (int)
+- margin in pixels to be added on 4 sides</p>
+<h2 id="returns">Returns</h2>
+<p>x_slice (slice) - the horizontal slice
+y_slice (slice) - the vertical slice</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def increase_box(self, max_width, max_height, aspect_ratio=None, margin=0, padding=0):
+    &#34;&#34;&#34; Adapt the bounding-box s.t. it
+            - is increased by `margin` on all directions
+            - lies within the source image of size `max_width`x`max_height`
+            - has the aspect ratio given by `aspect_ratio` (if not None)
+            - contains the original bounding-box (box is increased if necessary, up to source image limits)
+        Arguments:
+            max_width (int)      - width of input image
+            max_height (int)     - height of input image
+            aspect_ratio (float) - output aspect-ratio
+            margin (int)         - margin in pixels to be added on 4 sides
+        Returns:
+            x_slice (slice) - the horizontal slice
+            y_slice (slice) - the vertical slice
+    &#34;&#34;&#34;
+    top   = max(-padding,           int(self.y-margin))
+    bot   = min(max_height+padding, int(self.y+self.h+margin))
+    left  = max(-padding,           int(self.x-margin))
+    right = min(max_width+padding,  int(self.x+self.w+margin))
+
+    if aspect_ratio is None:
+        return slice(left, right, None), slice(top, bot, None)
+
+    if padding:
+        try:
+            raise NotImplementedError(&#34;increase_box method doesn&#39;t support padding when aspect ratio is given&#34;)
+        except:
+            pass
+
+    w = right - left
+    h = bot - top
+    if w/h &gt; aspect_ratio: # box is wider
+        h = int(w/aspect_ratio)
+        if h &gt; max_height: # box is too wide
+            h = max_height
+            w = int(max_height*aspect_ratio)
+            left = max_width//2 - w//2
+            return slice(left, w, None), slice(0, h, None)
+        cy = (bot+top)//2
+        if cy + h//2 &gt; max_height: # box hits the top
+            return slice(left, right, None), slice(0, h, None)
+        if cy - h//2 &lt; 0: # box hits the bot
+            return slice(left, right, None), slice(max_height-h, max_height, None)
+        return slice(left, right, None), slice(cy-h//2, cy-h//2+h, None)
+
+    if w/h &lt; aspect_ratio: # box is taller
+        w = int(h*aspect_ratio)
+        if w &gt; max_width: # box is too tall
+            w = max_width
+            h = int(max_width/aspect_ratio)
+            top = max_height//2 - h//2
+            return slice(0, w, None), slice(top, top+h, None)
+        cx = (left+right)//2
+        if cx + w//2 &gt; max_width: # box hits the right
+            return slice(max_width-w, max_width, None), slice(top, bot, None)
+        if cx - w//2 &lt; 0: # box hits the left
+            return slice(0, w, None), slice(top, bot, None)
+        return slice(cx-w//2, cx-w//2+w, None), slice(top, bot, None)
+
+    # else: good aspect_ratio
+    return slice(left, right, None), slice(top, bot, None)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.utils.DefaultDict"><code class="flex name class">
+<span>class <span class="ident">DefaultDict</span></span>
+<span>(</span><span>factory)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+(key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+d = {}
+for k, v in iterable:
+d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+in the keyword argument list.
+For example:
+dict(one=1, two=2)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DefaultDict(dict):
+    def __init__(self, factory):
+        self.factory = factory
+    def __missing__(self, key):
+        self[key] = self.factory(key)
+        return self[key]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.dict</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.utils.DefaultList"><code class="flex name class">
+<span>class <span class="ident">DefaultList</span></span>
+<span>(</span><span>*args, default=None, default_factory=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Built-in mutable sequence.</p>
+<p>If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DefaultList(list):
+    def __init__(self, *args, default=None, default_factory=None):
+        super().__init__(*args)
+        self.default_factory = default_factory or (lambda x: default)
+    def __getitem__(self, i):
+        if i &lt; -len(self) or len(self) &lt;= i:
+            return self.default_factory(i)
+        return super().__getitem__(i)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.list</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.utils.DelayedCallback"><code class="flex name class">
+<span>class <span class="ident">DelayedCallback</span></span>
+<span>(</span><span>callback, timedelta=datetime.timedelta(seconds=10))</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DelayedCallback:
+    def __init__(self, callback, timedelta=timedelta(seconds=10)):
+        self.timedelta = timedelta
+        self.last = datetime.now()
+        self.callback = callback
+    def __call__(self):
+        now = datetime.now()
+        if now - self.last &gt; self.timedelta:
+            self.last = now
+            self.callback()
+    def __del__(self):
+        try:
+            self.callback()
+        except:
+            pass</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.LazyGeneratorBackedList"><code class="flex name class">
+<span>class <span class="ident">LazyGeneratorBackedList</span></span>
+<span>(</span><span>gen)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Built-in mutable sequence.</p>
+<p>If no argument is given, the constructor creates a new empty list.
+The argument must be an iterable if specified.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LazyGeneratorBackedList(list):
+    def __init__(self, gen):
+        self.gen = gen
+    def next(self):
+        item = next(self.gen, None)
+        if item is None:
+            raise StopIteration
+        self.append(item)
+    def __getitem__(self, i):
+        while i &lt; -len(self) or len(self) &lt;= i:
+            self.next()
+        return super().__getitem__(i)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.list</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.utils.LazyGeneratorBackedList.next"><code class="name flex">
+<span>def <span class="ident">next</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def next(self):
+    item = next(self.gen, None)
+    if item is None:
+        raise StopIteration
+    self.append(item)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.utils.M3u8PlaylistDataset"><code class="flex name class">
+<span>class <span class="ident">M3u8PlaylistDataset</span></span>
+<span>(</span><span>filename, download_folder=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class M3u8PlaylistDataset(Dataset):
+    def __init__(self, filename, download_folder=None):
+        self.playlist = m3u8.load(filename)
+        self.download_folder = download_folder
+    def yield_keys(self):
+        yield from self.playlist.segments
+    def query_item(self, key):
+        if self.download_folder is not None:
+            filename = os.path.join(self.download_folder, os.path.basename(key.uri))
+            request.urlretrieve(key.uri, filename)
+            return filename
+        return key.uri</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.utils.M3u8PlaylistDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, key)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, key):
+    if self.download_folder is not None:
+        filename = os.path.join(self.download_folder, os.path.basename(key.uri))
+        request.urlretrieve(key.uri, filename)
+        return filename
+    return key.uri</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.M3u8PlaylistDataset.yield_keys"><code class="name flex">
+<span>def <span class="ident">yield_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def yield_keys(self):
+    yield from self.playlist.segments</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.utils.MJPEGReader"><code class="flex name class">
+<span>class <span class="ident">MJPEGReader</span></span>
+<span>(</span><span>filename)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MJPEGReader:
+    def __init__(self, filename):
+        self.fd = open(f&#34;{filename}.idx&#34;, &#34;rb&#34;)
+        self.cap = cv2.VideoCapture(filename)
+        self.header, self.version = struct.unpack(&#34;QI&#34;, self.fd.read(12))
+    def __del__(self):
+        if self.cap:
+            self.cap.release()
+    def __iter__(self):
+        return self
+    def __next__(self):
+        try:
+            tvsec, tvusec, offset, frame_idx, other = struct.unpack(&#34;IIQII&#34;, self.fd.read(24))
+        except:
+            raise StopIteration
+        found, image = self.cap.read()
+        timestamp = round(tvsec*1000+tvusec/1000)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) if image is not None else None
+        return timestamp, offset, frame_idx, other, image</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.VideoFileNameToDatasetReaderTransform"><code class="flex name class">
+<span>class <span class="ident">VideoFileNameToDatasetReaderTransform</span></span>
+<span>(</span><span>**kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VideoFileNameToDatasetReaderTransform():
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+    def __call__(self, key, filename):
+        return VideoReaderDataset(filename, **self.kwargs)</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.VideoFromPlaylistDataset"><code class="flex name class">
+<span>class <span class="ident">VideoFromPlaylistDataset</span></span>
+<span>(</span><span>parent)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>"Augments" a dataset in the sense that it can produce many child items
+from one root item of the dataset. The root key must be retrievable from
+the child key. By convention, the root key is in the first element of the
+child key. This is overridable with the <code>root_key</code> method.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; class PermutingDataset(AugmentedDataset):
+...     def augment(self, root_key, root_item):
+...         yield (root_key, 0), root_item
+...         yield (root_key, 1), root_item[::-1]
+&gt;&gt;&gt; d = DictDataset({0: (&quot;Denzel&quot;, &quot;Washington&quot;), 1: (&quot;Tom&quot;, &quot;Hanks&quot;)})
+&gt;&gt;&gt; d = PermutingDataset(d)
+&gt;&gt;&gt; new_keys = d.keys()
+&gt;&gt;&gt; new_keys
+((0, 0), (0, 1), (1, 0), (1, 1))
+&gt;&gt;&gt; d.query(new_keys)
+(array(['Denzel', 'Washington', 'Tom', 'Hanks'], ...),
+ array(['Washington', 'Denzel', 'Hanks', 'Tom'], ...))
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VideoFromPlaylistDataset(AugmentedDataset):
+    def augment(self, root_key, dataset):
+        for key in dataset.yield_keys():
+            item = dataset.query_item(key)
+            if item is not None:
+                yield (root_key, root_key.uri, key), item</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.AugmentedDataset</li>
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.utils.VideoFromPlaylistDataset.augment"><code class="name flex">
+<span>def <span class="ident">augment</span></span>(<span>self, root_key, dataset)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def augment(self, root_key, dataset):
+    for key in dataset.yield_keys():
+        item = dataset.query_item(key)
+        if item is not None:
+            yield (root_key, root_key.uri, key), item</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.utils.VideoMaker"><code class="flex name class">
+<span>class <span class="ident">VideoMaker</span></span>
+<span>(</span><span>filename='output.mp4', framerate=15)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VideoMaker:
+    def __init__(self, filename=&#34;output.mp4&#34;, framerate=15):
+        self.filename = filename
+        self.writer = imageio.get_writer(filename, fps=framerate)
+    def __enter__(self):
+        return self
+    def __call__(self, image):
+        self.writer.append_data(image)
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.writer is not None:
+            self.writer.close()</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.VideoMaker_obsolete"><code class="flex name class">
+<span>class <span class="ident">VideoMaker_obsolete</span></span>
+<span>(</span><span>filename='output.mp4', framerate=15)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VideoMaker_obsolete():
+    format_map = {
+        &#34;.mp4&#34;: &#39;mp4v&#39;,
+        &#34;.avi&#34;: &#39;XVID&#39;,
+        &#34;.mpeg4&#34;: &#39;H264&#39;
+    }
+    writer = None
+    def __init__(self, filename=&#34;output.mp4&#34;, framerate=15):
+        self.filename = filename
+        self.framerate = framerate
+        self.fourcc = cv2.VideoWriter_fourcc(*self.format_map[os.path.splitext(filename)[1]])
+    def __enter__(self):
+        return self
+    def __call__(self, image):
+        if self.writer is None:
+            shape = (image.shape[1], image.shape[0])
+            self.writer = cv2.VideoWriter(filename=self.filename, fourcc=self.fourcc, fps=self.framerate, frameSize=shape, apiPreference=cv2.CAP_FFMPEG)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        self.writer.write(image)
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.writer:
+            self.writer.release()
+            self.writer = None
+            print(&#34;{} successfully written&#34;.format(self.filename))
+    def __del__(self):
+        if self.writer:
+            self.writer.release()
+            self.writer = None
+            print(&#34;{} successfully written&#34;.format(self.filename))</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.utils.VideoMaker_obsolete.format_map"><code class="name">var <span class="ident">format_map</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.utils.VideoMaker_obsolete.writer"><code class="name">var <span class="ident">writer</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.utils.VideoReaderDataset"><code class="flex name class">
+<span>class <span class="ident">VideoReaderDataset</span></span>
+<span>(</span><span>filename, scale_factor=None, output_shape=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class VideoReaderDataset(Dataset):
+    cap = None
+    def __init__(self, filename, scale_factor=None, output_shape=None):
+        raise
+        # TODO: use instead
+        # vid = imageio.get_reader(&#34;/home/gva/KS-FR-STCHAMOND_93815_concatenated.mp4&#34;,  &#39;ffmpeg&#39;)
+        # nums = [0, 1, 2]
+        # for num in nums:
+        #     image = vid.get_data(num)
+        assert not scale_factor or not output_shape, &#34;You cannot provide both &#39;scale_factor&#39; and &#39;output_shape&#39; arguments.&#34;
+        self.cap = cv2.VideoCapture(filename)
+        self.fps = self.cap.get(cv2.CAP_PROP_FPS)
+        self.frame_count = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        shape = tuple([int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))])
+        if scale_factor:
+            shape = tuple(int(x*scale_factor) for x in shape)
+        elif output_shape:
+            shape = output_shape
+        self.shape = tuple(x-x%2 for x in shape) # make sure shape is even
+    def __del__(self):
+        if self.cap is not None:
+            self.cap.release()
+    def yield_keys(self):
+        yield from range(self.frame_count)
+    def query_item(self, i):
+        self.cap.set(cv2.CAP_PROP_POS_FRAMES, i)
+        _, frame = self.cap.read()
+        if frame is None:
+            return None
+        frame = cv2.resize(frame, self.shape)
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        return frame</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.utils.VideoReaderDataset.cap"><code class="name">var <span class="ident">cap</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.utils.VideoReaderDataset.query_item"><code class="name flex">
+<span>def <span class="ident">query_item</span></span>(<span>self, i)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns a tuple for one item, typically (Xi, Yi), or (Xi,)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_item(self, i):
+    self.cap.set(cv2.CAP_PROP_POS_FRAMES, i)
+    _, frame = self.cap.read()
+    if frame is None:
+        return None
+    frame = cv2.resize(frame, self.shape)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    return frame</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.utils.VideoReaderDataset.yield_keys"><code class="name flex">
+<span>def <span class="ident">yield_keys</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def yield_keys(self):
+    yield from range(self.frame_count)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities" href="index.html">deepsport_utilities</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.utils.VideoDataset" href="#deepsport_utilities.utils.VideoDataset">VideoDataset</a></code></li>
+<li><code><a title="deepsport_utilities.utils.blend" href="#deepsport_utilities.utils.blend">blend</a></code></li>
+<li><code><a title="deepsport_utilities.utils.colorify_heatmap" href="#deepsport_utilities.utils.colorify_heatmap">colorify_heatmap</a></code></li>
+<li><code><a title="deepsport_utilities.utils.concatenate_chunks" href="#deepsport_utilities.utils.concatenate_chunks">concatenate_chunks</a></code></li>
+<li><code><a title="deepsport_utilities.utils.crop_padded" href="#deepsport_utilities.utils.crop_padded">crop_padded</a></code></li>
+<li><code><a title="deepsport_utilities.utils.gamma_correction" href="#deepsport_utilities.utils.gamma_correction">gamma_correction</a></code></li>
+<li><code><a title="deepsport_utilities.utils.jpegBlur" href="#deepsport_utilities.utils.jpegBlur">jpegBlur</a></code></li>
+<li><code><a title="deepsport_utilities.utils.setdefaultattr" href="#deepsport_utilities.utils.setdefaultattr">setdefaultattr</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.utils.BoundingBox" href="#deepsport_utilities.utils.BoundingBox">BoundingBox</a></code></h4>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.utils.BoundingBox.h" href="#deepsport_utilities.utils.BoundingBox.h">h</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.increase_box" href="#deepsport_utilities.utils.BoundingBox.increase_box">increase_box</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.w" href="#deepsport_utilities.utils.BoundingBox.w">w</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.x" href="#deepsport_utilities.utils.BoundingBox.x">x</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.x_slice" href="#deepsport_utilities.utils.BoundingBox.x_slice">x_slice</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.y" href="#deepsport_utilities.utils.BoundingBox.y">y</a></code></li>
+<li><code><a title="deepsport_utilities.utils.BoundingBox.y_slice" href="#deepsport_utilities.utils.BoundingBox.y_slice">y_slice</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.DefaultDict" href="#deepsport_utilities.utils.DefaultDict">DefaultDict</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.DefaultList" href="#deepsport_utilities.utils.DefaultList">DefaultList</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.DelayedCallback" href="#deepsport_utilities.utils.DelayedCallback">DelayedCallback</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.LazyGeneratorBackedList" href="#deepsport_utilities.utils.LazyGeneratorBackedList">LazyGeneratorBackedList</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.utils.LazyGeneratorBackedList.next" href="#deepsport_utilities.utils.LazyGeneratorBackedList.next">next</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.M3u8PlaylistDataset" href="#deepsport_utilities.utils.M3u8PlaylistDataset">M3u8PlaylistDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.utils.M3u8PlaylistDataset.query_item" href="#deepsport_utilities.utils.M3u8PlaylistDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.utils.M3u8PlaylistDataset.yield_keys" href="#deepsport_utilities.utils.M3u8PlaylistDataset.yield_keys">yield_keys</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.MJPEGReader" href="#deepsport_utilities.utils.MJPEGReader">MJPEGReader</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.VideoFileNameToDatasetReaderTransform" href="#deepsport_utilities.utils.VideoFileNameToDatasetReaderTransform">VideoFileNameToDatasetReaderTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.VideoFromPlaylistDataset" href="#deepsport_utilities.utils.VideoFromPlaylistDataset">VideoFromPlaylistDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.utils.VideoFromPlaylistDataset.augment" href="#deepsport_utilities.utils.VideoFromPlaylistDataset.augment">augment</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.VideoMaker" href="#deepsport_utilities.utils.VideoMaker">VideoMaker</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.VideoMaker_obsolete" href="#deepsport_utilities.utils.VideoMaker_obsolete">VideoMaker_obsolete</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.utils.VideoMaker_obsolete.format_map" href="#deepsport_utilities.utils.VideoMaker_obsolete.format_map">format_map</a></code></li>
+<li><code><a title="deepsport_utilities.utils.VideoMaker_obsolete.writer" href="#deepsport_utilities.utils.VideoMaker_obsolete.writer">writer</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.utils.VideoReaderDataset" href="#deepsport_utilities.utils.VideoReaderDataset">VideoReaderDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.utils.VideoReaderDataset.cap" href="#deepsport_utilities.utils.VideoReaderDataset.cap">cap</a></code></li>
+<li><code><a title="deepsport_utilities.utils.VideoReaderDataset.query_item" href="#deepsport_utilities.utils.VideoReaderDataset.query_item">query_item</a></code></li>
+<li><code><a title="deepsport_utilities.utils.VideoReaderDataset.yield_keys" href="#deepsport_utilities.utils.VideoReaderDataset.yield_keys">yield_keys</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

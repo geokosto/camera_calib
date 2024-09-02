@@ -1,0 +1,12 @@
+# python related entries
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*/__pycache__/
+# virtualenv related entries
+venv/
+
+data/
+
+

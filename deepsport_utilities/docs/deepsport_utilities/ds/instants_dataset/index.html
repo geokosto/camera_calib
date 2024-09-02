@@ -1,0 +1,2714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.ds.instants_dataset API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.ds.instants_dataset</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from .instants_dataset import InstantsDataset, Instant, InstantKey, DownloadFlags, Player, Ball, BallState
+from .instants_transforms import GammaCorrectionTransform, CropBlockDividable
+from .views_dataset import ViewsDataset, ViewKey, View, BuildBallViews, BuildCameraViews, \
+    BuildHeadsViews, BuildCourtViews, BuildPlayersViews, BuildThumbnailViews, BuildBallViewsWithRandom
+from .views_transforms import AddBallAnnotation, UndistortTransform, \
+    ComputeDiff, GameGammaColorTransform, GameRGBColorTransform, \
+    BayeringTransform, ViewRandomCropperTransform, AddCalibFactory, AddCourtFactory, AddDiffFactory, \
+    AddNextImageFactory, BallViewRandomCropperTransform
+from .dataset_splitters import DeepSportDatasetSplitter, KFoldsArenaLabelsTestingDatasetSplitter, \
+    TestingArenaLabelsDatasetSplitter
+
+try:
+    from .views_transforms import AddBallDistance
+except ImportError:
+    pass
+
+# all but &#34;InstantsDataset&#34;
+__all__ = [&#34;Instant&#34;, &#34;InstantKey&#34;, &#34;DownloadFlags&#34;, &#34;Player&#34;, &#34;BallState&#34;,
+&#34;Ball&#34;, &#34;GammaCorrectionTransform&#34;, &#34;ViewsDataset&#34;, &#34;ViewKey&#34;, &#34;View&#34;,
+&#34;BuildBallViews&#34;, &#34;BuildCameraViews&#34;, &#34;AddBallAnnotation&#34;, &#34;UndistortTransform&#34;,
+&#34;DeepSportDatasetSplitter&#34;, &#34;KFoldsArenaLabelsTestingDatasetSplitter&#34;,
+&#34;TestingArenaLabelsDatasetSplitter&#34;, &#34;BuildHeadsViews&#34;, &#34;BuildCourtViews&#34;,
+&#34;BuildPlayersViews&#34;, &#34;BuildThumbnailViews&#34;, &#34;ComputeDiff&#34;,
+&#34;GameGammaColorTransform&#34;, &#34;GameRGBColorTransform&#34;, &#34;BayeringTransform&#34;,
+&#34;ViewRandomCropperTransform&#34;, &#34;AddCalibFactory&#34;, &#34;AddCourtFactory&#34;,
+&#34;AddDiffFactory&#34;, &#34;AddNextImageFactory&#34;, &#34;BallViewRandomCropperTransform&#34;,
+&#34;CropBlockDividable&#34;, &#34;BuildBallViewsWithRandom&#34;]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters" href="dataset_splitters.html">deepsport_utilities.ds.instants_dataset.dataset_splitters</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="deepsport_utilities.ds.instants_dataset.instants_dataset" href="instants_dataset.html">deepsport_utilities.ds.instants_dataset.instants_dataset</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="deepsport_utilities.ds.instants_dataset.instants_transforms" href="instants_transforms.html">deepsport_utilities.ds.instants_dataset.instants_transforms</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="deepsport_utilities.ds.instants_dataset.views_dataset" href="views_dataset.html">deepsport_utilities.ds.instants_dataset.views_dataset</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt><code class="name"><a title="deepsport_utilities.ds.instants_dataset.views_transforms" href="views_transforms.html">deepsport_utilities.ds.instants_dataset.views_transforms</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.AddBallAnnotation"><code class="flex name class">
+<span>class <span class="ident">AddBallAnnotation</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallAnnotation(Transform):
+    def __call__(self, key, view):
+        balls = [a for a in view.annotations if a.type == &#39;ball&#39;]
+        assert len(balls) == 1, f&#34;Expected one ball. received {len(balls)}.&#34;
+        view.ball = balls[0]
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.AddCalibFactory"><code class="flex name class">
+<span>class <span class="ident">AddCalibFactory</span></span>
+<span>(</span><span>as_dict=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddCalibFactory(Transform):
+    def __init__(self, as_dict=False):
+        self.as_dict = as_dict
+    @staticmethod
+    def to_basic_dict(calib):
+        return {
+            &#34;K&#34;: calib.K,
+            &#34;r&#34;: cv2.Rodrigues(calib.R)[0].flatten(),
+            &#34;T&#34;: calib.T,
+            &#34;width&#34;: np.array([calib.width]),
+            &#34;height&#34;: np.array([calib.height]),
+            &#34;kc&#34;: np.array(calib.kc),
+        }
+    def __call__(self, view_key, view):
+        if self.as_dict:
+            return self.to_basic_dict(view.calib)
+        return {&#34;calib&#34;: view.calib}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.AddCalibFactory.to_basic_dict"><code class="name flex">
+<span>def <span class="ident">to_basic_dict</span></span>(<span>calib)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def to_basic_dict(calib):
+    return {
+        &#34;K&#34;: calib.K,
+        &#34;r&#34;: cv2.Rodrigues(calib.R)[0].flatten(),
+        &#34;T&#34;: calib.T,
+        &#34;width&#34;: np.array([calib.width]),
+        &#34;height&#34;: np.array([calib.height]),
+        &#34;kc&#34;: np.array(calib.kc),
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.AddCourtFactory"><code class="flex name class">
+<span>class <span class="ident">AddCourtFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddCourtFactory(Transform):
+    def __call__(self, view_key, view):
+        if not getattr(view, &#34;court&#34;, None):
+            view.court = Court()
+        return {
+            &#34;court_width&#34;: np.array([view.court.w]),
+            &#34;court_height&#34;: np.array([view.court.h])
+        }</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.AddDiffFactory"><code class="flex name class">
+<span>class <span class="ident">AddDiffFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddDiffFactory(Transform):
+    def __call__(self, view_key, view):
+        raise NotImplementedError() # code needs to be re-implemented: current implementation only adds next image
+        return {&#34;input_image2&#34;: view.all_images[1]}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.AddNextImageFactory"><code class="flex name class">
+<span>class <span class="ident">AddNextImageFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddNextImageFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;input_image2&#34;: view.all_images[1]}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Ball"><code class="flex name class">
+<span>class <span class="ident">Ball</span></span>
+<span>(</span><span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Ball():
+    state = BallState.NONE # default
+    visible = None         # default
+    value = None           # default
+    def __init__(self, data):
+        self.type = &#34;ball&#34;
+        self.center = Point3D(*data[&#39;center&#39;])
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.camera = data[&#39;image&#39;]
+        self.visible = data.get(&#39;visible&#39;, None)
+        self.state = BallState(data.get(&#39;state&#39;, 0))
+        self.value = data.get(&#39;value&#39;, None)
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;center&#34;: self.center.to_list(),
+            &#34;image&#34;: self.camera,
+            &#34;visible&#34;: self.visible,
+            &#34;state&#34;: self.state,
+            &#34;value&#34;: self.value
+        }
+
+    def __repr__(self):
+        return &#34;Ball(&#34; + &#34;,&#34;.join([
+            f&#34;origin=&#39;{self.origin}&#39;, &#34; \
+            f&#34;center=({self.center.x:.01f}, {self.center.y:.01f}, {self.center.z:.01f})&#34; \
+        ]) + &#34;)&#34;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.BallAnnotation">BallAnnotation</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.Ball.state"><code class="name">var <span class="ident">state</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Ball.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Ball.visible"><code class="name">var <span class="ident">visible</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.Ball.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {
+        &#34;type&#34;: self.type,
+        &#34;origin&#34;: self.origin,
+        &#34;center&#34;: self.center.to_list(),
+        &#34;image&#34;: self.camera,
+        &#34;visible&#34;: self.visible,
+        &#34;state&#34;: self.state,
+        &#34;value&#34;: self.value
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BallState"><code class="flex name class">
+<span>class <span class="ident">BallState</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BallState(IntEnum):
+    NONE = 0
+    FLYING = 1
+    CONSTRAINT = 2
+    DRIBBLING = 3</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntEnum</li>
+<li>builtins.int</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BallState.CONSTRAINT"><code class="name">var <span class="ident">CONSTRAINT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BallState.DRIBBLING"><code class="name">var <span class="ident">DRIBBLING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BallState.FLYING"><code class="name">var <span class="ident">FLYING</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BallState.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">BallViewRandomCropperTransform</span></span>
+<span>(</span><span>*args, on_ball=True, def_min=None, def_max=None, size_min=None, size_max=None, scale_min=None, scale_max=None, rectify=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create random crops with annotated balls visible in them.
+If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+size is in the [min_size, max_size] range.
+If [def_min, def_max] range is given, scale factor is chosen s.t. image
+definition [px/m] is in the [def_min, def_max] range at ball location.
+If [scale_min, scale_max] range is given, scale factor is chosen in
+that range.
+An error is raised if multiple options are given.</p>
+<h2 id="arguments">Arguments</h2>
+<p>on_ball: if True, ball is always visible on the random crop.
+If False, ball is visible in the random crop half of the time.
+Else, on_ball is the probability that the ball is kept visible.
+def_min, def_max: min and max definition [px/m] of the random crop.
+size_min, size_max: min and max size [px] of the ball in the random crop.
+scale_min, scale_max: image's min and max scale factor</p>
+<p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments_1">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BallViewRandomCropperTransform(ViewRandomCropperTransform):
+    &#34;&#34;&#34; Create random crops with annotated balls visible in them.
+        If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+        size is in the [min_size, max_size] range.
+        If [def_min, def_max] range is given, scale factor is chosen s.t. image
+        definition [px/m] is in the [def_min, def_max] range at ball location.
+        If [scale_min, scale_max] range is given, scale factor is chosen in
+        that range.
+        An error is raised if multiple options are given.
+
+        Arguments:
+            on_ball: if True, ball is always visible on the random crop.
+                If False, ball is visible in the random crop half of the time.
+                Else, on_ball is the probability that the ball is kept visible.
+            def_min, def_max: min and max definition [px/m] of the random crop.
+            size_min, size_max: min and max size [px] of the ball in the random crop.
+            scale_min, scale_max: image&#39;s min and max scale factor
+    &#34;&#34;&#34;
+    def __init__(self, *args, on_ball=True,
+                 def_min=None, def_max=None,
+                 size_min=None, size_max=None,
+                 scale_min=None, scale_max=None,
+                 rectify=True, **kwargs):
+        msg = &#34;Only one of (&#39;size_min&#39; and &#39;size_max&#39;) or (&#39;def_min&#39; and &#39;def_max&#39;) or (&#39;scale_min&#39; and &#39;scale_max&#39;) should be defined&#34;
+        if size_min is not None and size_max is not None:
+            assert all([x is None for x in [def_min, def_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=size_min, size_max=size_max, **kwargs)
+            self.true_size = BALL_DIAMETER
+        elif def_min is not None and def_max is not None:
+            assert all([x is None for x in [size_min, size_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=def_min, size_max=def_max, **kwargs)
+            self.true_size = 100
+        elif scale_min is not None and scale_max is not None:
+            assert all([x is None for x in [size_min, size_max, def_min, def_max]]), msg
+            super().__init__(*args, size_min=scale_min, size_max=scale_max, **kwargs)
+            self.true_size = None
+        else:
+            raise ValueError(msg)
+
+        self.rectify = rectify
+        self.on_ball = {False: 0.5, True: 1.0, None: 0.0}.get(on_ball, on_ball)
+        if self.debug and self.on_ball != 1.0:
+            raise NotImplementedError(&#34;Random keypoint should be drawn in view.image (as well as it&#39;s projection on court for better visualization)&#34;)
+
+    def random_ball_position(self, view):
+        court = setdefaultattr(view, &#34;court&#34;, Court(getattr(view, &#34;rule_type&#34;, &#34;FIBA&#34;)))
+        #court_polygon = view.calib.get_region_visible_corners_2d(court.corners, 1)
+        top_edge = list(court.visible_edges(view.calib))[0]
+        start = top_edge[0][0][0]
+        stop = top_edge[1][0][0]
+        x = np.random.beta(2, 2)*(stop-start)+start
+        y = np.random.beta(2, 2)*court.h/2+court.h/4
+        z = 0
+        return Point3D(x,y,z)
+
+    def _apply_transformation(self, view, A):
+        if not self.rectify:
+            return super()._apply_transformation(view, A)
+
+        # rectify warp caused by projection on a plane
+        center = view.__shear_center
+        vector = Point2D(center.x - view.calib.K[0,2], center.y - view.calib.K[1,2])
+        R1 = np.eye(3)
+        R1[0:2,:] = cv2.getRotationMatrix2D(center.to_int_tuple(), np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        scale = np.cos(np.arctan(np.linalg.norm(vector)/view.calib.K[0,0]))
+        T1 = np.array([[1, 0, -center.x], [0, 1, -center.y], [0, 0, 1]])
+        S = np.array([[scale, 0, 0], [0, 1, 0], [0, 0, 1]])
+        R2 = np.eye(3)
+        R2[0:2,:] = cv2.getRotationMatrix2D((0, 0), -np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        T2 = np.array([[1, 0,  center.x], [0, 1,  center.y], [0, 0, 1]])
+        return super()._apply_transformation(view, A@T2@R2@S@T1@R1)
+
+    def _get_current_parameters(self, view_key, view):
+        ball = getattr(view, &#34;ball&#34;, None)
+
+        # If not `on_ball` use the ball anyway half of the samples
+        if random.random() &lt; self.on_ball and ball is not None:
+            keypoint = ball.center
+            view.ball = ball
+        else:
+            keypoint = self.random_ball_position(view)
+            view.ball = Ball({
+                &#39;center&#39;: keypoint,
+                &#39;origin&#39;: &#34;random&#34;,
+                &#39;image&#39;: view_key.camera,
+                &#39;visible&#39;: False,
+            })
+
+        # Use ball if any, else use the random ball (it only affects the strategy to scale)
+        if self.true_size is None:
+            size = 1
+        else:
+            point3D = ball.center if ball is not None else keypoint
+            size = float(view.calib.compute_length2D(point3D, self.true_size)[0])
+
+        keypoint = view.calib.project_3D_to_2D(keypoint)
+        input_shape = view.calib.width, view.calib.height
+        view.__shear_center = keypoint
+        return keypoint, size, input_shape</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform">CleverViewRandomCropperTransform</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform.random_ball_position"><code class="name flex">
+<span>def <span class="ident">random_ball_position</span></span>(<span>self, view)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_ball_position(self, view):
+    court = setdefaultattr(view, &#34;court&#34;, Court(getattr(view, &#34;rule_type&#34;, &#34;FIBA&#34;)))
+    #court_polygon = view.calib.get_region_visible_corners_2d(court.corners, 1)
+    top_edge = list(court.visible_edges(view.calib))[0]
+    start = top_edge[0][0][0]
+    stop = top_edge[1][0][0]
+    x = np.random.beta(2, 2)*(stop-start)+start
+    y = np.random.beta(2, 2)*court.h/2+court.h/4
+    z = 0
+    return Point3D(x,y,z)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BayeringTransform"><code class="flex name class">
+<span>class <span class="ident">BayeringTransform</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BayeringTransform(Transform):
+    def __init__(self):
+        self.R_filter = np.array([[1,0],[0,0]])
+        self.G_filter = np.array([[0,1],[1,0]])
+        self.B_filter = np.array([[0,0],[0,1]])
+    def __call__(self, view_key, view):
+        height, width, _ = view.image.shape
+        R_mask = np.tile(self.R_filter, [height//2, width//2])
+        G_mask = np.tile(self.G_filter, [height//2, width//2])
+        B_mask = np.tile(self.B_filter, [height//2, width//2])
+        mask = np.stack((R_mask, G_mask, B_mask), axis=2)
+        mask = mask[np.newaxis]
+        for i, image in enumerate(view.all_images):
+            view.all_images[i] = np.sum(image*mask, axis=3)
+        view.image = view.all_images[0]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViews"><code class="flex name class">
+<span>class <span class="ident">BuildBallViews</span></span>
+<span>(</span><span>margin, *args, origins=['annotation'], **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Margin given in world coordinates by default, except if <code>margin_in_pixels</code> is True.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildBallViews(ViewBuilder):
+    def __init__(self, margin, *args, origins=[&#34;annotation&#34;], **kwargs):
+        super().__init__(margin, *args, **kwargs)
+        self.origins = origins
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        balls = [a for a in instant.annotations + getattr(instant, &#34;detections&#34;, []) if a.type == &#39;ball&#39;]
+        predicate = lambda a: a.origin in self.origins
+        for idx, ball in enumerate(filter(predicate, balls)):
+            if not instant.calibs[ball.camera].projects_in(ball.center):
+                continue
+            keypoints = [ball.center]
+            c = int(ball.camera)
+            timestamp = getattr(instant, &#34;timestamps&#34;, [instant.timestamp]*instant.num_cameras)[c] # timestamps may be different for each camera
+            yield ViewDescription(c, idx, self.compute_box(keypoints, instant.calibs[c]), ball=ball, timestamp=timestamp)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.BuildBallViewsWithRandom" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.BuildBallViewsWithRandom">BuildBallViewsWithRandom</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViews.margin"><code class="name">var <span class="ident">margin</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViews.margin_in_pixels"><code class="name">var <span class="ident">margin_in_pixels</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViews.padding"><code class="name">var <span class="ident">padding</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom"><code class="flex name class">
+<span>class <span class="ident">BuildBallViewsWithRandom</span></span>
+<span>(</span><span>*args, random: float = 0, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>random: a proportion of random views that are at least <code>margin</code> away from any created view.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildBallViewsWithRandom(BuildBallViews):
+    &#34;&#34;&#34; random: a proportion of random views that are at least `margin` away from any created view.
+    &#34;&#34;&#34;
+    def __init__(self, *args, random: float=0, **kwargs):
+        assert 0 &lt;= random &lt; 1, &#34;random must be in [0,1[&#34;
+        super().__init__(*args, **kwargs)
+        self.random = random
+        self.record = {True: 0, False: 0}
+    def compute_box(self, point3D_list: list, calib: Calib):
+        if self.margin == np.inf:
+            return BoundingBox(0, 0, calib.width, calib.height)
+        return super().compute_box(point3D_list, calib)
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        idx = 0
+        boxes = {}
+        for view_description in super().__call__(instant_key, instant):
+            yield view_description
+            idx = view_description.index + 1
+            boxes.setdefault(view_description.camera, []).append(view_description.box)
+            self.record[True] += 1
+
+        court = instant.court
+        while (self.record[False] + 1)/(sum(self.record.values())+1) &lt; self.random:
+            camera = np.random.randint(instant.num_cameras)
+
+            top_edge = list(court.visible_edges(instant.calibs[camera]))[0]
+            start = top_edge[0][0][0]
+            stop = top_edge[1][0][0]
+            x = np.random.beta(2, 2)*(stop-start)+start
+            y = np.random.beta(2, 2)*court.h/2+court.h/4
+            z = np.random.randint(-400, 0)
+            point3D = Point3D(x,y,z)
+            if not instant.calibs[camera].projects_in(point3D):
+                continue
+
+            point2D = instant.calibs[camera].project_3D_to_2D(point3D)
+            if any([box.x &lt;= point2D.x &lt;= box.x+box.w and box.y &lt;= point2D.y &lt;= box.y+box.h for box in boxes.get(camera, [])]):
+                continue
+
+            ball = Ball({
+                &#39;origin&#39;: &#39;random&#39;,
+                &#39;center&#39;: point3D,
+                &#39;image&#39;: camera,
+                &#39;visible&#39;: False,
+                &#39;status&#39;: BallState.NONE,
+                &#39;value&#39;: 0
+            })
+            keypoints = [point3D]
+            c = int(ball.camera)
+            timestamp = getattr(instant, &#34;timestamps&#34;, [instant.timestamp]*instant.num_cameras)[c] # timestamps may be different for each camera
+            yield ViewDescription(c, idx, self.compute_box(keypoints, instant.calibs[c]), ball=ball, timestamp=timestamp)
+            idx += 1
+            self.record[False] += 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.BuildBallViews" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.BuildBallViews">BuildBallViews</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin"><code class="name">var <span class="ident">margin</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin_in_pixels"><code class="name">var <span class="ident">margin_in_pixels</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.padding"><code class="name">var <span class="ident">padding</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.compute_box"><code class="name flex">
+<span>def <span class="ident">compute_box</span></span>(<span>self, point3D_list: list, calib: <a title="deepsport_utilities.calib.Calib" href="../../calib.html#deepsport_utilities.calib.Calib">Calib</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_box(self, point3D_list: list, calib: Calib):
+    if self.margin == np.inf:
+        return BoundingBox(0, 0, calib.width, calib.height)
+    return super().compute_box(point3D_list, calib)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCameraViews"><code class="flex name class">
+<span>class <span class="ident">BuildCameraViews</span></span>
+<span>(</span><span>margin: float = 0, padding: int = None, margin_in_pixels: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds a view for each camera (margin parameter is useless)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildCameraViews(ViewBuilder):
+    &#34;&#34;&#34; Builds a view for each camera (margin parameter is useless)
+    &#34;&#34;&#34;
+    def __call__(self, instant_key: InstantKey, instant:Instant):
+        for c in range(instant.num_cameras):
+            yield ViewDescription(c, 0, BoundingBox(0, 0, instant.calibs[c].width, instant.calibs[c].height))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin"><code class="name">var <span class="ident">margin</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin_in_pixels"><code class="name">var <span class="ident">margin_in_pixels</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCameraViews.padding"><code class="name">var <span class="ident">padding</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCourtViews"><code class="flex name class">
+<span>class <span class="ident">BuildCourtViews</span></span>
+<span>(</span><span>margin: float = 0, padding: int = None, margin_in_pixels: bool = False, height: float = 300)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds a view including all the court keypoints visible on each camera
+Note: keypoints are duplicated at 2m from the floor</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildCourtViews(ViewBuilder):
+    &#34;&#34;&#34; Builds a view including all the court keypoints visible on each camera
+        Note: keypoints are duplicated at 2m from the floor
+    &#34;&#34;&#34;
+    height: float = 300
+    def __call__(self, instant_key: InstantKey, instant:Instant):
+        for c in range(instant.num_cameras):
+            calib = instant.calibs[c]
+            visible_edges = Court(instant.rule_type).visible_edges(calib)
+            court_keypoints = []
+            for p1, p2 in visible_edges:
+                court_keypoints = court_keypoints + [p1, p1+Point3D(0,0,-self.height), p2, p2+Point3D(0,0,-self.height)]
+            yield ViewDescription(c, 0, self.compute_box(court_keypoints, calib))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildCourtViews.height"><code class="name">var <span class="ident">height</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildHeadsViews"><code class="flex name class">
+<span>class <span class="ident">BuildHeadsViews</span></span>
+<span>(</span><span>margin: float = 0, padding: int = None, margin_in_pixels: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Margin given in world coordinates by default, except if <code>margin_in_pixels</code> is True.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildHeadsViews(ViewBuilder):
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        for idx, player in enumerate([a for a in instant.annotations if a.type == &#34;player&#34;]):
+            c = int(player.camera)
+            keypoints = [player.head]
+            yield ViewDescription(c, idx, self.compute_box(keypoints, instant.calibs[c]), annotation=player)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin"><code class="name">var <span class="ident">margin</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin_in_pixels"><code class="name">var <span class="ident">margin_in_pixels</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.padding"><code class="name">var <span class="ident">padding</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildPlayersViews"><code class="flex name class">
+<span>class <span class="ident">BuildPlayersViews</span></span>
+<span>(</span><span>margin: float = 0, padding: int = None, margin_in_pixels: bool = False, min_annotations: int = 1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds a view around the players visible on each camera
+min_annotations: minimum required number of person to use that camera</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildPlayersViews(ViewBuilder):
+    &#34;&#34;&#34; Builds a view around the players visible on each camera
+        min_annotations: minimum required number of person to use that camera
+    &#34;&#34;&#34;
+    min_annotations: int = 1
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        for c in range(instant.num_cameras):
+            annotations = [a for a in instant.annotations if a.camera == c and a.type == &#34;player&#34; and a.team &gt; 0]
+            if len(annotations) &lt; self.min_annotations:
+                continue
+
+            keypoints = []
+            for a in annotations:
+                keypoints += [a.head, a.hips, a.foot1, a.foot2]
+
+            yield ViewDescription(c, 0, self.compute_box(keypoints, instant.calibs[c]))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildPlayersViews.min_annotations"><code class="name">var <span class="ident">min_annotations</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews"><code class="flex name class">
+<span>class <span class="ident">BuildThumbnailViews</span></span>
+<span>(</span><span>margin: float = 0, padding: int = None, margin_in_pixels: bool = False, with_annotations: bool = True, with_detections: bool = False, with_random: Tuple[int, bool] = 0, with_occlusions: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Builds a view around each person (players, referee)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BuildThumbnailViews(ViewBuilder):
+    &#34;&#34;&#34; Builds a view around each person (players, referee)
+    &#34;&#34;&#34;
+    with_annotations: bool = True
+    with_detections: bool = False
+    with_random: Tuple[int, bool] = 0
+    with_occlusions: bool = False
+    BODY_HEIGHT = 180
+    threshold = 0.25
+    def __post_init__(self):
+        super().__post_init__()
+        self.with_random = 10 if isinstance(self.with_random, bool) and self.with_random else self.with_random
+
+    def check_density_map(self, density_map, box, threshold):
+        if 0 in density_map[box.y_slice, box.x_slice].shape:
+            return False
+        if np.mean(density_map[box.y_slice, box.x_slice]) &lt;= threshold:
+            return True
+        return False
+
+    def sample_density_map(self, density_map):
+        # avoid going too close to other detections
+        dilation = cv2.dilate(density_map, np.ones((3,3)), iterations=10)
+        indices_y, indices_x = np.where(dilation == 0)
+        # random choic a position in the image
+        i = np.random.randint(0, len(indices_x))
+        return np.array([[indices_x[i], indices_y[i]]])
+
+    @staticmethod
+    def fill_density_map(density_map, box):
+        density_map[box.y_slice, box.x_slice] += 1
+
+    def __call__(self, instant_key: InstantKey, instant:Instant):
+        # Set random seed with timestamp
+        random_state = np.random.get_state()
+        np.random.seed(instant_key.timestamp &amp; 0xFFFFFFFF)
+
+        instant.density_maps = [np.zeros(img.shape[0:2], dtype=np.uint8) for img in instant.images]
+
+        for c in range(instant.num_cameras):
+            calib = instant.calibs[c]
+            density_map = instant.density_maps[c]
+            index = 0
+
+            # From annotation
+            for a in [a for a in instant.annotations if a.type == &#34;player&#34; and calib.projects_in(a.hips) and self.with_annotations]:
+                keypoints = [a.head, a.hips, a.foot1, a.foot2]
+                box = self.compute_box(keypoints, calib)
+                #if self.check_density_map(instant.density_maps, box, c, 1+self.threshold) or self.with_occlusions:
+                yield ViewDescription(c, index, box, origin=&#39;annotation&#39;, annotation=a, density_map=density_map)
+                self.fill_density_map(density_map, box)
+                index = index + 1
+
+            if self.with_detections:
+                # From keemotion foregrounddetector detections
+                # FIXME:
+                for detection in []:#[d for d in instant.fg_detections if d.camera == c and calib.projects_in(d.feet) and self.with_detections]:
+                    keypoints = [ detection.feet, detection.feet + Point3D(0, 0, -self.BODY_HEIGHT) ]
+                    box = self.compute_box(keypoints, calib)
+                    if self.check_density_map(density_map, box, self.threshold):
+                        yield ViewDescription(c, index, box, origin=&#39;detection&#39;, detection=detection, density_map=density_map)
+                        self.fill_density_map(density_map, box)
+                        index = index + 1
+
+
+            # From random
+            if self.with_random:
+                raise NotImplementedError
+                # TODO: use Calib.visible_edge() to replace the function &#34;find_court_intersection_with_camera_border&#34;
+                court_keypoints_3D = []# find_court_intersection_with_camera_border(calib, instant.rule_type)
+                court_keypoints_2D = np.array([calib.project_3D_to_2D(p).to_list() for p in court_keypoints_3D])
+                convex_hull = ConvexHull(court_keypoints_2D)
+                points = np.array([court_keypoints_2D[i,:] for i in convex_hull.vertices]).astype(np.int32)
+                court = np.ones(instant.images[c].shape[0:2], dtype=np.uint8)
+                density_map[cv2.fillPoly(court, [points], 0)==1] += 1
+
+            for _ in range(self.with_random):
+                feet = calib.project_2D_to_3D(Point2D(self.sample_density_map(density_map)), Z=0)
+                keypoints = [feet, feet + Point3D(0, 0, -self.BODY_HEIGHT)]
+                box = self.compute_box(keypoints, calib)
+                if self.check_density_map(density_map, box, self.threshold):
+                    yield ViewDescription(c, index, box, origin=&#39;random&#39;, density_map=density_map)
+                    self.fill_density_map(density_map, box)
+                    index = index + 1
+
+        # Restore random seed
+        np.random.set_state(random_state)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.BODY_HEIGHT"><code class="name">var <span class="ident">BODY_HEIGHT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.threshold"><code class="name">var <span class="ident">threshold</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_annotations"><code class="name">var <span class="ident">with_annotations</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_detections"><code class="name">var <span class="ident">with_detections</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_occlusions"><code class="name">var <span class="ident">with_occlusions</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_random"><code class="name">var <span class="ident">with_random</span> : Tuple[int, bool]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.fill_density_map"><code class="name flex">
+<span>def <span class="ident">fill_density_map</span></span>(<span>density_map, box)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def fill_density_map(density_map, box):
+    density_map[box.y_slice, box.x_slice] += 1</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.check_density_map"><code class="name flex">
+<span>def <span class="ident">check_density_map</span></span>(<span>self, density_map, box, threshold)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_density_map(self, density_map, box, threshold):
+    if 0 in density_map[box.y_slice, box.x_slice].shape:
+        return False
+    if np.mean(density_map[box.y_slice, box.x_slice]) &lt;= threshold:
+        return True
+    return False</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.sample_density_map"><code class="name flex">
+<span>def <span class="ident">sample_density_map</span></span>(<span>self, density_map)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sample_density_map(self, density_map):
+    # avoid going too close to other detections
+    dilation = cv2.dilate(density_map, np.ones((3,3)), iterations=10)
+    indices_y, indices_x = np.where(dilation == 0)
+    # random choic a position in the image
+    i = np.random.randint(0, len(indices_x))
+    return np.array([[indices_x[i], indices_y[i]]])</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ComputeDiff"><code class="flex name class">
+<span>class <span class="ident">ComputeDiff</span></span>
+<span>(</span><span>squash=False, inplace=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ComputeDiff(Transform):
+    def __init__(self, squash=False, inplace=False):
+        self.squash = squash
+        self.inplace = inplace
+
+    def __call__(self, view_key: ViewKey, view: View):
+        diff = np.abs(view.image.astype(np.int32) - view.all_images[1].astype(np.int32)).astype(np.uint8)
+        if self.squash:
+            diff = np.mean(diff, axis=2).astype(np.uint8)
+        if self.inplace:
+            view.image = np.dstack((view.image, diff))
+        else:
+            view.diff = diff
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.CropBlockDividable"><code class="flex name class">
+<span>class <span class="ident">CropBlockDividable</span></span>
+<span>(</span><span>block_size=16)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CropBlockDividable(Transform):
+    def __init__(self, block_size=16):
+        self.block_size = block_size
+
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        for k, image in instant.all_images.items():
+            h, w = image.shape[:2]
+            h = h - h % self.block_size
+            w = w - w % self.block_size
+            instant.all_images[k] = image[:h, :w]
+        return instant</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter"><code class="flex name class">
+<span>class <span class="ident">DeepSportDatasetSplitter</span></span>
+<span>(</span><span>validation_pc: int = 15, additional_keys_usage: str = 'skip', folds: str = 'ABCDEF', repetitions: dict = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DeepSportDatasetSplitter(validation_pc: int = 15, additional_keys_usage: str = 'skip', folds: str = 'ABCDEF', repetitions: dict = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeepSportDatasetSplitter: # pylint: disable=too-few-public-methods
+    validation_pc: int = 15
+    additional_keys_usage: str = &#34;skip&#34;
+    folds: str = &#34;ABCDEF&#34;
+    split = {
+        &#34;A&#34;: [&#39;KS-FR-CAEN&#39;, &#39;KS-FR-LIMOGES&#39;, &#39;KS-FR-ROANNE&#39;],
+        &#34;B&#34;: [&#39;KS-FR-NANTES&#39;, &#39;KS-FR-BLOIS&#39;, &#39;KS-FR-FOS&#39;],
+        &#34;C&#34;: [&#39;KS-FR-LEMANS&#39;, &#39;KS-FR-MONACO&#39;, &#39;KS-FR-STRASBOURG&#39;],
+        &#34;D&#34;: [&#39;KS-FR-GRAVELINES&#39;, &#39;KS-FR-STCHAMOND&#39;, &#39;KS-FR-POITIERS&#39;],
+        &#34;E&#34;: [&#39;KS-FR-NANCY&#39;, &#39;KS-FR-BOURGEB&#39;, &#39;KS-FR-VICHY&#39;],
+        # F is a fictive fold for which all keys are used for training
+    }
+    repetitions: dict = None
+    def __post_init__(self):
+        self.repetitions = self.repetitions or {}
+
+    def split_keys(self, keys, fold=0):
+        fold_index = fold
+        assert 0 &lt;= fold_index &lt;= len(self.folds)-1, &#34;Invalid fold index&#34;
+
+        testing_fold = self.folds[fold_index]
+        self.testing_arena_labels = set(self.split.get(testing_fold, []))
+        remaining_arena_labels = [label for f in self.folds.replace(testing_fold, &#34;&#34;) for label in self.split.get(f, [])]
+        testing_keys = []
+        remaining_keys = defaultdict(list)
+        additional_keys = []
+        additional_arena_labels = set()
+        for key in keys:
+            if key.arena_label in remaining_arena_labels:
+                remaining_keys[key.instant_key].append(key)
+            elif key.arena_label in self.testing_arena_labels:
+                testing_keys.append(key)
+            else:
+                additional_keys.append(key)
+                additional_arena_labels.add(key.arena_label)
+
+        # Backup random seed
+        random_state = random.getstate()
+        random.seed(fold)
+
+        total_length = len(remaining_keys)
+        validation_keys, training_keys = [], []
+        indices = np.zeros(total_length, dtype=np.int32) # a vector of 1s for validation keys
+        indices[np.random.choice(total_length, total_length*self.validation_pc//100, replace=False)] = 1
+        for i, instant_key in zip(indices, remaining_keys):
+            (training_keys, validation_keys)[i].extend(remaining_keys[instant_key])
+
+        # Restore random seed
+        random.setstate(random_state)
+        testing2_keys = None
+        if additional_keys:
+            if self.additional_keys_usage == &#34;testing&#34;:
+                testing_keys += additional_keys
+                self.testing_arena_labels = self.testing_arena_labels.union(additional_arena_labels)
+            elif self.additional_keys_usage == &#34;training&#34;:
+                print(f&#34;WARNING: adding {len(additional_keys)} keys to the training set&#34;)
+                training_keys += additional_keys
+            elif self.additional_keys_usage == &#34;validation&#34;:
+                validation_keys += additional_keys
+            elif self.additional_keys_usage in [&#34;none&#34;, &#34;skip&#34;]:
+                pass
+            elif self.additional_keys_usage == &#34;testing2&#34;:
+                testing2_keys = additional_keys
+            else:
+                raise ValueError(&#34;They are additional arena labels that I don&#39;t know what to do with. Please tell me the &#39;additional_keys_usage&#39; argument&#34;)
+
+        self.testing_arena_labels = list(self.testing_arena_labels)
+
+        return training_keys, validation_keys, testing_keys, testing2_keys
+
+    def __call__(self, dataset, fold=0):
+        training_keys, validation_keys, testing_keys, testing2_keys = self.split_keys(dataset.keys, fold)
+        subsets = [
+            Subset(name=&#34;training&#34;, subset_type=SubsetType.TRAIN, keys=training_keys, dataset=dataset),
+            Subset(name=&#34;validation&#34;, subset_type=SubsetType.EVAL, keys=validation_keys, dataset=dataset, repetitions=self.repetitions.get(&#39;validation&#39;, 1)),
+            Subset(name=&#34;testing&#34;, subset_type=SubsetType.EVAL, keys=testing_keys, dataset=dataset, repetitions=self.repetitions.get(&#39;testing&#39;, 1)),
+        ]
+        if testing2_keys:
+            subsets.append(Subset(name=&#34;testing2&#34;, subset_type=SubsetType.EVAL, keys=testing2_keys, dataset=dataset, repetitions=1))
+
+        return subsets</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters.ArenaLabelFoldsDatasetSplitter" href="dataset_splitters.html#deepsport_utilities.ds.instants_dataset.dataset_splitters.ArenaLabelFoldsDatasetSplitter">ArenaLabelFoldsDatasetSplitter</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters.KFoldsArenaLabelsTestingDatasetSplitter" href="dataset_splitters.html#deepsport_utilities.ds.instants_dataset.dataset_splitters.KFoldsArenaLabelsTestingDatasetSplitter">KFoldsArenaLabelsTestingDatasetSplitter</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters.OfficialFoldsDatasetSplitter" href="dataset_splitters.html#deepsport_utilities.ds.instants_dataset.dataset_splitters.OfficialFoldsDatasetSplitter">OfficialFoldsDatasetSplitter</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters.SingleArenaDatasetSplitter" href="dataset_splitters.html#deepsport_utilities.ds.instants_dataset.dataset_splitters.SingleArenaDatasetSplitter">SingleArenaDatasetSplitter</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.additional_keys_usage"><code class="name">var <span class="ident">additional_keys_usage</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.folds"><code class="name">var <span class="ident">folds</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.repetitions"><code class="name">var <span class="ident">repetitions</span> : dict</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split"><code class="name">var <span class="ident">split</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.validation_pc"><code class="name">var <span class="ident">validation_pc</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split_keys"><code class="name flex">
+<span>def <span class="ident">split_keys</span></span>(<span>self, keys, fold=0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_keys(self, keys, fold=0):
+    fold_index = fold
+    assert 0 &lt;= fold_index &lt;= len(self.folds)-1, &#34;Invalid fold index&#34;
+
+    testing_fold = self.folds[fold_index]
+    self.testing_arena_labels = set(self.split.get(testing_fold, []))
+    remaining_arena_labels = [label for f in self.folds.replace(testing_fold, &#34;&#34;) for label in self.split.get(f, [])]
+    testing_keys = []
+    remaining_keys = defaultdict(list)
+    additional_keys = []
+    additional_arena_labels = set()
+    for key in keys:
+        if key.arena_label in remaining_arena_labels:
+            remaining_keys[key.instant_key].append(key)
+        elif key.arena_label in self.testing_arena_labels:
+            testing_keys.append(key)
+        else:
+            additional_keys.append(key)
+            additional_arena_labels.add(key.arena_label)
+
+    # Backup random seed
+    random_state = random.getstate()
+    random.seed(fold)
+
+    total_length = len(remaining_keys)
+    validation_keys, training_keys = [], []
+    indices = np.zeros(total_length, dtype=np.int32) # a vector of 1s for validation keys
+    indices[np.random.choice(total_length, total_length*self.validation_pc//100, replace=False)] = 1
+    for i, instant_key in zip(indices, remaining_keys):
+        (training_keys, validation_keys)[i].extend(remaining_keys[instant_key])
+
+    # Restore random seed
+    random.setstate(random_state)
+    testing2_keys = None
+    if additional_keys:
+        if self.additional_keys_usage == &#34;testing&#34;:
+            testing_keys += additional_keys
+            self.testing_arena_labels = self.testing_arena_labels.union(additional_arena_labels)
+        elif self.additional_keys_usage == &#34;training&#34;:
+            print(f&#34;WARNING: adding {len(additional_keys)} keys to the training set&#34;)
+            training_keys += additional_keys
+        elif self.additional_keys_usage == &#34;validation&#34;:
+            validation_keys += additional_keys
+        elif self.additional_keys_usage in [&#34;none&#34;, &#34;skip&#34;]:
+            pass
+        elif self.additional_keys_usage == &#34;testing2&#34;:
+            testing2_keys = additional_keys
+        else:
+            raise ValueError(&#34;They are additional arena labels that I don&#39;t know what to do with. Please tell me the &#39;additional_keys_usage&#39; argument&#34;)
+
+    self.testing_arena_labels = list(self.testing_arena_labels)
+
+    return training_keys, validation_keys, testing_keys, testing2_keys</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags"><code class="flex name class">
+<span>class <span class="ident">DownloadFlags</span></span>
+<span>(</span><span>value, names=None, *, module=None, qualname=None, type=None, start=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>An enumeration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DownloadFlags(IntFlag):
+    NONE = 0
+    WITH_IMAGE = 1
+    WITH_CALIB_FILE = 2
+    #WITH_FOREGROUND_MASK_FILE = 4 # obsolete
+    WITH_HUMAN_SEGMENTATION_MASKS = 8
+    WITH_FOLLOWING_IMAGE = 16
+    WITH_ALL_IMAGES = 32
+    ALL = -1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>enum.IntFlag</li>
+<li>builtins.int</li>
+<li>enum.Flag</li>
+<li>enum.Enum</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.ALL"><code class="name">var <span class="ident">ALL</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.NONE"><code class="name">var <span class="ident">NONE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_ALL_IMAGES"><code class="name">var <span class="ident">WITH_ALL_IMAGES</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_CALIB_FILE"><code class="name">var <span class="ident">WITH_CALIB_FILE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE"><code class="name">var <span class="ident">WITH_FOLLOWING_IMAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS"><code class="name">var <span class="ident">WITH_HUMAN_SEGMENTATION_MASKS</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_IMAGE"><code class="name">var <span class="ident">WITH_IMAGE</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.GameGammaColorTransform"><code class="flex name class">
+<span>class <span class="ident">GameGammaColorTransform</span></span>
+<span>(</span><span>transform_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameGammaColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        #29582 : [1.04, 1.02, 0.93],
+        #24651 : [1.05, 1.02, 0.92],
+        #30046 : [1.01, 1.01, 1.01]
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key, view):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            gammas = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = gamma_correction(view.image, gammas)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.GameRGBColorTransform"><code class="flex name class">
+<span>class <span class="ident">GameRGBColorTransform</span></span>
+<span>(</span><span>transform_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameRGBColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key: ViewKey, view: View):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            adaptation_vector = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = np.clip(view.image.astype(np.float32)*adaptation_vector, 0, 255).astype(np.uint8)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.GammaCorrectionTransform"><code class="flex name class">
+<span>class <span class="ident">GammaCorrectionTransform</span></span>
+<span>(</span><span>transform_dict=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GammaCorrectionTransform(Transform):
+    def __init__(self, transform_dict=None):
+        self.transform_dict = {
+            29582 : [1.04, 1.02, 0.93], # Gravelines game
+            24651 : [1.05, 1.02, 0.92], # Gravelines game
+            69244 : [1.035, 1.025, 0.990], # Gravelines game
+            59201 : [1.040, 1.030, 0.990], # Gravelines game
+            30046 : [0.98, 0.98, 0.98], # Strasbourg game
+            # TODO: LAPUA
+            # TODO: ESPOO
+            **(transform_dict if transform_dict is not None else {})
+        }
+        # transform_dict is a dict of game_id, gamma correction triplets
+        assert all([isinstance(k, int) for k in self.transform_dict.keys()])
+
+    def __call__(self, instant_key: InstantKey, instant: Instant):
+        if instant_key.game_id in self.transform_dict.keys():
+            gammas = np.array(self.transform_dict[instant_key.game_id])
+            for k, image in instant.all_images.items():
+                instant.all_images[k] = gamma_correction(image, gammas)
+        return instant</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant"><code class="flex name class">
+<span>class <span class="ident">Instant</span></span>
+<span>(</span><span>db_item, dataset_folder, download_flags)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Python object describing dataset item.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Attributes that require files to be downloaded (like images) should
+be decorated with <code>functools.cached_property</code> to prevent being read before they get
+downloaded.</p>
+</div></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Instant(GenericItem):
+    def __init__(self, db_item, dataset_folder, download_flags):
+        self.dataset_folder = dataset_folder
+        self.download_flags = download_flags
+
+        self.arena_label = db_item[&#34;arena_label&#34;]
+        self.num_cameras = db_item[&#34;num_cameras&#34;]
+
+        self.game_id = db_item[&#34;game_id&#34;]
+        self.league_id = db_item[&#34;league_id&#34;]
+        self.rule_type = db_item[&#34;rule_type&#34;]
+        self.sport = db_item[&#34;sport&#34;]
+
+        self.timestamp = db_item[&#34;timestamp&#34;]
+        self.offsets = db_item[&#34;offsets&#34;]
+
+        self.annotation_state = db_item.get(&#34;annotation_state&#34;, None)
+        self.annotator_id = db_item.get(&#34;annotator_id&#34;, None)
+        self.annotation_ts = db_item.get(&#34;annotation_ts&#34;, None)
+        self.annotation_duration = db_item.get(&#34;annotation_duration&#34;, None)
+        self.annotation_game_state = db_item.get(&#34;annotation_game_state&#34;, &#34;standard_game&#34;)
+        self.annotated_human_masks = db_item.get(&#34;annotated_human_masks&#34;, False)
+
+        self.format =  db_item[&#34;format&#34;]
+
+        annotation_map = {
+            &#34;player&#34;: Player,
+            &#34;ball&#34;: Ball
+        }
+        self.annotations = [annotation_map[a[&#39;type&#39;]](a)for a in (db_item.get(&#39;annotations&#39;, []) or [])]
+
+        self.image_source = db_item.get(&#34;image_source&#34;, &#34;raw&#34;)
+        self.court_dim = COURT_DIM[self.rule_type]
+        self.court = Court(self.rule_type)
+        self.timestamps = [self.timestamp for _ in range(self.num_cameras)]
+
+    def __str__(self):
+        return &#34;({}[{:5d}]@{})&#34;.format(self.arena_label, self.game_id, self.timestamp)
+
+    def get_filekey(self, prefix, suffix):
+        return os.path.join(self.arena_label, str(self.game_id), &#34;{}{}{}&#34;.format(prefix, self.timestamp, suffix))
+
+    @cached_property
+    def calibs(self):
+        return [self.__load_calib(c) for c in range(self.num_cameras)]
+
+    @cached_property
+    def all_images(self):
+        _ = self.calibs # triggers calib loading
+        all_images = {}
+        for c in range(self.num_cameras):
+            for idx, offset in enumerate(self.offsets):
+                if     (idx == 0) \
+                    or (idx == 1 and self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE) \
+                    or (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES):
+                    try:
+                        all_images[(c,offset)] = self.__load_image(c, offset)
+                    except BaseException as e:
+                        raise ValueError((self.offsets, self.key)) from e
+        return all_images
+
+    @property
+    def images(self):
+        return [img for (c, offset), img in self.all_images.items() if offset == 0]
+
+    @cached_property
+    def human_masks(self):
+        assert self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS, \
+            &#34;Provided flag doesn&#39;t contain &#39;human_masks&#39;. Recreate your dataset with appropriate DownloadFlags&#34;
+        try:
+            filenames = [os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_humans.png&#34;)) for cam_idx in range(self.num_cameras)]
+            return [imageio.imread(filename) for filename in filenames] # imageio handles 16bits images while cv2 doesn&#39;t
+        except FileNotFoundError:
+            # If one human_masks file is missing for one camera, no human_masks will be available.
+            # If file is missing because no human appears on that camera, you should upload an empty image to the bucket.
+            return []
+
+    def __load_image(self, cam_idx, offset=0):
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;_{}.png&#34;.format(offset)))
+        image = cv2.imread(filename)
+        if image is None:
+            raise FileNotFoundError(filename)
+        return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    def __load_calib(self, cam_idx):
+        assert self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE, \
+            &#34;Provided flag doesn&#39;t contain calib files. Recreate your dataset with appropriate DownloadFlags&#34;
+        filename = os.path.join(self.dataset_folder, self.get_filekey(&#34;camcourt{}_&#34;.format(cam_idx+1), &#34;.json&#34;))
+        return parse_DeepSport_calib(json.load(open(filename, &#39;r&#39;))[&#39;calibration&#39;])
+
+    def draw(self, i=None, draw_players=True, draw_ball=True, draw_lines=False):
+        if i is None:
+            w, h = self.court_dim
+            image = np.ones((int(h), int(w), 3), np.uint8)*255
+            R = np.identity(3)
+            C = Point3D(w/2, h/2, -3000)
+            m = w/0.01  # pixel_size (pixels/meters) on 1 centimeter sensor
+            f = 0.009  # focal (meters)
+            R = np.identity(3)
+            calib = Calib(width=w, height=h, T=-R@C[:3], R=R, K=np.array([[f*m,  0, w/2], [0, f*m, h/2], [0,  0,  1]]))
+        else:
+            image = self.images[i].copy()
+            calib = self.calibs[i]
+
+        if draw_lines:
+            self.court.draw_lines(image, calib)
+        # if fg_detections is not None:
+        #     calib = self.calibs[i] if i is not None else None
+        #     detections = self.fg_detections[i][fg_detections] if i is not None else \
+        #                  itertools.chain(*self.fg_detections)
+        #     for det in detections:
+        #         v = calib.project_3D_to_2D(det.feet).to_int_tuple()
+        #         cv2.circle(image, v[0:2].flatten(), 7, [255, 0, 255], -1)
+
+        for annotation in self.annotations:
+            if annotation.type == &#34;player&#34; and draw_players:
+                head = calib.project_3D_to_2D(annotation.head).to_int_tuple()
+                hips = calib.project_3D_to_2D(annotation.hips).to_int_tuple()
+                foot1 = calib.project_3D_to_2D(annotation.foot1).to_int_tuple()
+                foot2 = calib.project_3D_to_2D(annotation.foot2).to_int_tuple()
+
+                if any([kp[0] &lt; 0 or kp[1] &gt; image.shape[1] or kp[1] &lt; 0 or kp[1] &gt; image.shape[0] for kp in [head, hips]]):
+                    continue
+
+                # head tip
+                length = 70 # cm
+                headT3D = length * Point3D(np.cos(annotation.headAngle), np.sin(annotation.headAngle), 0)
+                headT = calib.project_3D_to_2D(annotation.head+headT3D).to_int_tuple()
+
+                color = [0, 0, 0]
+                color[annotation.team-1] = 255
+
+                if i is not None:
+                    cv2.line(image, hips, foot1, color, 3)
+                    cv2.line(image, hips, foot2, color, 3)
+                    cv2.line(image, head, hips, color, 3)
+                else:
+                    cv2.circle(image, head, 5, color, -1)
+                cv2.line(image, head, headT, color, 3)
+
+            elif annotation.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(annotation.center).to_list())
+                color = [255, 255, 0]
+                cv2.circle(image, center, 5, color, -1)
+        for detection in getattr(self, &#34;detections&#34;, []):
+            if detection.type == &#34;ball&#34; and draw_ball:
+                center = tuple(int(x) for x in calib.project_3D_to_2D(detection.center).to_list())
+                color = [0, 255, 255]
+                cv2.circle(image, center, 5, color, -1)
+        return image
+
+    @property
+    def files(self):
+        for i in range(0, int(self.num_cameras)):
+            if self.download_flags &amp; DownloadFlags.WITH_IMAGE:
+                for idx, offset in enumerate(self.offsets):
+                    if     (self.download_flags &amp; DownloadFlags.WITH_ALL_IMAGES) \
+                        or (self.download_flags &amp; DownloadFlags.WITH_FOLLOWING_IMAGE and idx == 1) \
+                        or (idx == 0):
+                        yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_{}.png&#34;.format(offset))
+            if self.download_flags &amp; DownloadFlags.WITH_CALIB_FILE:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;.json&#34;)
+            if self.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS:
+                yield self.get_filekey(&#34;camcourt{}_&#34;.format(i+1), &#34;_humans.png&#34;)
+
+    @property
+    def key(self):
+        return InstantKey(self.arena_label, self.game_id, self.timestamp)
+
+    @property
+    def db_item(self):
+        db_item = {
+            &#34;format&#34;: self.format,
+            &#34;image_source&#34;: self.image_source,
+
+            # arena relative infos
+            &#34;arena_label&#34;: self.arena_label,
+            &#34;num_cameras&#34;: self.num_cameras,
+
+            # game relative infos
+            &#34;sport&#34;: self.sport,
+            &#34;game_id&#34;: self.game_id,
+            &#34;league_id&#34;: self.league_id,
+            &#34;rule_type&#34;: self.rule_type,
+
+            # instant relative infos
+            &#34;timestamp&#34;: self.timestamp,
+            &#34;offsets&#34;: self.offsets,
+
+            &#34;annotation_state&#34;: self.annotation_state,
+            &#34;annotations&#34;: [a.to_dict() for a in self.annotations],
+            &#34;annotated_human_masks&#34;: self.annotated_human_masks
+        }
+
+        for attr in [&#34;annotation_ts&#34;, &#34;annotator_id&#34;, &#34;annotation_duration&#34;, &#34;annotation_game_state&#34;]:
+            if value := getattr(self, attr, None):
+                db_item[attr] = value
+        return db_item
+
+    def to_dict(self):
+        return {&#34;db_item&#34;: self.db_item, &#34;download_flags&#34;: self.download_flags, &#34;dataset_folder&#34;: self.dataset_folder}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.generic_dataset.GenericItem" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem">GenericItem</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.all_images"><code class="name">var <span class="ident">all_images</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.calibs"><code class="name">var <span class="ident">calibs</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.human_masks"><code class="name">var <span class="ident">human_masks</span></code></dt>
+<dd>
+<div class="desc"><p>Declares a property to be lazy (evaluated only if absent from the object)
+Also provides a first basic mechanism for a lazy property. Enhanced by Lazy</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def __get__(self, instance, ownerclass=None):
+    name = self.name
+    value = instance.__dict__.get(name, _NOVALUE)
+    if value is _NOVALUE:
+        try:
+            value = self.initializer(instance)
+        except AttributeError as e:
+            raise LazyPropertyError(name) from e
+        instance.__dict__[name] = value
+    return value</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.images"><code class="name">var <span class="ident">images</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def images(self):
+    return [img for (c, offset), img in self.all_images.items() if offset == 0]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.draw"><code class="name flex">
+<span>def <span class="ident">draw</span></span>(<span>self, i=None, draw_players=True, draw_ball=True, draw_lines=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw(self, i=None, draw_players=True, draw_ball=True, draw_lines=False):
+    if i is None:
+        w, h = self.court_dim
+        image = np.ones((int(h), int(w), 3), np.uint8)*255
+        R = np.identity(3)
+        C = Point3D(w/2, h/2, -3000)
+        m = w/0.01  # pixel_size (pixels/meters) on 1 centimeter sensor
+        f = 0.009  # focal (meters)
+        R = np.identity(3)
+        calib = Calib(width=w, height=h, T=-R@C[:3], R=R, K=np.array([[f*m,  0, w/2], [0, f*m, h/2], [0,  0,  1]]))
+    else:
+        image = self.images[i].copy()
+        calib = self.calibs[i]
+
+    if draw_lines:
+        self.court.draw_lines(image, calib)
+    # if fg_detections is not None:
+    #     calib = self.calibs[i] if i is not None else None
+    #     detections = self.fg_detections[i][fg_detections] if i is not None else \
+    #                  itertools.chain(*self.fg_detections)
+    #     for det in detections:
+    #         v = calib.project_3D_to_2D(det.feet).to_int_tuple()
+    #         cv2.circle(image, v[0:2].flatten(), 7, [255, 0, 255], -1)
+
+    for annotation in self.annotations:
+        if annotation.type == &#34;player&#34; and draw_players:
+            head = calib.project_3D_to_2D(annotation.head).to_int_tuple()
+            hips = calib.project_3D_to_2D(annotation.hips).to_int_tuple()
+            foot1 = calib.project_3D_to_2D(annotation.foot1).to_int_tuple()
+            foot2 = calib.project_3D_to_2D(annotation.foot2).to_int_tuple()
+
+            if any([kp[0] &lt; 0 or kp[1] &gt; image.shape[1] or kp[1] &lt; 0 or kp[1] &gt; image.shape[0] for kp in [head, hips]]):
+                continue
+
+            # head tip
+            length = 70 # cm
+            headT3D = length * Point3D(np.cos(annotation.headAngle), np.sin(annotation.headAngle), 0)
+            headT = calib.project_3D_to_2D(annotation.head+headT3D).to_int_tuple()
+
+            color = [0, 0, 0]
+            color[annotation.team-1] = 255
+
+            if i is not None:
+                cv2.line(image, hips, foot1, color, 3)
+                cv2.line(image, hips, foot2, color, 3)
+                cv2.line(image, head, hips, color, 3)
+            else:
+                cv2.circle(image, head, 5, color, -1)
+            cv2.line(image, head, headT, color, 3)
+
+        elif annotation.type == &#34;ball&#34; and draw_ball:
+            center = tuple(int(x) for x in calib.project_3D_to_2D(annotation.center).to_list())
+            color = [255, 255, 0]
+            cv2.circle(image, center, 5, color, -1)
+    for detection in getattr(self, &#34;detections&#34;, []):
+        if detection.type == &#34;ball&#34; and draw_ball:
+            center = tuple(int(x) for x in calib.project_3D_to_2D(detection.center).to_list())
+            color = [0, 255, 255]
+            cv2.circle(image, center, 5, color, -1)
+    return image</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.get_filekey"><code class="name flex">
+<span>def <span class="ident">get_filekey</span></span>(<span>self, prefix, suffix)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_filekey(self, prefix, suffix):
+    return os.path.join(self.arena_label, str(self.game_id), &#34;{}{}{}&#34;.format(prefix, self.timestamp, suffix))</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Instant.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {&#34;db_item&#34;: self.db_item, &#34;download_flags&#34;: self.download_flags, &#34;dataset_folder&#34;: self.dataset_folder}</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.generic_dataset.GenericItem" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem">GenericItem</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.db_item" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.db_item">db_item</a></code></li>
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.files" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.files">files</a></code></li>
+<li><code><a title="deepsport_utilities.ds.generic_dataset.GenericItem.key" href="../generic_dataset.html#deepsport_utilities.ds.generic_dataset.GenericItem.key">key</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.InstantKey"><code class="flex name class">
+<span>class <span class="ident">InstantKey</span></span>
+<span>(</span><span>arena_label: str, game_id: int, timestamp: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>InstantKey(arena_label, game_id, timestamp)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class InstantKey(NamedTuple):
+    arena_label: str
+    game_id: int
+    timestamp: int</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.tuple</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.InstantKey.arena_label"><code class="name">var <span class="ident">arena_label</span> : str</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 0</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.InstantKey.game_id"><code class="name">var <span class="ident">game_id</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 1</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.InstantKey.timestamp"><code class="name">var <span class="ident">timestamp</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 2</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter"><code class="flex name class">
+<span>class <span class="ident">KFoldsArenaLabelsTestingDatasetSplitter</span></span>
+<span>(</span><span>fold_count=8, validation_pc=15, evaluation_sets_repetitions=5)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>DeepSportDatasetSplitter(validation_pc: int = 15, additional_keys_usage: str = 'skip', folds: str = 'ABCDEF', repetitions: dict = None)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class KFoldsArenaLabelsTestingDatasetSplitter(DeepSportDatasetSplitter):
+    def __init__(self, fold_count=8, validation_pc=15, evaluation_sets_repetitions=5):
+        self.fold_count = fold_count
+        self.validation_pc = validation_pc
+        self.evaluation_sets_repetitions = evaluation_sets_repetitions
+
+    def __call__(self, dataset, fold=0):
+        keys = list(dataset.keys.all())
+        assert fold &gt;= 0 and fold &lt; self.fold_count
+
+        keys_dict = count_keys_per_arena_label(keys)
+        keys_lists = split_equally(keys_dict, self.fold_count)
+
+        self.testing_arena_labels = keys_lists[fold]
+        testing_keys = [k for k in keys if k.arena_label in self.testing_arena_labels]
+        remaining_keys = [k for k in keys if k not in testing_keys]
+
+        # Backup random seed
+        random_state = random.getstate()
+        random.seed(fold)
+
+        validation_keys = random.sample(remaining_keys, len(keys)*self.validation_pc//100)
+
+        # Restore random seed
+        random.setstate(random_state)
+
+        training_keys = [k for k in remaining_keys if k not in validation_keys]
+        r = self.evaluation_sets_repetitions
+        return [
+            Subset(name=&#34;training&#34;, subset_type=SubsetType.TRAIN, keys=training_keys, dataset=dataset),
+            Subset(name=&#34;validation&#34;, subset_type=SubsetType.EVAL, keys=validation_keys, dataset=dataset, repetitions=r),
+            Subset(name=&#34;testing&#34;, subset_type=SubsetType.EVAL, keys=testing_keys, dataset=dataset, repetitions=r),
+        ]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters.DeepSportDatasetSplitter" href="dataset_splitters.html#deepsport_utilities.ds.instants_dataset.dataset_splitters.DeepSportDatasetSplitter">DeepSportDatasetSplitter</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.additional_keys_usage"><code class="name">var <span class="ident">additional_keys_usage</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.folds"><code class="name">var <span class="ident">folds</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.repetitions"><code class="name">var <span class="ident">repetitions</span> : dict</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.validation_pc"><code class="name">var <span class="ident">validation_pc</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.Player"><code class="flex name class">
+<span>class <span class="ident">Player</span></span>
+<span>(</span><span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Player():
+    def __init__(self, data):
+        self.type = &#34;player&#34;
+        self.origin = data.get(&#39;origin&#39;, &#34;annotation&#34;)
+        self.team = data[&#39;team&#39;]
+        self.head = Point3D(*data[&#39;head&#39;])
+        self.hips = Point3D(*data[&#39;hips&#39;])
+        self.foot1 = Point3D(*data[&#39;foot1&#39;])
+        self.foot2 = Point3D(*data[&#39;foot2&#39;])
+        self.foot1_at_the_ground = str(data[&#34;foot1_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.foot2_at_the_ground = str(data[&#34;foot2_at_the_ground&#34;]).lower() == &#34;true&#34;
+        self.headAngle = data[&#39;headOrientation&#39;]
+        self.camera = data[&#39;image&#39;]
+        self.hipsAngle = data.get(&#39;hipsOrientation&#39;, self.headAngle)
+        self.feet = (self.foot1 + self.foot2) / 2
+
+    def to_dict(self):
+        return {
+            &#34;type&#34;: self.type,
+            &#34;origin&#34;: self.origin,
+            &#34;team&#34;: self.team,
+            &#34;head&#34;: self.head.to_list(),
+            &#34;headOrientation&#34;: self.headAngle,
+            &#34;hips&#34;: self.hips.to_list(),
+            &#34;foot1&#34;: self.foot1.to_list(),
+            &#34;foot2&#34;: self.foot2.to_list(),
+            &#34;foot1_at_the_ground&#34;: self.foot1_at_the_ground,
+            &#34;foot2_at_the_ground&#34;: self.foot2_at_the_ground,
+            &#34;image&#34;: self.camera
+        }</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.Player.to_dict"><code class="name flex">
+<span>def <span class="ident">to_dict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def to_dict(self):
+    return {
+        &#34;type&#34;: self.type,
+        &#34;origin&#34;: self.origin,
+        &#34;team&#34;: self.team,
+        &#34;head&#34;: self.head.to_list(),
+        &#34;headOrientation&#34;: self.headAngle,
+        &#34;hips&#34;: self.hips.to_list(),
+        &#34;foot1&#34;: self.foot1.to_list(),
+        &#34;foot2&#34;: self.foot2.to_list(),
+        &#34;foot1_at_the_ground&#34;: self.foot1_at_the_ground,
+        &#34;foot2_at_the_ground&#34;: self.foot2_at_the_ground,
+        &#34;image&#34;: self.camera
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.TestingArenaLabelsDatasetSplitter"><code class="flex name class">
+<span>class <span class="ident">TestingArenaLabelsDatasetSplitter</span></span>
+<span>(</span><span>testing_arena_labels, validation_pc=15, repetitions=1)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TestingArenaLabelsDatasetSplitter():
+    def __init__(self, testing_arena_labels, validation_pc=15, repetitions=1):
+        self.testing_arena_labels = testing_arena_labels
+        self.validation_pc = validation_pc
+        self.repetitions = repetitions
+        assert isinstance(self.testing_arena_labels, (list, tuple))
+
+    def __call__(self, dataset, fold=0):
+        testing_keys, remaining_keys = [], []
+        for key in dataset.keys:
+            (remaining_keys, testing_keys)[key.arena_label in self.testing_arena_labels].append(key)
+
+        # Backup random seed
+        np_random_state = np.random.get_state()
+        np.random.seed(fold)
+
+        total_length = len(remaining_keys)
+        validation_keys, training_keys = [], []
+        validation_indices = np.zeros(total_length, dtype=np.int32) # a vector of 1s for validation keys
+        validation_indices[np.random.choice(total_length, total_length*self.validation_pc//100, replace=False)] = 1
+        for i, key in zip(validation_indices, remaining_keys):
+            (training_keys, validation_keys)[i].append(key)
+
+        # Restore random seed
+        np.random.set_state(np_random_state)
+
+        subsets = [
+            Subset(name=&#34;training&#34;, subset_type=SubsetType.TRAIN, keys=training_keys, dataset=dataset),
+            Subset(name=&#34;validation&#34;, subset_type=SubsetType.EVAL, keys=validation_keys, dataset=dataset, repetitions=self.repetitions),
+            Subset(name=&#34;testing&#34;, subset_type=SubsetType.EVAL, keys=testing_keys, dataset=dataset, repetitions=self.repetitions),
+        ]
+        return [s for s in subsets if len(s.keys) &gt; 0]</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.UndistortTransform"><code class="flex name class">
+<span>class <span class="ident">UndistortTransform</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UndistortTransform(Transform):
+    def __call__(self, key, view):
+        all_images = []
+        for image in view.all_images:
+            all_images.append(cv2.undistort(image, view.calib.K, view.calib.kc))
+        view.calib = view.calib.update(kc=np.array([0,0,0,0,0]))
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.View"><code class="flex name class">
+<span>class <span class="ident">View</span></span>
+<span>(</span><span>all_images, calib, annotations=None, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class View():
+    def __init__(self, all_images, calib, annotations=None, **kwargs):
+        self.image = all_images[0]
+        self.all_images = all_images
+        self.calib = calib
+        self.annotations = annotations
+        for k, v in kwargs.items():
+            setattr(self, k, v)
+
+    def draw(self):
+        image = self.image.copy()
+
+        coord_2D_int = lambda x: self.calib.project_3D_to_2D(x).to_int_tuple()
+
+        for annotation in self.annotations:
+            if annotation.type == &#34;player&#34;:
+                head = annotation.head
+                hips = annotation.hips
+                foot1 = annotation.foot1
+                foot2 = annotation.foot2
+
+                color = [0, 0, 0]
+                color[annotation.team-1] = 255
+                cv2.line(image, coord_2D_int(head), coord_2D_int(hips), color, 3)
+                cv2.line(image, coord_2D_int(hips), coord_2D_int(foot1), color, 3)
+                cv2.line(image, coord_2D_int(hips), coord_2D_int(foot2), color, 3)
+
+            elif annotation.type == &#34;ball&#34;:
+                ball =  annotation.center
+                color = [255, 255, 0]
+                cv2.circle(image, coord_2D_int(ball), 5, color, -1)
+
+        return image</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.View.draw"><code class="name flex">
+<span>def <span class="ident">draw</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def draw(self):
+    image = self.image.copy()
+
+    coord_2D_int = lambda x: self.calib.project_3D_to_2D(x).to_int_tuple()
+
+    for annotation in self.annotations:
+        if annotation.type == &#34;player&#34;:
+            head = annotation.head
+            hips = annotation.hips
+            foot1 = annotation.foot1
+            foot2 = annotation.foot2
+
+            color = [0, 0, 0]
+            color[annotation.team-1] = 255
+            cv2.line(image, coord_2D_int(head), coord_2D_int(hips), color, 3)
+            cv2.line(image, coord_2D_int(hips), coord_2D_int(foot1), color, 3)
+            cv2.line(image, coord_2D_int(hips), coord_2D_int(foot2), color, 3)
+
+        elif annotation.type == &#34;ball&#34;:
+            ball =  annotation.center
+            color = [255, 255, 0]
+            cv2.circle(image, coord_2D_int(ball), 5, color, -1)
+
+    return image</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey"><code class="flex name class">
+<span>class <span class="ident">ViewKey</span></span>
+<span>(</span><span>instant_key: <a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey">InstantKey</a>, camera: int, index: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>ViewKey(instant_key, camera, index)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ViewKey(NamedTuple):
+    instant_key: InstantKey
+    camera: int
+    index: int
+
+    @property
+    def arena_label(self):
+        return self.instant_key.arena_label
+
+    @property
+    def timestamp(self):
+        return self.instant_key.timestamp
+
+    @property
+    def game_id(self):
+        return self.instant_key.game_id</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.tuple</li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.arena_label"><code class="name">var <span class="ident">arena_label</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def arena_label(self):
+    return self.instant_key.arena_label</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.camera"><code class="name">var <span class="ident">camera</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 1</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.game_id"><code class="name">var <span class="ident">game_id</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def game_id(self):
+    return self.instant_key.game_id</code></pre>
+</details>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.index"><code class="name">var <span class="ident">index</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 2</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.instant_key"><code class="name">var <span class="ident">instant_key</span> : <a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey">InstantKey</a></code></dt>
+<dd>
+<div class="desc"><p>Alias for field number 0</p></div>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewKey.timestamp"><code class="name">var <span class="ident">timestamp</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def timestamp(self):
+    return self.instant_key.timestamp</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">ViewRandomCropperTransform</span></span>
+<span>(</span><span>output_shape, size_min, size_max, max_angle=0, do_flip=False, padding=0, margin=0, debug=False, regenerate=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ViewRandomCropperTransform(RandomCropperTransform):
+    def _apply_transformation(self, view, A):
+        if self.debug:
+            w, h = self.output_shape
+            points = Point2D(np.linalg.inv(A)@Point2D([0,0,w,w],[0,h,h,0]).H)
+            cv2.polylines(view.image, [points.T.astype(np.int32)], True, (255,0,0), self.linewidth)
+        else:
+            view.image = cv2.warpAffine(view.image, A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            view.calib = view.calib.update(K=A@view.calib.K, width=self.output_shape[0], height=self.output_shape[1])
+
+            if hasattr(view, &#34;all_images&#34;):
+                for i in range(1, len(view.all_images)): # skip first image as it was already done
+                    view.all_images[i] = cv2.warpAffine(view.all_images[i], A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            if hasattr(view, &#34;human_masks&#34;) and view.human_masks is not None:
+                view.human_masks = cv2.warpAffine(view.human_masks, A[0:2,:], self.output_shape, flags=cv2.INTER_NEAREST)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform">NaiveViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform" href="views_transforms.html#deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform">PlayerViewRandomCropperTransform</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.transforms.RandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewsDataset"><code class="flex name class">
+<span>class <span class="ident">ViewsDataset</span></span>
+<span>(</span><span>instants_dataset: <a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantsDataset">InstantsDataset</a>, view_builder: <a title="deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder" href="views_dataset.html#deepsport_utilities.ds.instants_dataset.views_dataset.ViewBuilder">ViewBuilder</a>, output_shape=None, rescale=True, crop=True, debug=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Dataset of views built according the given ViewBuilder, extracted from the given InstantDataset.</p>
+<h2 id="arguments">Arguments</h2>
+<p>instants_dataset
+- the InstantDataset from which views are built
+view_builder
+- the ViewBuilder dictating what type of view is to be created
+output_shape
+- view aspect ratio (or exact dimension if 'rescale' is given)
+rescale
+- tells whether the view should be rescaled to output_shape size
+crop
+- tells whether the original image should be cropped or a rectangle
+should be drawn instead (for debug purposes)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ViewsDataset(AugmentedDataset):
+    &#34;&#34;&#34; Dataset of views built according the given ViewBuilder, extracted from the given InstantDataset.
+        Arguments:
+            instants_dataset   - the InstantDataset from which views are built
+            view_builder       - the ViewBuilder dictating what type of view is to be created
+            output_shape       - view aspect ratio (or exact dimension if &#39;rescale&#39; is given)
+            rescale            - tells whether the view should be rescaled to output_shape size
+            crop               - tells whether the original image should be cropped or a rectangle
+                                 should be drawn instead (for debug purposes)
+    &#34;&#34;&#34;
+    def __init__(self, instants_dataset: InstantsDataset, view_builder: ViewBuilder, output_shape=None, rescale=True, crop=True, debug=False):
+        super().__init__(instants_dataset)
+        self.view_builder = view_builder
+        self.output_shape = output_shape
+        self.rescale = rescale
+        self.crop = crop
+        self.debug = debug
+
+    def _crop_view(self, view_description: ViewDescription, instant: Instant, **kwargs):
+        padding = self.view_builder.padding
+        c = view_description.camera
+        input_height, input_width, _ = instant.images[c].shape
+        aspect_ratio = self.output_shape[0]/self.output_shape[1] if self.output_shape else None
+        x_slice, y_slice = view_description.box.increase_box(
+            max_width=input_width,
+            max_height=input_height,
+            aspect_ratio=aspect_ratio,
+            padding=self.view_builder.padding
+        )
+
+        if self.crop:
+            all_images = []
+            for offset in instant.offsets:
+                index = (c,offset)
+                if index not in instant.all_images:
+                    continue # that offset was not downloaded with the download flag of instants dataset
+                image = crop_padded(instant.all_images[index], x_slice, y_slice, padding)
+                height, width, _ = image.shape
+                if self.rescale and self.output_shape and (width, height) != self.output_shape:
+                    image = cv2.resize(image, self.output_shape)
+                all_images.append(image)
+            calib = instant.calibs[c].crop(x_slice, y_slice) # handles negative `slice.start` positions
+            if self.rescale and self.output_shape:
+                calib = calib.scale(*self.output_shape)
+            if instant.download_flags &amp; DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS and instant.human_masks:
+                human_masks = crop_padded(instant.human_masks[c], x_slice, y_slice, padding)
+                if self.rescale and self.output_shape:
+                    human_masks = cv2.resize(human_masks, self.output_shape)
+            else:
+                human_masks = None
+        else:
+            if self.debug:
+                all_images = []
+                for offset in instant.offsets:
+                    # the coordinates of the rectangle below are probably wrong see documentation of cv2.rectangle
+                    raise NotImplementedError(&#34;TODO: check rectangle coordinates&#34;)
+                    image = cv2.rectangle(instant.all_images[(c, offset)], (x_slice.start, x_slice.stop), (y_slice.start, y_slice.stop), (255,0,0), 10)
+                    all_images.append(image)
+            else:
+                all_images = instant.all_images
+            calib = instant.calibs[c]
+            human_masks = instant.human_masks[c]
+
+        return View(all_images, calib, instant.annotations, rule_type=instant.rule_type, human_masks=human_masks, **kwargs)
+
+    def augment(self, instant_key: InstantKey, instant: Instant):
+        random_state = np.random.get_state()
+        np.random.seed(instant_key.timestamp &amp; 0xFFFFFFFF)
+
+        for view_description in self.view_builder(instant_key, instant):
+            view_key = ViewKey(instant_key, view_description.camera, view_description.index)
+            yield view_key, self._crop_view(view_description, instant, **view_description.data)
+
+        # required to keep the random seed random
+        np.random.set_state(random_state)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>mlworkflow.datasets.AugmentedDataset</li>
+<li>mlworkflow.datasets.Dataset</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.ViewsDataset.augment"><code class="name flex">
+<span>def <span class="ident">augment</span></span>(<span>self, instant_key: <a title="deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.InstantKey">InstantKey</a>, instant: <a title="deepsport_utilities.ds.instants_dataset.instants_dataset.Instant" href="instants_dataset.html#deepsport_utilities.ds.instants_dataset.instants_dataset.Instant">Instant</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def augment(self, instant_key: InstantKey, instant: Instant):
+    random_state = np.random.get_state()
+    np.random.seed(instant_key.timestamp &amp; 0xFFFFFFFF)
+
+    for view_description in self.view_builder(instant_key, instant):
+        view_key = ViewKey(instant_key, view_description.camera, view_description.index)
+        yield view_key, self._crop_view(view_description, instant, **view_description.data)
+
+    # required to keep the random seed random
+    np.random.set_state(random_state)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities.ds" href="../index.html">deepsport_utilities.ds</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.dataset_splitters" href="dataset_splitters.html">deepsport_utilities.ds.instants_dataset.dataset_splitters</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_dataset" href="instants_dataset.html">deepsport_utilities.ds.instants_dataset.instants_dataset</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.instants_transforms" href="instants_transforms.html">deepsport_utilities.ds.instants_dataset.instants_transforms</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_dataset" href="views_dataset.html">deepsport_utilities.ds.instants_dataset.views_dataset</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms" href="views_transforms.html">deepsport_utilities.ds.instants_dataset.views_transforms</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.AddBallAnnotation" href="#deepsport_utilities.ds.instants_dataset.AddBallAnnotation">AddBallAnnotation</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.AddCalibFactory" href="#deepsport_utilities.ds.instants_dataset.AddCalibFactory">AddCalibFactory</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.AddCalibFactory.to_basic_dict" href="#deepsport_utilities.ds.instants_dataset.AddCalibFactory.to_basic_dict">to_basic_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.AddCourtFactory" href="#deepsport_utilities.ds.instants_dataset.AddCourtFactory">AddCourtFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.AddDiffFactory" href="#deepsport_utilities.ds.instants_dataset.AddDiffFactory">AddDiffFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.AddNextImageFactory" href="#deepsport_utilities.ds.instants_dataset.AddNextImageFactory">AddNextImageFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.Ball" href="#deepsport_utilities.ds.instants_dataset.Ball">Ball</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Ball.state" href="#deepsport_utilities.ds.instants_dataset.Ball.state">state</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Ball.to_dict" href="#deepsport_utilities.ds.instants_dataset.Ball.to_dict">to_dict</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Ball.value" href="#deepsport_utilities.ds.instants_dataset.Ball.value">value</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Ball.visible" href="#deepsport_utilities.ds.instants_dataset.Ball.visible">visible</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BallState" href="#deepsport_utilities.ds.instants_dataset.BallState">BallState</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BallState.CONSTRAINT" href="#deepsport_utilities.ds.instants_dataset.BallState.CONSTRAINT">CONSTRAINT</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BallState.DRIBBLING" href="#deepsport_utilities.ds.instants_dataset.BallState.DRIBBLING">DRIBBLING</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BallState.FLYING" href="#deepsport_utilities.ds.instants_dataset.BallState.FLYING">FLYING</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BallState.NONE" href="#deepsport_utilities.ds.instants_dataset.BallState.NONE">NONE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform.random_ball_position" href="#deepsport_utilities.ds.instants_dataset.BallViewRandomCropperTransform.random_ball_position">random_ball_position</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BayeringTransform" href="#deepsport_utilities.ds.instants_dataset.BayeringTransform">BayeringTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViews" href="#deepsport_utilities.ds.instants_dataset.BuildBallViews">BuildBallViews</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViews.margin" href="#deepsport_utilities.ds.instants_dataset.BuildBallViews.margin">margin</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViews.margin_in_pixels" href="#deepsport_utilities.ds.instants_dataset.BuildBallViews.margin_in_pixels">margin_in_pixels</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViews.padding" href="#deepsport_utilities.ds.instants_dataset.BuildBallViews.padding">padding</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom" href="#deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom">BuildBallViewsWithRandom</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.compute_box" href="#deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.compute_box">compute_box</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin" href="#deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin">margin</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin_in_pixels" href="#deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.margin_in_pixels">margin_in_pixels</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.padding" href="#deepsport_utilities.ds.instants_dataset.BuildBallViewsWithRandom.padding">padding</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildCameraViews" href="#deepsport_utilities.ds.instants_dataset.BuildCameraViews">BuildCameraViews</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin" href="#deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin">margin</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin_in_pixels" href="#deepsport_utilities.ds.instants_dataset.BuildCameraViews.margin_in_pixels">margin_in_pixels</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildCameraViews.padding" href="#deepsport_utilities.ds.instants_dataset.BuildCameraViews.padding">padding</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildCourtViews" href="#deepsport_utilities.ds.instants_dataset.BuildCourtViews">BuildCourtViews</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildCourtViews.height" href="#deepsport_utilities.ds.instants_dataset.BuildCourtViews.height">height</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildHeadsViews" href="#deepsport_utilities.ds.instants_dataset.BuildHeadsViews">BuildHeadsViews</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin" href="#deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin">margin</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin_in_pixels" href="#deepsport_utilities.ds.instants_dataset.BuildHeadsViews.margin_in_pixels">margin_in_pixels</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildHeadsViews.padding" href="#deepsport_utilities.ds.instants_dataset.BuildHeadsViews.padding">padding</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildPlayersViews" href="#deepsport_utilities.ds.instants_dataset.BuildPlayersViews">BuildPlayersViews</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildPlayersViews.min_annotations" href="#deepsport_utilities.ds.instants_dataset.BuildPlayersViews.min_annotations">min_annotations</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews">BuildThumbnailViews</a></code></h4>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.BODY_HEIGHT" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.BODY_HEIGHT">BODY_HEIGHT</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.check_density_map" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.check_density_map">check_density_map</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.fill_density_map" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.fill_density_map">fill_density_map</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.sample_density_map" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.sample_density_map">sample_density_map</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.threshold" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.threshold">threshold</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_annotations" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_annotations">with_annotations</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_detections" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_detections">with_detections</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_occlusions" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_occlusions">with_occlusions</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_random" href="#deepsport_utilities.ds.instants_dataset.BuildThumbnailViews.with_random">with_random</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.ComputeDiff" href="#deepsport_utilities.ds.instants_dataset.ComputeDiff">ComputeDiff</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.CropBlockDividable" href="#deepsport_utilities.ds.instants_dataset.CropBlockDividable">CropBlockDividable</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter">DeepSportDatasetSplitter</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.additional_keys_usage" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.additional_keys_usage">additional_keys_usage</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.folds" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.folds">folds</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.repetitions" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.repetitions">repetitions</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split">split</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split_keys" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.split_keys">split_keys</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.validation_pc" href="#deepsport_utilities.ds.instants_dataset.DeepSportDatasetSplitter.validation_pc">validation_pc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags">DownloadFlags</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.ALL" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.ALL">ALL</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.NONE" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.NONE">NONE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_ALL_IMAGES" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_ALL_IMAGES">WITH_ALL_IMAGES</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_CALIB_FILE" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_CALIB_FILE">WITH_CALIB_FILE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_FOLLOWING_IMAGE">WITH_FOLLOWING_IMAGE</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_HUMAN_SEGMENTATION_MASKS">WITH_HUMAN_SEGMENTATION_MASKS</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_IMAGE" href="#deepsport_utilities.ds.instants_dataset.DownloadFlags.WITH_IMAGE">WITH_IMAGE</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.GameGammaColorTransform" href="#deepsport_utilities.ds.instants_dataset.GameGammaColorTransform">GameGammaColorTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.GameRGBColorTransform" href="#deepsport_utilities.ds.instants_dataset.GameRGBColorTransform">GameRGBColorTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.GammaCorrectionTransform" href="#deepsport_utilities.ds.instants_dataset.GammaCorrectionTransform">GammaCorrectionTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.Instant" href="#deepsport_utilities.ds.instants_dataset.Instant">Instant</a></code></h4>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.all_images" href="#deepsport_utilities.ds.instants_dataset.Instant.all_images">all_images</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.calibs" href="#deepsport_utilities.ds.instants_dataset.Instant.calibs">calibs</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.draw" href="#deepsport_utilities.ds.instants_dataset.Instant.draw">draw</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.get_filekey" href="#deepsport_utilities.ds.instants_dataset.Instant.get_filekey">get_filekey</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.human_masks" href="#deepsport_utilities.ds.instants_dataset.Instant.human_masks">human_masks</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.images" href="#deepsport_utilities.ds.instants_dataset.Instant.images">images</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Instant.to_dict" href="#deepsport_utilities.ds.instants_dataset.Instant.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.InstantKey" href="#deepsport_utilities.ds.instants_dataset.InstantKey">InstantKey</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.InstantKey.arena_label" href="#deepsport_utilities.ds.instants_dataset.InstantKey.arena_label">arena_label</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.InstantKey.game_id" href="#deepsport_utilities.ds.instants_dataset.InstantKey.game_id">game_id</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.InstantKey.timestamp" href="#deepsport_utilities.ds.instants_dataset.InstantKey.timestamp">timestamp</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter" href="#deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter">KFoldsArenaLabelsTestingDatasetSplitter</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.additional_keys_usage" href="#deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.additional_keys_usage">additional_keys_usage</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.folds" href="#deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.folds">folds</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.repetitions" href="#deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.repetitions">repetitions</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.validation_pc" href="#deepsport_utilities.ds.instants_dataset.KFoldsArenaLabelsTestingDatasetSplitter.validation_pc">validation_pc</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.Player" href="#deepsport_utilities.ds.instants_dataset.Player">Player</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.Player.to_dict" href="#deepsport_utilities.ds.instants_dataset.Player.to_dict">to_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.TestingArenaLabelsDatasetSplitter" href="#deepsport_utilities.ds.instants_dataset.TestingArenaLabelsDatasetSplitter">TestingArenaLabelsDatasetSplitter</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.UndistortTransform" href="#deepsport_utilities.ds.instants_dataset.UndistortTransform">UndistortTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.View" href="#deepsport_utilities.ds.instants_dataset.View">View</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.View.draw" href="#deepsport_utilities.ds.instants_dataset.View.draw">draw</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey" href="#deepsport_utilities.ds.instants_dataset.ViewKey">ViewKey</a></code></h4>
+<ul class="two-column">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.arena_label" href="#deepsport_utilities.ds.instants_dataset.ViewKey.arena_label">arena_label</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.camera" href="#deepsport_utilities.ds.instants_dataset.ViewKey.camera">camera</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.game_id" href="#deepsport_utilities.ds.instants_dataset.ViewKey.game_id">game_id</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.index" href="#deepsport_utilities.ds.instants_dataset.ViewKey.index">index</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.instant_key" href="#deepsport_utilities.ds.instants_dataset.ViewKey.instant_key">instant_key</a></code></li>
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewKey.timestamp" href="#deepsport_utilities.ds.instants_dataset.ViewKey.timestamp">timestamp</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.ViewRandomCropperTransform">ViewRandomCropperTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.ViewsDataset" href="#deepsport_utilities.ds.instants_dataset.ViewsDataset">ViewsDataset</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.ViewsDataset.augment" href="#deepsport_utilities.ds.instants_dataset.ViewsDataset.augment">augment</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

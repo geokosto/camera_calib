@@ -1,0 +1,1482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>deepsport_utilities.ds.instants_dataset.views_transforms API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>deepsport_utilities.ds.instants_dataset.views_transforms</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os
+import random
+
+import cv2
+import numpy as np
+import skimage.draw
+
+from calib3d import Point3D, Point2D
+from deepsport_utilities.court import Court, BALL_DIAMETER
+from deepsport_utilities.transforms import Transform, RandomCropperTransform
+from deepsport_utilities.utils import gamma_correction, setdefaultattr
+from deepsport_utilities.ds.instants_dataset import View, ViewKey, Ball, BallState
+
+class AddBallAnnotation(Transform):
+    def __call__(self, key, view):
+        balls = [a for a in view.annotations if a.type == &#39;ball&#39;]
+        assert len(balls) == 1, f&#34;Expected one ball. received {len(balls)}.&#34;
+        view.ball = balls[0]
+        return view
+
+class UndistortTransform(Transform):
+    def __call__(self, key, view):
+        all_images = []
+        for image in view.all_images:
+            all_images.append(cv2.undistort(image, view.calib.K, view.calib.kc))
+        view.calib = view.calib.update(kc=np.array([0,0,0,0,0]))
+        return view
+
+class ComputeDiff(Transform):
+    def __init__(self, squash=False, inplace=False):
+        self.squash = squash
+        self.inplace = inplace
+
+    def __call__(self, view_key: ViewKey, view: View):
+        diff = np.abs(view.image.astype(np.int32) - view.all_images[1].astype(np.int32)).astype(np.uint8)
+        if self.squash:
+            diff = np.mean(diff, axis=2).astype(np.uint8)
+        if self.inplace:
+            view.image = np.dstack((view.image, diff))
+        else:
+            view.diff = diff
+        return view
+
+class GameGammaColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        #29582 : [1.04, 1.02, 0.93],
+        #24651 : [1.05, 1.02, 0.92],
+        #30046 : [1.01, 1.01, 1.01]
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key, view):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            gammas = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = gamma_correction(view.image, gammas)
+        return view
+
+class BayeringTransform(Transform):
+    def __init__(self):
+        self.R_filter = np.array([[1,0],[0,0]])
+        self.G_filter = np.array([[0,1],[1,0]])
+        self.B_filter = np.array([[0,0],[0,1]])
+    def __call__(self, view_key, view):
+        height, width, _ = view.image.shape
+        R_mask = np.tile(self.R_filter, [height//2, width//2])
+        G_mask = np.tile(self.G_filter, [height//2, width//2])
+        B_mask = np.tile(self.B_filter, [height//2, width//2])
+        mask = np.stack((R_mask, G_mask, B_mask), axis=2)
+        mask = mask[np.newaxis]
+        for i, image in enumerate(view.all_images):
+            view.all_images[i] = np.sum(image*mask, axis=3)
+        view.image = view.all_images[0]
+
+class GameRGBColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key: ViewKey, view: View):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            adaptation_vector = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = np.clip(view.image.astype(np.float32)*adaptation_vector, 0, 255).astype(np.uint8)
+        return view
+
+class ViewRandomCropperTransform(RandomCropperTransform):
+    def _apply_transformation(self, view, A):
+        if self.debug:
+            w, h = self.output_shape
+            points = Point2D(np.linalg.inv(A)@Point2D([0,0,w,w],[0,h,h,0]).H)
+            cv2.polylines(view.image, [points.T.astype(np.int32)], True, (255,0,0), self.linewidth)
+        else:
+            view.image = cv2.warpAffine(view.image, A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            view.calib = view.calib.update(K=A@view.calib.K, width=self.output_shape[0], height=self.output_shape[1])
+
+            if hasattr(view, &#34;all_images&#34;):
+                for i in range(1, len(view.all_images)): # skip first image as it was already done
+                    view.all_images[i] = cv2.warpAffine(view.all_images[i], A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            if hasattr(view, &#34;human_masks&#34;) and view.human_masks is not None:
+                view.human_masks = cv2.warpAffine(view.human_masks, A[0:2,:], self.output_shape, flags=cv2.INTER_NEAREST)
+        return view
+
+class NaiveViewRandomCropperTransform(ViewRandomCropperTransform):
+    def __init__(self, *args, scale_min=0.5, scale_max=2, **kwargs):
+        &#34;&#34;&#34; scale is the scale factor that will be applied to images
+        &#34;&#34;&#34;
+        super().__init__(*args, size_min=scale_min, size_max=scale_max, **kwargs)
+
+    def _get_current_parameters(self, view_key, view):
+        input_shape = view.calib.width, view.calib.height
+        return None, 1, input_shape
+
+
+class BallViewRandomCropperTransform(ViewRandomCropperTransform):
+    &#34;&#34;&#34; Create random crops with annotated balls visible in them.
+        If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+        size is in the [min_size, max_size] range.
+        If [def_min, def_max] range is given, scale factor is chosen s.t. image
+        definition [px/m] is in the [def_min, def_max] range at ball location.
+        If [scale_min, scale_max] range is given, scale factor is chosen in
+        that range.
+        An error is raised if multiple options are given.
+
+        Arguments:
+            on_ball: if True, ball is always visible on the random crop.
+                If False, ball is visible in the random crop half of the time.
+                Else, on_ball is the probability that the ball is kept visible.
+            def_min, def_max: min and max definition [px/m] of the random crop.
+            size_min, size_max: min and max size [px] of the ball in the random crop.
+            scale_min, scale_max: image&#39;s min and max scale factor
+    &#34;&#34;&#34;
+    def __init__(self, *args, on_ball=True,
+                 def_min=None, def_max=None,
+                 size_min=None, size_max=None,
+                 scale_min=None, scale_max=None,
+                 rectify=True, **kwargs):
+        msg = &#34;Only one of (&#39;size_min&#39; and &#39;size_max&#39;) or (&#39;def_min&#39; and &#39;def_max&#39;) or (&#39;scale_min&#39; and &#39;scale_max&#39;) should be defined&#34;
+        if size_min is not None and size_max is not None:
+            assert all([x is None for x in [def_min, def_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=size_min, size_max=size_max, **kwargs)
+            self.true_size = BALL_DIAMETER
+        elif def_min is not None and def_max is not None:
+            assert all([x is None for x in [size_min, size_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=def_min, size_max=def_max, **kwargs)
+            self.true_size = 100
+        elif scale_min is not None and scale_max is not None:
+            assert all([x is None for x in [size_min, size_max, def_min, def_max]]), msg
+            super().__init__(*args, size_min=scale_min, size_max=scale_max, **kwargs)
+            self.true_size = None
+        else:
+            raise ValueError(msg)
+
+        self.rectify = rectify
+        self.on_ball = {False: 0.5, True: 1.0, None: 0.0}.get(on_ball, on_ball)
+        if self.debug and self.on_ball != 1.0:
+            raise NotImplementedError(&#34;Random keypoint should be drawn in view.image (as well as it&#39;s projection on court for better visualization)&#34;)
+
+    def random_ball_position(self, view):
+        court = setdefaultattr(view, &#34;court&#34;, Court(getattr(view, &#34;rule_type&#34;, &#34;FIBA&#34;)))
+        #court_polygon = view.calib.get_region_visible_corners_2d(court.corners, 1)
+        top_edge = list(court.visible_edges(view.calib))[0]
+        start = top_edge[0][0][0]
+        stop = top_edge[1][0][0]
+        x = np.random.beta(2, 2)*(stop-start)+start
+        y = np.random.beta(2, 2)*court.h/2+court.h/4
+        z = 0
+        return Point3D(x,y,z)
+
+    def _apply_transformation(self, view, A):
+        if not self.rectify:
+            return super()._apply_transformation(view, A)
+
+        # rectify warp caused by projection on a plane
+        center = view.__shear_center
+        vector = Point2D(center.x - view.calib.K[0,2], center.y - view.calib.K[1,2])
+        R1 = np.eye(3)
+        R1[0:2,:] = cv2.getRotationMatrix2D(center.to_int_tuple(), np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        scale = np.cos(np.arctan(np.linalg.norm(vector)/view.calib.K[0,0]))
+        T1 = np.array([[1, 0, -center.x], [0, 1, -center.y], [0, 0, 1]])
+        S = np.array([[scale, 0, 0], [0, 1, 0], [0, 0, 1]])
+        R2 = np.eye(3)
+        R2[0:2,:] = cv2.getRotationMatrix2D((0, 0), -np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        T2 = np.array([[1, 0,  center.x], [0, 1,  center.y], [0, 0, 1]])
+        return super()._apply_transformation(view, A@T2@R2@S@T1@R1)
+
+    def _get_current_parameters(self, view_key, view):
+        ball = getattr(view, &#34;ball&#34;, None)
+
+        # If not `on_ball` use the ball anyway half of the samples
+        if random.random() &lt; self.on_ball and ball is not None:
+            keypoint = ball.center
+            view.ball = ball
+        else:
+            keypoint = self.random_ball_position(view)
+            view.ball = Ball({
+                &#39;center&#39;: keypoint,
+                &#39;origin&#39;: &#34;random&#34;,
+                &#39;image&#39;: view_key.camera,
+                &#39;visible&#39;: False,
+            })
+
+        # Use ball if any, else use the random ball (it only affects the strategy to scale)
+        if self.true_size is None:
+            size = 1
+        else:
+            point3D = ball.center if ball is not None else keypoint
+            size = float(view.calib.compute_length2D(point3D, self.true_size)[0])
+
+        keypoint = view.calib.project_3D_to_2D(keypoint)
+        input_shape = view.calib.width, view.calib.height
+        view.__shear_center = keypoint
+        return keypoint, size, input_shape
+
+
+class CleverViewRandomCropperTransform(BallViewRandomCropperTransform):
+    def __init__(self, def_min=60, def_max=160, **kwargs):
+        super().__init__(on_ball=0, def_min=def_min, def_max=def_max, **kwargs)
+
+
+
+class PlayerViewRandomCropperTransform(ViewRandomCropperTransform):
+    def __init__(self, output_shape, def_min=60, def_max=160, margin=100, **kwargs):
+        &#34;&#34;&#34;
+            def -  definition in pixels per meters. 60px/m = ball of 14px
+            margin - a margin in cm the keypoints
+        &#34;&#34;&#34;
+        super().__init__(output_shape=output_shape, size_min=def_min, size_max=def_max, **kwargs)
+        self.margin = margin
+
+    def focus_on_player(self, view_key, view):
+        players = [a for a in view.annotations if a.type == &#34;player&#34; and a.camera == view_key.camera]
+        if not players:
+            return None
+        player = random.sample(players, 1)[0]
+        keypoints = Point3D([player.head, player.hips, player.foot1, player.foot2])
+        return keypoints
+
+    def _get_current_parameters(self, view_key, view):
+        raise NotImplementedError(&#34;This code was not tested. Images should be visualized.&#34;)
+        keypoints = self.focus_on_player(view_key, view)
+        if keypoints is None:
+            return None
+        margin = float(view.calib.compute_length2D(Point3D(np.mean(keypoints, axis=1)), self.margin))
+        size = float(view.calib.compute_length2D(Point3D(np.mean(keypoints, axis=1)), 100))
+        keypoints = view.calib.project_3D_to_2D(keypoints)
+        input_shape = view.calib.width, view.calib.height
+        return keypoints, size, input_shape
+
+class AddBallSizeFactory(Transform):
+    def __init__(self, origins=[&#39;annotation&#39;, &#39;interpolation&#39;]):
+        self.origins = origins
+    def __call__(self, view_key, view):
+        ball = view.ball
+        predicate = lambda ball:    ball.origin in self.origins         \
+                                and ball.visible is not False           \
+                                and view.calib.projects_in(ball.center) \
+                                and ball.center.z &lt; -10
+        return {&#34;ball_size&#34;: view.calib.compute_length2D(ball.center, BALL_DIAMETER)[0] if predicate(ball) else np.nan}
+
+class AddBallHeightFactory(Transform):
+    &#34;&#34;&#34; Ball hidden are considered
+    &#34;&#34;&#34;
+    def __init__(self, origins=[&#39;annotation&#39;, &#39;interpolation&#39;]):
+        self.origins = origins
+    def __call__(self, view_key, view):
+        ball = view.ball
+        predicate = lambda ball:    ball.origin in self.origins         \
+                                and view.calib.projects_in(ball.center) \
+                                and ball.center.z &lt; -10
+        center2D = view.calib.project_3D_to_2D(ball.center)
+        ground2D = view.calib.project_3D_to_2D(Point3D(ball.center.x, ball.center.y, 0))
+        return {&#34;ball_height&#34;: np.linalg.norm(center2D - ground2D) if predicate(ball) else np.nan}
+
+class AddBallPresenceFactory(Transform):
+    def __call__(self, view_key: ViewKey, view: View):
+        return {&#39;ball_presence&#39;: 1 if view.ball.origin in [&#39;annotation&#39;, &#39;interpolation&#39;] else 0}
+
+class AddBallStateFactory(Transform):
+    def __init__(self, state_mapping=None):
+        self.state_mapping = state_mapping or {state: np.eye(len(BallState))[s] for s, state in enumerate(BallState)}
+        self.nan = np.ones_like(list(self.state_mapping.values())[0])*np.nan
+    def __call__(self, view_key, view):
+        predicate = lambda ball: view.calib.projects_in(ball.center) and ball.visible
+        state = self.state_mapping.get(view.ball.state if predicate(view.ball) else BallState.NONE, self.nan)
+        return {&#34;ball_state&#34;: state}
+
+class AddBallPositionFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball_position&#34;: view.calib.project_3D_to_2D(view.ball.center)}
+
+class AddBallFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball&#34;: view.ball}
+
+class AddBallVisibilityFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball_visible&#34;: view.ball.visible}
+
+class AddDiffFactory(Transform):
+    def __call__(self, view_key, view):
+        raise NotImplementedError() # code needs to be re-implemented: current implementation only adds next image
+        return {&#34;input_image2&#34;: view.all_images[1]}
+
+class AddNextImageFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;input_image2&#34;: view.all_images[1]}
+
+class AddCalibFactory(Transform):
+    def __init__(self, as_dict=False):
+        self.as_dict = as_dict
+    @staticmethod
+    def to_basic_dict(calib):
+        return {
+            &#34;K&#34;: calib.K,
+            &#34;r&#34;: cv2.Rodrigues(calib.R)[0].flatten(),
+            &#34;T&#34;: calib.T,
+            &#34;width&#34;: np.array([calib.width]),
+            &#34;height&#34;: np.array([calib.height]),
+            &#34;kc&#34;: np.array(calib.kc),
+        }
+    def __call__(self, view_key, view):
+        if self.as_dict:
+            return self.to_basic_dict(view.calib)
+        return {&#34;calib&#34;: view.calib}
+
+class AddCourtFactory(Transform):
+    def __call__(self, view_key, view):
+        if not getattr(view, &#34;court&#34;, None):
+            view.court = Court()
+        return {
+            &#34;court_width&#34;: np.array([view.court.w]),
+            &#34;court_height&#34;: np.array([view.court.h])
+        }
+
+class AddImageFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;input_image&#34;: view.image}
+
+class AddHumansSegmentationTargetViewFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;human_masks&#34;: view.human_masks}
+
+class AddBallSegmentationTargetViewFactory(Transform):
+    def __call__(self, view_key, view):
+        calib = view.calib
+        target = np.zeros((calib.height, calib.width), dtype=np.uint8)
+        for ball in [a for a in view.annotations if a.type == &#34;ball&#34; and calib.projects_in(a.center) and a.visible]:
+            diameter = calib.compute_length2D(ball.center, BALL_DIAMETER)
+            center = calib.project_3D_to_2D(ball.center)
+            #cv2.circle(target, center.to_int_tuple(), radius=int(diameter/2), color=1, thickness=-1)
+            target[skimage.draw.disk(center.flatten()[::-1], radius=float(diameter/2), shape=target.shape)] = 1
+        return {
+            &#34;target&#34;: target
+        }
+
+try:
+    from calib3d.pycuda import CudaCalib
+    import pycuda.driver as cuda
+    # pylint: disable=unused-import
+    import pycuda.autoinit
+    # pylint: enable=unused-import
+    from pycuda.compiler import SourceModule
+
+    class AddBallDistance(Transform):
+        def __init__(self):
+            self._calib_struct_ptr = cuda.mem_alloc(CudaCalib.memsize())
+            self._ball_ptr = cuda.mem_alloc(3*8)
+            cuda_code = open(os.path.join(os.path.dirname(__file__), &#34;mod_source.c&#34;), &#34;r&#34;).read()
+            mod = SourceModule(str(CudaCalib.struct_str())+cuda_code)
+            self._ball_distance = mod.get_function(&#34;BallDistance&#34;)
+            self._bdim = (32,32,1)
+
+        def __repr__(self):
+            return &#34;{}()&#34;.format(self.__class__.__name__)
+
+        def __call__(self, key, view: View):
+            # copy calib to GPU
+            calib = CudaCalib.from_calib(view.calib)
+            calib.memset(self._calib_struct_ptr, cuda.memcpy_htod)
+
+            # copy ball position to GPU
+            cuda.memcpy_htod(self._ball_ptr, memoryview(view.ball.center))
+
+            # create distmap on GPU
+            distmap_gpu = cuda.mem_alloc(calib.img_width * calib.img_height * 8)# 8 bytes per double
+            cuda.memset_d8(distmap_gpu, 0, calib.img_width * calib.img_height * 8)
+
+            # compute best block and grid dimensions
+            dx, mx = divmod(calib.img_width, self._bdim[0])
+            dy, my = divmod(calib.img_height, self._bdim[1])
+            gdim = ( (dx + (mx&gt;0)) * self._bdim[0], (dy + (my&gt;0)) * self._bdim[1])
+
+            # call gpu function
+            self._ball_distance(distmap_gpu, self._calib_struct_ptr, self._ball_ptr, block=self._bdim, grid=gdim)
+
+            # copy result to memory
+            view.ball_distance = np.zeros((calib.img_height,calib.img_width))#, np.int8)
+            cuda.memcpy_dtoh(view.ball_distance, distmap_gpu)
+            # cuda.Context.synchronize()
+            return view
+except ModuleNotFoundError as e:
+    if e.name == &#34;calib3d.pycuda&#34;:
+        raise e
+
+except ImportError as e:
+    if &#34;CudaCalib&#34; not in str(e.msg):
+        raise e</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallAnnotation"><code class="flex name class">
+<span>class <span class="ident">AddBallAnnotation</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallAnnotation(Transform):
+    def __call__(self, key, view):
+        balls = [a for a in view.annotations if a.type == &#39;ball&#39;]
+        assert len(balls) == 1, f&#34;Expected one ball. received {len(balls)}.&#34;
+        view.ball = balls[0]
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball&#34;: view.ball}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallHeightFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallHeightFactory</span></span>
+<span>(</span><span>origins=['annotation', 'interpolation'])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Ball hidden are considered</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallHeightFactory(Transform):
+    &#34;&#34;&#34; Ball hidden are considered
+    &#34;&#34;&#34;
+    def __init__(self, origins=[&#39;annotation&#39;, &#39;interpolation&#39;]):
+        self.origins = origins
+    def __call__(self, view_key, view):
+        ball = view.ball
+        predicate = lambda ball:    ball.origin in self.origins         \
+                                and view.calib.projects_in(ball.center) \
+                                and ball.center.z &lt; -10
+        center2D = view.calib.project_3D_to_2D(ball.center)
+        ground2D = view.calib.project_3D_to_2D(Point3D(ball.center.x, ball.center.y, 0))
+        return {&#34;ball_height&#34;: np.linalg.norm(center2D - ground2D) if predicate(ball) else np.nan}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPositionFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallPositionFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallPositionFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball_position&#34;: view.calib.project_3D_to_2D(view.ball.center)}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPresenceFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallPresenceFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallPresenceFactory(Transform):
+    def __call__(self, view_key: ViewKey, view: View):
+        return {&#39;ball_presence&#39;: 1 if view.ball.origin in [&#39;annotation&#39;, &#39;interpolation&#39;] else 0}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSegmentationTargetViewFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallSegmentationTargetViewFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallSegmentationTargetViewFactory(Transform):
+    def __call__(self, view_key, view):
+        calib = view.calib
+        target = np.zeros((calib.height, calib.width), dtype=np.uint8)
+        for ball in [a for a in view.annotations if a.type == &#34;ball&#34; and calib.projects_in(a.center) and a.visible]:
+            diameter = calib.compute_length2D(ball.center, BALL_DIAMETER)
+            center = calib.project_3D_to_2D(ball.center)
+            #cv2.circle(target, center.to_int_tuple(), radius=int(diameter/2), color=1, thickness=-1)
+            target[skimage.draw.disk(center.flatten()[::-1], radius=float(diameter/2), shape=target.shape)] = 1
+        return {
+            &#34;target&#34;: target
+        }</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSizeFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallSizeFactory</span></span>
+<span>(</span><span>origins=['annotation', 'interpolation'])</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallSizeFactory(Transform):
+    def __init__(self, origins=[&#39;annotation&#39;, &#39;interpolation&#39;]):
+        self.origins = origins
+    def __call__(self, view_key, view):
+        ball = view.ball
+        predicate = lambda ball:    ball.origin in self.origins         \
+                                and ball.visible is not False           \
+                                and view.calib.projects_in(ball.center) \
+                                and ball.center.z &lt; -10
+        return {&#34;ball_size&#34;: view.calib.compute_length2D(ball.center, BALL_DIAMETER)[0] if predicate(ball) else np.nan}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallStateFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallStateFactory</span></span>
+<span>(</span><span>state_mapping=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallStateFactory(Transform):
+    def __init__(self, state_mapping=None):
+        self.state_mapping = state_mapping or {state: np.eye(len(BallState))[s] for s, state in enumerate(BallState)}
+        self.nan = np.ones_like(list(self.state_mapping.values())[0])*np.nan
+    def __call__(self, view_key, view):
+        predicate = lambda ball: view.calib.projects_in(ball.center) and ball.visible
+        state = self.state_mapping.get(view.ball.state if predicate(view.ball) else BallState.NONE, self.nan)
+        return {&#34;ball_state&#34;: state}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallVisibilityFactory"><code class="flex name class">
+<span>class <span class="ident">AddBallVisibilityFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddBallVisibilityFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;ball_visible&#34;: view.ball.visible}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory"><code class="flex name class">
+<span>class <span class="ident">AddCalibFactory</span></span>
+<span>(</span><span>as_dict=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddCalibFactory(Transform):
+    def __init__(self, as_dict=False):
+        self.as_dict = as_dict
+    @staticmethod
+    def to_basic_dict(calib):
+        return {
+            &#34;K&#34;: calib.K,
+            &#34;r&#34;: cv2.Rodrigues(calib.R)[0].flatten(),
+            &#34;T&#34;: calib.T,
+            &#34;width&#34;: np.array([calib.width]),
+            &#34;height&#34;: np.array([calib.height]),
+            &#34;kc&#34;: np.array(calib.kc),
+        }
+    def __call__(self, view_key, view):
+        if self.as_dict:
+            return self.to_basic_dict(view.calib)
+        return {&#34;calib&#34;: view.calib}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Static methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory.to_basic_dict"><code class="name flex">
+<span>def <span class="ident">to_basic_dict</span></span>(<span>calib)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def to_basic_dict(calib):
+    return {
+        &#34;K&#34;: calib.K,
+        &#34;r&#34;: cv2.Rodrigues(calib.R)[0].flatten(),
+        &#34;T&#34;: calib.T,
+        &#34;width&#34;: np.array([calib.width]),
+        &#34;height&#34;: np.array([calib.height]),
+        &#34;kc&#34;: np.array(calib.kc),
+    }</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddCourtFactory"><code class="flex name class">
+<span>class <span class="ident">AddCourtFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddCourtFactory(Transform):
+    def __call__(self, view_key, view):
+        if not getattr(view, &#34;court&#34;, None):
+            view.court = Court()
+        return {
+            &#34;court_width&#34;: np.array([view.court.w]),
+            &#34;court_height&#34;: np.array([view.court.h])
+        }</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddDiffFactory"><code class="flex name class">
+<span>class <span class="ident">AddDiffFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddDiffFactory(Transform):
+    def __call__(self, view_key, view):
+        raise NotImplementedError() # code needs to be re-implemented: current implementation only adds next image
+        return {&#34;input_image2&#34;: view.all_images[1]}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddHumansSegmentationTargetViewFactory"><code class="flex name class">
+<span>class <span class="ident">AddHumansSegmentationTargetViewFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddHumansSegmentationTargetViewFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;human_masks&#34;: view.human_masks}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddImageFactory"><code class="flex name class">
+<span>class <span class="ident">AddImageFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddImageFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;input_image&#34;: view.image}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.AddNextImageFactory"><code class="flex name class">
+<span>class <span class="ident">AddNextImageFactory</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AddNextImageFactory(Transform):
+    def __call__(self, view_key, view):
+        return {&#34;input_image2&#34;: view.all_images[1]}</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">BallViewRandomCropperTransform</span></span>
+<span>(</span><span>*args, on_ball=True, def_min=None, def_max=None, size_min=None, size_max=None, scale_min=None, scale_max=None, rectify=True, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create random crops with annotated balls visible in them.
+If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+size is in the [min_size, max_size] range.
+If [def_min, def_max] range is given, scale factor is chosen s.t. image
+definition [px/m] is in the [def_min, def_max] range at ball location.
+If [scale_min, scale_max] range is given, scale factor is chosen in
+that range.
+An error is raised if multiple options are given.</p>
+<h2 id="arguments">Arguments</h2>
+<p>on_ball: if True, ball is always visible on the random crop.
+If False, ball is visible in the random crop half of the time.
+Else, on_ball is the probability that the ball is kept visible.
+def_min, def_max: min and max definition [px/m] of the random crop.
+size_min, size_max: min and max size [px] of the ball in the random crop.
+scale_min, scale_max: image's min and max scale factor</p>
+<p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments_1">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BallViewRandomCropperTransform(ViewRandomCropperTransform):
+    &#34;&#34;&#34; Create random crops with annotated balls visible in them.
+        If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+        size is in the [min_size, max_size] range.
+        If [def_min, def_max] range is given, scale factor is chosen s.t. image
+        definition [px/m] is in the [def_min, def_max] range at ball location.
+        If [scale_min, scale_max] range is given, scale factor is chosen in
+        that range.
+        An error is raised if multiple options are given.
+
+        Arguments:
+            on_ball: if True, ball is always visible on the random crop.
+                If False, ball is visible in the random crop half of the time.
+                Else, on_ball is the probability that the ball is kept visible.
+            def_min, def_max: min and max definition [px/m] of the random crop.
+            size_min, size_max: min and max size [px] of the ball in the random crop.
+            scale_min, scale_max: image&#39;s min and max scale factor
+    &#34;&#34;&#34;
+    def __init__(self, *args, on_ball=True,
+                 def_min=None, def_max=None,
+                 size_min=None, size_max=None,
+                 scale_min=None, scale_max=None,
+                 rectify=True, **kwargs):
+        msg = &#34;Only one of (&#39;size_min&#39; and &#39;size_max&#39;) or (&#39;def_min&#39; and &#39;def_max&#39;) or (&#39;scale_min&#39; and &#39;scale_max&#39;) should be defined&#34;
+        if size_min is not None and size_max is not None:
+            assert all([x is None for x in [def_min, def_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=size_min, size_max=size_max, **kwargs)
+            self.true_size = BALL_DIAMETER
+        elif def_min is not None and def_max is not None:
+            assert all([x is None for x in [size_min, size_max, scale_min, scale_max]]), msg
+            super().__init__(*args, size_min=def_min, size_max=def_max, **kwargs)
+            self.true_size = 100
+        elif scale_min is not None and scale_max is not None:
+            assert all([x is None for x in [size_min, size_max, def_min, def_max]]), msg
+            super().__init__(*args, size_min=scale_min, size_max=scale_max, **kwargs)
+            self.true_size = None
+        else:
+            raise ValueError(msg)
+
+        self.rectify = rectify
+        self.on_ball = {False: 0.5, True: 1.0, None: 0.0}.get(on_ball, on_ball)
+        if self.debug and self.on_ball != 1.0:
+            raise NotImplementedError(&#34;Random keypoint should be drawn in view.image (as well as it&#39;s projection on court for better visualization)&#34;)
+
+    def random_ball_position(self, view):
+        court = setdefaultattr(view, &#34;court&#34;, Court(getattr(view, &#34;rule_type&#34;, &#34;FIBA&#34;)))
+        #court_polygon = view.calib.get_region_visible_corners_2d(court.corners, 1)
+        top_edge = list(court.visible_edges(view.calib))[0]
+        start = top_edge[0][0][0]
+        stop = top_edge[1][0][0]
+        x = np.random.beta(2, 2)*(stop-start)+start
+        y = np.random.beta(2, 2)*court.h/2+court.h/4
+        z = 0
+        return Point3D(x,y,z)
+
+    def _apply_transformation(self, view, A):
+        if not self.rectify:
+            return super()._apply_transformation(view, A)
+
+        # rectify warp caused by projection on a plane
+        center = view.__shear_center
+        vector = Point2D(center.x - view.calib.K[0,2], center.y - view.calib.K[1,2])
+        R1 = np.eye(3)
+        R1[0:2,:] = cv2.getRotationMatrix2D(center.to_int_tuple(), np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        scale = np.cos(np.arctan(np.linalg.norm(vector)/view.calib.K[0,0]))
+        T1 = np.array([[1, 0, -center.x], [0, 1, -center.y], [0, 0, 1]])
+        S = np.array([[scale, 0, 0], [0, 1, 0], [0, 0, 1]])
+        R2 = np.eye(3)
+        R2[0:2,:] = cv2.getRotationMatrix2D((0, 0), -np.arctan2(vector.y, vector.x)*180/np.pi, 1.0)
+        T2 = np.array([[1, 0,  center.x], [0, 1,  center.y], [0, 0, 1]])
+        return super()._apply_transformation(view, A@T2@R2@S@T1@R1)
+
+    def _get_current_parameters(self, view_key, view):
+        ball = getattr(view, &#34;ball&#34;, None)
+
+        # If not `on_ball` use the ball anyway half of the samples
+        if random.random() &lt; self.on_ball and ball is not None:
+            keypoint = ball.center
+            view.ball = ball
+        else:
+            keypoint = self.random_ball_position(view)
+            view.ball = Ball({
+                &#39;center&#39;: keypoint,
+                &#39;origin&#39;: &#34;random&#34;,
+                &#39;image&#39;: view_key.camera,
+                &#39;visible&#39;: False,
+            })
+
+        # Use ball if any, else use the random ball (it only affects the strategy to scale)
+        if self.true_size is None:
+            size = 1
+        else:
+            point3D = ball.center if ball is not None else keypoint
+            size = float(view.calib.compute_length2D(point3D, self.true_size)[0])
+
+        keypoint = view.calib.project_3D_to_2D(keypoint)
+        input_shape = view.calib.width, view.calib.height
+        view.__shear_center = keypoint
+        return keypoint, size, input_shape</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform">CleverViewRandomCropperTransform</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform.random_ball_position"><code class="name flex">
+<span>def <span class="ident">random_ball_position</span></span>(<span>self, view)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def random_ball_position(self, view):
+    court = setdefaultattr(view, &#34;court&#34;, Court(getattr(view, &#34;rule_type&#34;, &#34;FIBA&#34;)))
+    #court_polygon = view.calib.get_region_visible_corners_2d(court.corners, 1)
+    top_edge = list(court.visible_edges(view.calib))[0]
+    start = top_edge[0][0][0]
+    stop = top_edge[1][0][0]
+    x = np.random.beta(2, 2)*(stop-start)+start
+    y = np.random.beta(2, 2)*court.h/2+court.h/4
+    z = 0
+    return Point3D(x,y,z)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.BayeringTransform"><code class="flex name class">
+<span>class <span class="ident">BayeringTransform</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class BayeringTransform(Transform):
+    def __init__(self):
+        self.R_filter = np.array([[1,0],[0,0]])
+        self.G_filter = np.array([[0,1],[1,0]])
+        self.B_filter = np.array([[0,0],[0,1]])
+    def __call__(self, view_key, view):
+        height, width, _ = view.image.shape
+        R_mask = np.tile(self.R_filter, [height//2, width//2])
+        G_mask = np.tile(self.G_filter, [height//2, width//2])
+        B_mask = np.tile(self.B_filter, [height//2, width//2])
+        mask = np.stack((R_mask, G_mask, B_mask), axis=2)
+        mask = mask[np.newaxis]
+        for i, image in enumerate(view.all_images):
+            view.all_images[i] = np.sum(image*mask, axis=3)
+        view.image = view.all_images[0]</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">CleverViewRandomCropperTransform</span></span>
+<span>(</span><span>def_min=60, def_max=160, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create random crops with annotated balls visible in them.
+If [min_size, max_size] range is given, scale factor is chosen s.t. ball
+size is in the [min_size, max_size] range.
+If [def_min, def_max] range is given, scale factor is chosen s.t. image
+definition [px/m] is in the [def_min, def_max] range at ball location.
+If [scale_min, scale_max] range is given, scale factor is chosen in
+that range.
+An error is raised if multiple options are given.</p>
+<h2 id="arguments">Arguments</h2>
+<p>on_ball: if True, ball is always visible on the random crop.
+If False, ball is visible in the random crop half of the time.
+Else, on_ball is the probability that the ball is kept visible.
+def_min, def_max: min and max definition [px/m] of the random crop.
+size_min, size_max: min and max size [px] of the ball in the random crop.
+scale_min, scale_max: image's min and max scale factor</p>
+<p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments_1">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CleverViewRandomCropperTransform(BallViewRandomCropperTransform):
+    def __init__(self, def_min=60, def_max=160, **kwargs):
+        super().__init__(on_ball=0, def_min=def_min, def_max=def_max, **kwargs)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.ComputeDiff"><code class="flex name class">
+<span>class <span class="ident">ComputeDiff</span></span>
+<span>(</span><span>squash=False, inplace=False)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ComputeDiff(Transform):
+    def __init__(self, squash=False, inplace=False):
+        self.squash = squash
+        self.inplace = inplace
+
+    def __call__(self, view_key: ViewKey, view: View):
+        diff = np.abs(view.image.astype(np.int32) - view.all_images[1].astype(np.int32)).astype(np.uint8)
+        if self.squash:
+            diff = np.mean(diff, axis=2).astype(np.uint8)
+        if self.inplace:
+            view.image = np.dstack((view.image, diff))
+        else:
+            view.diff = diff
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.GameGammaColorTransform"><code class="flex name class">
+<span>class <span class="ident">GameGammaColorTransform</span></span>
+<span>(</span><span>transform_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameGammaColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        #29582 : [1.04, 1.02, 0.93],
+        #24651 : [1.05, 1.02, 0.92],
+        #30046 : [1.01, 1.01, 1.01]
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key, view):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            gammas = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = gamma_correction(view.image, gammas)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.GameRGBColorTransform"><code class="flex name class">
+<span>class <span class="ident">GameRGBColorTransform</span></span>
+<span>(</span><span>transform_dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameRGBColorTransform(Transform):
+    def __init__(self, transform_dict):
+        assert all([isinstance(k, int) for k in transform_dict.keys()])
+        self.transform_dict = transform_dict
+
+    def __call__(self, view_key: ViewKey, view: View):
+        if view_key.instant_key.game_id in self.transform_dict.keys():
+            adaptation_vector = np.array(self.transform_dict[view_key.instant_key.game_id])
+            view.image = np.clip(view.image.astype(np.float32)*adaptation_vector, 0, 255).astype(np.uint8)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">NaiveViewRandomCropperTransform</span></span>
+<span>(</span><span>*args, scale_min=0.5, scale_max=2, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>scale is the scale factor that will be applied to images</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class NaiveViewRandomCropperTransform(ViewRandomCropperTransform):
+    def __init__(self, *args, scale_min=0.5, scale_max=2, **kwargs):
+        &#34;&#34;&#34; scale is the scale factor that will be applied to images
+        &#34;&#34;&#34;
+        super().__init__(*args, size_min=scale_min, size_max=scale_max, **kwargs)
+
+    def _get_current_parameters(self, view_key, view):
+        input_shape = view.calib.width, view.calib.height
+        return None, 1, input_shape</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">PlayerViewRandomCropperTransform</span></span>
+<span>(</span><span>output_shape, def_min=60, def_max=160, margin=100, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>def -
+definition in pixels per meters. 60px/m = ball of 14px
+margin - a margin in cm the keypoints</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PlayerViewRandomCropperTransform(ViewRandomCropperTransform):
+    def __init__(self, output_shape, def_min=60, def_max=160, margin=100, **kwargs):
+        &#34;&#34;&#34;
+            def -  definition in pixels per meters. 60px/m = ball of 14px
+            margin - a margin in cm the keypoints
+        &#34;&#34;&#34;
+        super().__init__(output_shape=output_shape, size_min=def_min, size_max=def_max, **kwargs)
+        self.margin = margin
+
+    def focus_on_player(self, view_key, view):
+        players = [a for a in view.annotations if a.type == &#34;player&#34; and a.camera == view_key.camera]
+        if not players:
+            return None
+        player = random.sample(players, 1)[0]
+        keypoints = Point3D([player.head, player.hips, player.foot1, player.foot2])
+        return keypoints
+
+    def _get_current_parameters(self, view_key, view):
+        raise NotImplementedError(&#34;This code was not tested. Images should be visualized.&#34;)
+        keypoints = self.focus_on_player(view_key, view)
+        if keypoints is None:
+            return None
+        margin = float(view.calib.compute_length2D(Point3D(np.mean(keypoints, axis=1)), self.margin))
+        size = float(view.calib.compute_length2D(Point3D(np.mean(keypoints, axis=1)), 100))
+        keypoints = view.calib.project_3D_to_2D(keypoints)
+        input_shape = view.calib.width, view.calib.height
+        return keypoints, size, input_shape</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform.focus_on_player"><code class="name flex">
+<span>def <span class="ident">focus_on_player</span></span>(<span>self, view_key, view)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def focus_on_player(self, view_key, view):
+    players = [a for a in view.annotations if a.type == &#34;player&#34; and a.camera == view_key.camera]
+    if not players:
+        return None
+    player = random.sample(players, 1)[0]
+    keypoints = Point3D([player.head, player.hips, player.foot1, player.foot2])
+    return keypoints</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.UndistortTransform"><code class="flex name class">
+<span>class <span class="ident">UndistortTransform</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class UndistortTransform(Transform):
+    def __call__(self, key, view):
+        all_images = []
+        for image in view.all_images:
+            all_images.append(cv2.undistort(image, view.calib.K, view.calib.kc))
+        view.calib = view.calib.update(kc=np.array([0,0,0,0,0]))
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+</dd>
+<dt id="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform"><code class="flex name class">
+<span>class <span class="ident">ViewRandomCropperTransform</span></span>
+<span>(</span><span>output_shape, size_min, size_max, max_angle=0, do_flip=False, padding=0, margin=0, debug=False, regenerate=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Randomly scale, crop and rotate dataset items. The scale factor is
+randomly selected to keep the given keypoints of interest between
+<code>size_min</code> and <code>size_max</code> (At each call, the current keypoint size
+is returned by <code>_get_current_parameters</code>).</p>
+<h2 id="arguments">Arguments</h2>
+<p>output_shape: Tuple(int, int) final shape of image-like data.
+size_min: (int) lower bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+size_max: (int) upper bound of keypoints random size. If <code>0</code>
+<code>size_min</code> and <code>size_max</code> are ignored and no random scaling
+is applied.
+max_angle: (int) positive and negative bounds for random
+rotation (in degrees)
+do_flip: (bool) tells if random flip should be applied
+padding: (int) amount of padding (in pixels) in input image
+margin: (int) minimum margin (in pixels) between keypoints and
+output image border
+debug: (bool) if <code>True</code>, doesn't actually crop but display
+debug information on image instead.
+regenerate: (bool) if <code>True</code>, items are (deep)-copied before
+calling <code>_apply_transformation</code>. Else, transformation can
+occur in-place.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ViewRandomCropperTransform(RandomCropperTransform):
+    def _apply_transformation(self, view, A):
+        if self.debug:
+            w, h = self.output_shape
+            points = Point2D(np.linalg.inv(A)@Point2D([0,0,w,w],[0,h,h,0]).H)
+            cv2.polylines(view.image, [points.T.astype(np.int32)], True, (255,0,0), self.linewidth)
+        else:
+            view.image = cv2.warpAffine(view.image, A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            view.calib = view.calib.update(K=A@view.calib.K, width=self.output_shape[0], height=self.output_shape[1])
+
+            if hasattr(view, &#34;all_images&#34;):
+                for i in range(1, len(view.all_images)): # skip first image as it was already done
+                    view.all_images[i] = cv2.warpAffine(view.all_images[i], A[0:2,:], self.output_shape, flags=cv2.INTER_LINEAR)
+            if hasattr(view, &#34;human_masks&#34;) and view.human_masks is not None:
+                view.human_masks = cv2.warpAffine(view.human_masks, A[0:2,:], self.output_shape, flags=cv2.INTER_NEAREST)
+        return view</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.transforms.Transform" href="../../transforms.html#deepsport_utilities.transforms.Transform">Transform</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform">NaiveViewRandomCropperTransform</a></li>
+<li><a title="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform">PlayerViewRandomCropperTransform</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="deepsport_utilities.transforms.RandomCropperTransform" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform">RandomCropperTransform</a></b></code>:
+<ul class="hlist">
+<li><code><a title="deepsport_utilities.transforms.RandomCropperTransform.random_size" href="../../transforms.html#deepsport_utilities.transforms.RandomCropperTransform.random_size">random_size</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="deepsport_utilities.ds.instants_dataset" href="index.html">deepsport_utilities.ds.instants_dataset</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallAnnotation" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallAnnotation">AddBallAnnotation</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallFactory">AddBallFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallHeightFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallHeightFactory">AddBallHeightFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPositionFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPositionFactory">AddBallPositionFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPresenceFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallPresenceFactory">AddBallPresenceFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSegmentationTargetViewFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSegmentationTargetViewFactory">AddBallSegmentationTargetViewFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSizeFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallSizeFactory">AddBallSizeFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallStateFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallStateFactory">AddBallStateFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddBallVisibilityFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddBallVisibilityFactory">AddBallVisibilityFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory">AddCalibFactory</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory.to_basic_dict" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddCalibFactory.to_basic_dict">to_basic_dict</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddCourtFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddCourtFactory">AddCourtFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddDiffFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddDiffFactory">AddDiffFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddHumansSegmentationTargetViewFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddHumansSegmentationTargetViewFactory">AddHumansSegmentationTargetViewFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddImageFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddImageFactory">AddImageFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.AddNextImageFactory" href="#deepsport_utilities.ds.instants_dataset.views_transforms.AddNextImageFactory">AddNextImageFactory</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform">BallViewRandomCropperTransform</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform.random_ball_position" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BallViewRandomCropperTransform.random_ball_position">random_ball_position</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.BayeringTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.BayeringTransform">BayeringTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.CleverViewRandomCropperTransform">CleverViewRandomCropperTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ComputeDiff" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ComputeDiff">ComputeDiff</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.GameGammaColorTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.GameGammaColorTransform">GameGammaColorTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.GameRGBColorTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.GameRGBColorTransform">GameRGBColorTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.NaiveViewRandomCropperTransform">NaiveViewRandomCropperTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform">PlayerViewRandomCropperTransform</a></code></h4>
+<ul class="">
+<li><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform.focus_on_player" href="#deepsport_utilities.ds.instants_dataset.views_transforms.PlayerViewRandomCropperTransform.focus_on_player">focus_on_player</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.UndistortTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.UndistortTransform">UndistortTransform</a></code></h4>
+</li>
+<li>
+<h4><code><a title="deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform" href="#deepsport_utilities.ds.instants_dataset.views_transforms.ViewRandomCropperTransform">ViewRandomCropperTransform</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
