@@ -406,3 +406,28 @@ class CalibrationTool:
             tvecs=tvecs,
         )
         print("Calibration results saved to camera_calibration.npz")
+
+        # Visualize calibration results
+        from deepsport_utilities.deepsport_utilities.court import Court
+        from calib3d.calib3d.calib import Calib
+
+        calib = Calib(
+            width=self.image.shape[1],
+            height=self.image.shape[0],
+            T=tvecs[0],
+            R=cv2.Rodrigues(rvecs[0])[0],  # Convert rotation vector to matrix
+            K=camera_matrix,
+            # kc=dist_coeffs,
+        )
+
+        court_rule_type = "FIBA"
+        court = Court(rule_type=court_rule_type)
+        court.draw_lines(self.image, calib)
+
+        # Display the image with the court drawn on it
+        cv2.imshow("Court Calibration", cv2.resize(self.image, (0, 0), fx=0.7, fy=0.7))
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+        # Save the image with court lines
+        cv2.imwrite("data/court_with_lines.png", self.image)

@@ -4,7 +4,7 @@ from calibration_tool import CalibrationTool
 
 def main():
     # Set the path to your image file
-    image_path = "data/camcourt1_1512405572696_0.png"
+    image_path = "data/camcourt1_1512416912203_40.png"
 
     # Set the court type (FIBA, NBA, NCAA, NCAAW, or NFHS)
     court_type = "FIBA"
